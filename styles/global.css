@@ -13,8 +13,15 @@
     -ms-user-select: none;
     user-select: none;
 }
-
+:root{
+    --text-grey: #868d9a;
+}
 
 body{
     background-color: #232529;
+    font-family: "Roboto", sans-serif;
+}
+
+.pointer{
+    cursor: pointer;
 }
