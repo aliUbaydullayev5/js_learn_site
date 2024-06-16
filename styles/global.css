@@ -15,6 +15,14 @@
 }
 :root{
     --text-grey: #868d9a;
+    --main-padding: 980px;
+}
+
+.container{
+    margin: auto;
+    width: 100%;
+    max-width: var(--main-padding);
+    padding: 40px 0 28px;
 }
 
 body{
@@ -24,4 +32,7 @@ body{
 
 .pointer{
     cursor: pointer;
+}
+p, ul, li{
+    color: #e2e3e7;
 }
