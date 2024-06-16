@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/styles/global.css">
+<div id="page_1_1_header">
+    dasd
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('/pages/header/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('page_1_1_header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    });
+</script>

@@ -38,7 +38,8 @@
     cursor: pointer;
     transition: .2s;
 }
-.header_center_area>ul>li:hover{
+
+.header_center_area>ul>li:hover {
     color: #d2483e;
 }
 
@@ -66,9 +67,6 @@
         grid-template-rows: 1fr 60px 30px;
     }
 
-    .header_left_area {
-    }
-
     .header_center_area {
         grid-row: 1/2;
         flex-wrap: wrap;
@@ -77,14 +75,9 @@
         gap: 5px;
     }
 
-    .header_center_area>ul{
+    .header_center_area>ul {
         flex-wrap: wrap;
         justify-content: center;
         gap: 7px;
     }
-    
-    .header_right_area {
-
-    }
-
 }

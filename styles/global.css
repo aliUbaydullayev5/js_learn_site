@@ -13,12 +13,13 @@
     -ms-user-select: none;
     user-select: none;
 }
-:root{
+
+:root {
     --text-grey: #868d9a;
     --main-width: 980px;
 }
 
-.container{
+.container {
     margin: auto;
     width: 100%;
     max-width: var(--main-width);
@@ -26,21 +27,25 @@
 }
 
 @media only screen and (max-width: 1000px) {
-    .container{
+    .container {
         width: 100%;
         max-width: var(--main-width);
         /* padding: 40px 0 28px; */
         padding: 20px;
     }
 }
-body{
+
+body {
     background-color: #232529;
     font-family: "Roboto", sans-serif;
 }
 
-.pointer{
+.pointer {
     cursor: pointer;
 }
-p, ul, li{
+
+p,
+ul,
+li {
     color: #e2e3e7;
 }
