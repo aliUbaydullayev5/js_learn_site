@@ -2,10 +2,77 @@
 <script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="/styles/global.css">
+    <link rel="stylesheet" href="./style.css">
+
 <div id="page_1_1_header">
-    dasd
+
 </div>
+
+
+
+<div class="container content">
+    <article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle">
+        <meta itemprop="name" content="Справочники и спецификации">
+        <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <meta itemprop="email" content="iliakan@gmail.com">
+            <meta itemprop="name" content="Ilya Kantor">
+        </div>
+        <div itemprop="articleBody">
+            <p>Эта книга является <em>учебником</em> и нацелена на то, чтобы помочь вам постепенно освоить язык. Но
+                когда вы хорошо изучите основы, вам понадобятся дополнительные источники информации.</p>
+            <h2><a class="main__anchor" name="spetsifikatsiya" href="#spetsifikatsiya">Спецификация</a></h2>
+            <p><a href="https://www.ecma-international.org/publications-and-standards/standards/ecma-262/">Спецификация
+                    ECMA-262</a> содержит самую глубокую, детальную и формализованную информацию о JavaScript. Она
+                определяет сам язык.</p>
+            <p>Вначале спецификация может показаться тяжеловатой для понимания из-за слишком формального стиля
+                изложения. Если вы ищете источник самой достоверной информации, то это правильное место, но она не для
+                ежедневного использования.</p>
+            <p>Новая версия спецификации появляется каждый год. А пока она не вышла официально, все желающие могут
+                ознакомиться с текущим черновиком на <a href="https://tc39.es/ecma262/">https://tc39.es/ecma262/</a>.
+            </p>
+            <p>Чтобы почитать о самых последних возможностях, включая те, которые «почти в стандарте» (так называемые
+                «stage 3 proposals»), посетите <a
+                    href="https://github.com/tc39/proposals">https://github.com/tc39/proposals</a>.</p>
+            <p>Если вы разрабатываете под браузеры, то существуют и другие спецификации, о которых рассказывается во <a
+                    href="/browser-environment">второй части</a> этого учебника.</p>
+            <h2><a class="main__anchor" name="spravochniki" href="#spravochniki">Справочники</a></h2>
+            <ul>
+                <li>
+                    <p><strong>MDN (Mozilla) JavaScript Reference</strong> – это справочник с примерами и другой
+                        информацией. Хороший источник для получения подробных сведений о функциях языка, методах
+                        встроенных объектов и так далее.</p>
+                    <p>Располагается по адресу <a
+                            href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference">https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference</a>.
+                    </p>
+                    <p>Хотя зачастую вместо их сайта удобнее использовать какой-нибудь интернет-поисковик, вводя там
+                        запрос «MDN [что вы хотите найти]», например <a
+                            href="https://google.com/search?q=MDN+parseInt">https://google.com/search?q=MDN+parseInt</a>
+                        для поиска информации о функции <code>parseInt</code>.</p>
+                </li>
+            </ul>
+            <h2><a class="main__anchor" name="tablitsy-sovmestimosti" href="#tablitsy-sovmestimosti">Таблицы
+                    совместимости</a></h2>
+            <p>JavaScript – это развивающийся язык, в который постоянно добавляется что-то новое.</p>
+            <p>Посмотреть, какие возможности поддерживаются в разных браузерах и других движках, можно в следующих
+                источниках:</p>
+            <ul>
+                <li><a href="https://caniuse.com">https://caniuse.com</a> – таблицы с информацией о поддержке по каждой
+                    возможности языка. Например, чтобы узнать, какие движки поддерживают современные криптографические
+                    функции, посетите: <a
+                        href="https://caniuse.com/#feat=cryptography">https://caniuse.com/#feat=cryptography</a>.</li>
+                <li><a href="https://kangax.github.io/compat-table">https://kangax.github.io/compat-table</a> – таблица
+                    с возможностями языка и движками, которые их поддерживают и не поддерживают.</li>
+            </ul>
+            <p>Все эти ресурсы полезны в ежедневной работе программиста, так как они содержат ценную информацию о
+                возможностях использования языка, их поддержке и так далее.</p>
+            <p>Пожалуйста, запомните эти ссылки (или ссылку на эту страницу) на случай, когда вам понадобится подробная
+                информация о какой-нибудь конкретной возможности JavaScript.</p>
+        </div>
+    </article>
+</div>
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
