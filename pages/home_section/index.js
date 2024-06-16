@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     fetch('./pages/home_section/index.html')
         .then(response => response.text())
         .then(data => {

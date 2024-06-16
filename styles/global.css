@@ -15,16 +15,24 @@
 }
 :root{
     --text-grey: #868d9a;
-    --main-padding: 980px;
+    --main-width: 980px;
 }
 
 .container{
     margin: auto;
     width: 100%;
-    max-width: var(--main-padding);
+    max-width: var(--main-width);
     padding: 40px 0 28px;
 }
 
+@media only screen and (max-width: 1000px) {
+    .container{
+        width: 100%;
+        max-width: var(--main-width);
+        /* padding: 40px 0 28px; */
+        padding: 20px;
+    }
+}
 body{
     background-color: #232529;
     font-family: "Roboto", sans-serif;
