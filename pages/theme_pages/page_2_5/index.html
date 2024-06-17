@@ -1,0 +1,565 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="./style.css">
+<div id="page_1_1_header">
+
+</div>
+
+<div class="container">
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="/"><span
+                                class="breadcrumbs__hidden-text">Учебник</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="/js"><span>Язык
+                                JavaScript</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link"
+                            href="/first-steps"><span>Основы JavaScript</span></a></li>
+                    <script
+                        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Учебник","item":"https://learn.javascript.ru/"},{"@type":"ListItem","position":2,"name":"Язык JavaScript","item":"https://learn.javascript.ru/js"},{"@type":"ListItem","position":3,"name":"Основы JavaScript","item":"https://learn.javascript.ru/first-steps"}]}</script>
+                </ol>
+                <div class="updated-at" data-tooltip="Последнее обновление: 26 августа 2023 г.">
+                    <div class="updated-at__content">26 августа 2023 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Типы данных</h1>
+        </div>
+    </header>
+
+
+
+    <div itemprop="articleBody">
+        <p>Значение в JavaScript всегда относится к данным определённого типа. Например, это может быть строка или
+            число.</p>
+        <p>Есть восемь основных типов данных в JavaScript. В этой главе мы рассмотрим их в общем, а в следующих главах
+            поговорим подробнее о каждом.</p>
+        <p>Переменная в JavaScript может содержать любые данные. В один момент там может быть строка, а в другой –
+            число:</p>
+        <div id="zmr0lrbr33" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// Не будет ошибкой</code>
+        <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">"hello"</code><code class="token punctuation">;</code>
+        message <code class="token operator">=</code> <code class="token number">123456</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Языки программирования, в которых такое возможно, называются «динамически типизированными». Это значит, что
+            типы данных есть, но переменные не привязаны ни к одному из них.</p>
+        <h2><a class="main__anchor" name="chislo" href="#chislo">Число</a></h2>
+        <div id="orpm3y58l0" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> n <code class="token operator">=</code> <code class="token number">123</code><code class="token punctuation">;</code>
+        n <code class="token operator">=</code> <code class="token number">12.345</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p><em>Числовой</em> тип данных (<code>number</code>) представляет как целочисленные значения, так и числа с
+            плавающей точкой.</p>
+        <p>Существует множество операций для чисел, например, умножение <code>*</code>, деление <code>/</code>, сложение
+            <code>+</code>, вычитание <code>-</code> и так далее.</p>
+        <p>Кроме обычных чисел, существуют так называемые «специальные числовые значения», которые относятся к этому
+            типу данных: <code>Infinity</code>, <code>-Infinity</code> и <code>NaN</code>.</p>
+        <ul>
+            <li>
+                <p><code>Infinity</code> представляет собой математическую <a
+                        href="https://ru.wikipedia.org/wiki/%D0%91%D0%B5%D1%81%D0%BA%D0%BE%D0%BD%D0%B5%D1%87%D0%BD%D0%BE%D1%81%D1%82%D1%8C#%D0%92_%D0%BC%D0%B0%D1%82%D0%B5%D0%BC%D0%B0%D1%82%D0%B8%D0%BA%D0%B5">бесконечность</a>
+                    ∞. Это особое значение, которое больше любого числа.</p>
+                <p>Мы можем получить его в результате деления на ноль:</p>
+                <div id="fni8pxmi6h" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">1</code> <code class="token operator">/</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Infinity</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Или задать его явно:</p>
+                <div id="3eltrtmutl" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">Infinity</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Infinity</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
+            <li>
+                <p><code>NaN</code> означает вычислительную ошибку. Это результат неправильной или неопределённой
+                    математической операции, например:</p>
+                <div id="rwmmmrmcth" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"не число"</code> <code class="token operator">/</code> <code class="token number">2</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// NaN, такое деление является ошибкой</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Значение <code>NaN</code> «прилипчиво». Любая математическая операция с <code>NaN</code> возвращает
+                    <code>NaN</code>:</p>
+                <div id="byxa048rdf" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">NaN</code> <code class="token operator">+</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// NaN</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">3</code> <code class="token operator">*</code> <code class="token number">NaN</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// NaN</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"не число"</code> <code class="token operator">/</code> <code class="token number">2</code> <code class="token operator">-</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// NaN</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Если где-то в математическом выражении есть <code>NaN</code>, то оно распространяется на весь
+                    результат (есть только одно исключение: <code>NaN ** 0</code> равно <code>1</code>).</p>
+            </li>
+        </ul>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Математические операции – безопасны</span>
+            </div>
+            <div class="important__content">
+                <p>Математические операции в JavaScript «безопасны». Мы можем делать что угодно: делить на ноль,
+                    обращаться с нечисловыми строками как с числами и т.д.</p>
+                <p>Скрипт никогда не остановится с фатальной ошибкой (не «умрёт»). В худшем случае мы получим
+                    <code>NaN</code> как результат выполнения.</p>
+            </div>
+        </div>
+        <p>Специальные числовые значения относятся к типу «число». Конечно, это не числа в привычном значении этого
+            слова.</p>
+        <p>Подробнее о работе с числами мы поговорим в главе <a href="/number">Числа</a>.</p>
+        <h2><a class="main__anchor" name="bigint" href="#bigint">BigInt</a></h2>
+        <p>В JavaScript тип <code>number</code> не может безопасно работать с числами, большими, чем
+            <code>(2<sup>53</sup>-1)</code> (т. е. <code>9007199254740991</code>) или меньшими, чем
+            <code>-(2<sup>53</sup>-1)</code> для отрицательных чисел.</p>
+        <p>Если говорить совсем точно, то, технически, тип <code>number</code> <em>может</em> хранить большие целые
+            числа (до <code>1.7976931348623157 * 10<sup>308</sup></code>), но за пределами безопасного диапазона целых
+            чисел <code>±(2<sup>53</sup>-1)</code> будет ошибка точности, так как не все цифры помещаются в
+            фиксированную 64-битную память. Поэтому можно хранить «приблизительное» значение.</p>
+        <p>Например, эти два числа (прямо за пределами безопасного диапазона) совпадают:</p>
+        <div id="czeozhgktd" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript">console<code class="token punctuation">.</code><code class="token function">log</code><code class="token punctuation">(</code><code class="token number">9007199254740991</code> <code class="token operator">+</code> <code class="token number">1</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 9007199254740992</code>
+        console<code class="token punctuation">.</code><code class="token function">log</code><code class="token punctuation">(</code><code class="token number">9007199254740991</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 9007199254740992</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>То есть все нечетные целые числа, большие чем <code>(2<sup>53</sup>-1)</code>, вообще не могут храниться в
+            типе <code>number</code>.</p>
+        <p>В большинстве случаев безопасного диапазона чисел от <code>-(2<sup>53</sup>-1)</code> до
+            <code>(2<sup>53</sup>-1)</code> вполне достаточно, но иногда нам требуется весь диапазон действительно
+            гигантских целых чисел без каких-либо ограничений или пропущенных значений внутри него. Например, в
+            криптографии или при использовании метки времени («timestamp») с микросекундами.</p>
+        <p>Тип <code>BigInt</code> был добавлен в JavaScript, чтобы дать возможность работать с целыми числами
+            произвольной длины.</p>
+        <p>Чтобы создать значение типа <code>BigInt</code>, необходимо добавить <code>n</code> в конец числового
+            литерала:</p>
+        <div id="ygonxwnqnu" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// символ "n" в конце означает, что это BigInt</code>
+        <code class="token keyword">const</code> bigInt <code class="token operator">=</code> <code class="token number">1234567890123456789012345678901234567890n</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Так как необходимость в использовании <code>BigInt</code>–чисел появляется достаточно редко, мы рассмотрим их
+            в отдельной главе <a href="/bigint">BigInt</a>. Ознакомьтесь с ней, когда вам понадобятся настолько большие
+            числа.</p>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Поддержка</span></div>
+            <div class="important__content">
+                <p>В данный момент <code>BigInt</code> поддерживается только в браузерах Firefox, Chrome, Edge и Safari,
+                    но не поддерживается в IE.</p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="stroka" href="#stroka">Строка</a></h2>
+        <p>Строка (<code>string</code>) в JavaScript должна быть заключена в кавычки.</p>
+        <div id="1gdjvyar1p" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> str <code class="token operator">=</code> <code class="token string">"Привет"</code><code class="token punctuation">;</code>
+        <code class="token keyword">let</code> str2 <code class="token operator">=</code> <code class="token string">'Одинарные кавычки тоже подойдут'</code><code class="token punctuation">;</code>
+        <code class="token keyword">let</code> phrase <code class="token operator">=</code> <code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Обратные кавычки позволяют встраивать переменные </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>str<code class="token interpolation-punctuation punctuation">}</code></code><code class="token template-punctuation string">`</code></code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>В JavaScript существует три типа кавычек.</p>
+        <ol>
+            <li>Двойные кавычки: <code>"Привет"</code>.</li>
+            <li>Одинарные кавычки: <code>'Привет'</code>.</li>
+            <li>Обратные кавычки: <code>`Привет`</code>.</li>
+        </ol>
+        <p>Двойные или одинарные кавычки являются «простыми», между ними нет разницы в JavaScript.</p>
+        <p>Обратные же кавычки имеют расширенную функциональность. Они позволяют нам встраивать выражения в строку,
+            заключая их в <code>${…}</code>. Например:</p>
+        <div id="h0po4i02df" data-trusted="1" class="code-example"
+            data-highlight="[{&quot;start&quot;:6,&quot;cols&quot;:[{&quot;start&quot;:19,&quot;end&quot;:27}]},{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:16,&quot;end&quot;:23}]}]"
+            data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> name <code class="token operator">=</code> <code class="token string">"Иван"</code><code class="token punctuation">;</code>
+        
+        <code class="token comment">// Вставим переменную</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Привет, </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation"><em class="inline-highlight">${</em></code><em class="inline-highlight">name<code class="token interpolation-punctuation punctuation">}</code></em></code><code class="token string">!</code><code class="token template-punctuation string">`</code></code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Привет, Иван!</code>
+        
+        <code class="token comment">// Вставим выражение</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">результат: </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation"><em class="inline-highlight">${</em></code><em class="inline-highlight"><code class="token number">1</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token interpolation-punctuation punctuation">}</code></em></code><code class="token template-punctuation string">`</code></code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// результат: 3</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Выражение внутри <code>${…}</code> вычисляется, и его результат становится частью строки. Мы можем положить
+            туда всё, что угодно: переменную <code>name</code>, или выражение <code>1 + 2</code>, или что-то более
+            сложное.</p>
+        <p>Обратите внимание, что это можно делать только в обратных кавычках. Другие кавычки не имеют такой
+            функциональности встраивания!</p>
+        <div id="w2pm6xyw7z" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"результат: ${1 + 2}"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// результат: ${1 + 2} (двойные кавычки ничего не делают)</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Мы рассмотрим строки более подробно в главе <a href="/string">Строки</a>.</p>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Нет отдельного типа данных для одного
+                    символа.</span></div>
+            <div class="important__content">
+                <p>В некоторых языках, например C и Java, для хранения одного символа, например <code>"a"</code> или
+                    <code>"%"</code>, существует отдельный тип. В языках C и Java это <code>char</code>.</p>
+                <p>В JavaScript подобного типа нет, есть только тип <code>string</code>. Строка может содержать ноль
+                    символов (быть пустой), один символ или множество.</p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="bulevyy-logicheskiy-tip" href="#bulevyy-logicheskiy-tip">Булевый (логический)
+                тип</a></h2>
+        <p>Булевый тип (<code>boolean</code>) может принимать только два значения: <code>true</code> (истина) и
+            <code>false</code> (ложь).</p>
+        <p>Такой тип, как правило, используется для хранения значений да/нет: <code>true</code> значит «да, правильно»,
+            а <code>false</code> значит «нет, не правильно».</p>
+        <p>Например:</p>
+        <div id="oqf7lg0p6k" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> nameFieldChecked <code class="token operator">=</code> <code class="token boolean">true</code><code class="token punctuation">;</code> <code class="token comment">// да, поле отмечено</code>
+        <code class="token keyword">let</code> ageFieldChecked <code class="token operator">=</code> <code class="token boolean">false</code><code class="token punctuation">;</code> <code class="token comment">// нет, поле не отмечено</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Булевые значения также могут быть результатом сравнений:</p>
+        <div id="lublr3i2ck" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> isGreater <code class="token operator">=</code> <code class="token number">4</code> <code class="token operator">&gt;</code> <code class="token number">1</code><code class="token punctuation">;</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code> isGreater <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true (результатом сравнения будет "да")</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Мы рассмотрим булевые значения более подробно в главе <a href="/logical-operators">Логические операторы</a>.
+        </p>
+        <h2><a class="main__anchor" name="znachenie-null" href="#znachenie-null">Значение «null»</a></h2>
+        <p>Специальное значение <code>null</code> не относится ни к одному из типов, описанных выше.</p>
+        <p>Оно формирует отдельный тип, который содержит только значение <code>null</code>:</p>
+        <div id="zm8emuv172" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>В JavaScript <code>null</code> не является «ссылкой на несуществующий объект» или «нулевым указателем», как в
+            некоторых других языках.</p>
+        <p>Это просто специальное значение, которое представляет собой «ничего», «пусто» или «значение неизвестно».</p>
+        <p>В приведённом выше коде указано, что значение переменной <code>age</code> неизвестно.</p>
+        <h2><a class="main__anchor" name="znachenie-undefined" href="#znachenie-undefined">Значение «undefined»</a></h2>
+        <p>Специальное значение <code>undefined</code> также стоит особняком. Оно формирует тип из самого себя так же,
+            как и <code>null</code>.</p>
+        <p>Оно означает, что «значение не было присвоено».</p>
+        <p>Если переменная объявлена, но ей не присвоено никакого значения, то её значением будет
+            <code>undefined</code>:</p>
+        <div id="8zuig3vqu0" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age<code class="token punctuation">;</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>age<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// выведет "undefined"</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Технически мы можем присвоить значение <code>undefined</code> любой переменной:</p>
+        <div id="lkllum020l" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token number">123</code><code class="token punctuation">;</code>
+        
+        <code class="token comment">// изменяем значение на undefined</code>
+        age <code class="token operator">=</code> <code class="token keyword">undefined</code><code class="token punctuation">;</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>age<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// "undefined"</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>…Но так делать не рекомендуется. Обычно <code>null</code> используется для присвоения переменной «пустого»
+            или «неизвестного» значения, а <code>undefined</code> – для проверок, была ли переменная назначена.</p>
+        <h2><a class="main__anchor" name="obekty-i-simvoly" href="#obekty-i-simvoly">Объекты и символы</a></h2>
+        <p>Тип <code>object</code> (объект) – особенный.</p>
+        <p>Все остальные типы называются «примитивными», потому что их значениями могут быть только простые значения
+            (будь то строка, или число, или что-то ещё). В объектах же хранят коллекции данных или более сложные
+            структуры.</p>
+        <p>Объекты занимают важное место в языке и требуют особого внимания. Мы разберёмся с ними в главе <a
+                href="/object">Объекты</a> после того, как узнаем больше о примитивах.</p>
+        <p>Тип <code>symbol</code> (символ) используется для создания уникальных идентификаторов в объектах. Мы
+            упоминаем здесь о нём для полноты картины, изучим этот тип после объектов.</p>
+        <h2><a class="main__anchor" name="type-typeof" href="#type-typeof">Оператор typeof</a></h2>
+        <p>Оператор <code>typeof</code> возвращает тип аргумента. Это полезно, когда мы хотим обрабатывать значения
+            различных типов по-разному или просто хотим сделать проверку.</p>
+        <p>У него есть две синтаксические формы:</p>
+        <div id="pkev7ionsq" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// Обычный синтаксис</code>
+        <code class="token keyword">typeof</code> <code class="token number">5</code> <code class="token comment">// Выведет "number"</code>
+        <code class="token comment">// Синтаксис, напоминающий вызов функции (встречается реже)</code>
+        <code class="token keyword">typeof</code><code class="token punctuation">(</code><code class="token number">5</code><code class="token punctuation">)</code> <code class="token comment">// Также выведет "number"</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Если передается выражение, то нужно заключать его в скобки, т.к. typeof имеет более высокий приоритет, чем
+            бинарные операторы:</p>
+        <div id="7e8f6i45o7" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">typeof</code> <code class="token number">50</code> <code class="token operator">+</code> <code class="token string">" Квартир"</code><code class="token punctuation">;</code> <code class="token comment">// Выведет "number Квартир"</code>
+        <code class="token keyword">typeof</code> <code class="token punctuation">(</code><code class="token number">50</code> <code class="token operator">+</code> <code class="token string">" Квартир"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Выведет "string"</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Другими словами, скобки необходимы для определения типа значения, которое получилось в результате выполнения
+            выражения в них.</p>
+        <p>Вызов <code>typeof x</code> возвращает строку с именем типа:</p>
+        <div id="ouc8iradjd" data-trusted="1" class="code-example"
+            data-highlight="[{&quot;start&quot;:16,&quot;end&quot;:16},{&quot;start&quot;:14,&quot;end&quot;:14},{&quot;start&quot;:12,&quot;end&quot;:12}]"
+            data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">typeof</code> <code class="token keyword">undefined</code> <code class="token comment">// "undefined"</code>
+        
+        <code class="token keyword">typeof</code> <code class="token number">0</code> <code class="token comment">// "number"</code>
+        
+        <code class="token keyword">typeof</code> <code class="token number">10n</code> <code class="token comment">// "bigint"</code>
+        
+        <code class="token keyword">typeof</code> <code class="token boolean">true</code> <code class="token comment">// "boolean"</code>
+        
+        <code class="token keyword">typeof</code> <code class="token string">"foo"</code> <code class="token comment">// "string"</code>
+        
+        <code class="token keyword">typeof</code> <code class="token function">Symbol</code><code class="token punctuation">(</code><code class="token string">"id"</code><code class="token punctuation">)</code> <code class="token comment">// "symbol"</code>
+        
+        <em class="block-highlight"><code class="token keyword">typeof</code> Math <code class="token comment">// "object"  (1)</code></em>
+        
+        <em class="block-highlight"><code class="token keyword">typeof</code> <code class="token keyword">null</code> <code class="token comment">// "object"  (2)</code></em>
+        
+        <em class="block-highlight"><code class="token keyword">typeof</code> alert <code class="token comment">// "function"  (3)</code></em></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Последние три строки нуждаются в пояснении:</p>
+        <ol>
+            <li><code>Math</code> — это встроенный объект, который предоставляет математические операции и константы. Мы
+                рассмотрим его подробнее в главе <a href="/number">Числа</a>. Здесь он служит лишь примером объекта.
+            </li>
+            <li>Результатом вызова <code>typeof null</code> является <code>"object"</code>. Это официально признанная
+                ошибка в <code>typeof</code>, ведущая начало с времён создания JavaScript и сохранённая для
+                совместимости. Конечно, <code>null</code> не является объектом. Это специальное значение с отдельным
+                типом.</li>
+            <li>Вызов <code>typeof alert</code> возвращает <code>"function"</code>, потому что <code>alert</code>
+                является функцией. Мы изучим функции в следующих главах, где заодно увидим, что в JavaScript нет
+                специального типа «функция». Функции относятся к объектному типу. Но <code>typeof</code> обрабатывает их
+                особым образом, возвращая <code>"function"</code>. Так тоже повелось от создания JavaScript. Формально
+                это неверно, но может быть удобным на практике.</li>
+        </ol>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <p>В JavaScript есть 8 основных типов данных.</p>
+        <ul>
+            <li>Семь из них называют «примитивными» типами данных:
+                <ul>
+                    <li><code>number</code> для любых чисел: целочисленных или чисел с плавающей точкой; целочисленные
+                        значения ограничены диапазоном <code>±(2<sup>53</sup>-1)</code>.</li>
+                    <li><code>bigint</code> для целых чисел произвольной длины.</li>
+                    <li><code>string</code> для строк. Строка может содержать ноль или больше символов, нет отдельного
+                        символьного типа.</li>
+                    <li><code>boolean</code> для <code>true</code>/<code>false</code>.</li>
+                    <li><code>null</code> для неизвестных значений – отдельный тип, имеющий одно значение
+                        <code>null</code>.</li>
+                    <li><code>undefined</code> для неприсвоенных значений – отдельный тип, имеющий одно значение
+                        <code>undefined</code>.</li>
+                    <li><code>symbol</code> для уникальных идентификаторов.</li>
+                </ul>
+            </li>
+            <li>И один не является «примитивным» и стоит особняком:
+                <ul>
+                    <li><code>object</code> для более сложных структур данных.</li>
+                </ul>
+            </li>
+        </ul>
+        <p>Оператор <code>typeof</code> позволяет нам увидеть, какой тип данных сохранён в переменной.</p>
+        <ul>
+            <li>Имеет две формы: <code>typeof x</code> или <code>typeof(x)</code>.</li>
+            <li>Возвращает строку с именем типа. Например, <code>"string"</code>.</li>
+            <li>Для <code>null</code> возвращается <code>"object"</code> – это ошибка в языке, на самом деле это не
+                объект.</li>
+        </ul>
+        <p>В следующих главах мы сконцентрируемся на примитивных значениях, а когда познакомимся с ними, перейдём к
+            объектам.</p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('/pages/header/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('page_1_1_header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    });
+</script>

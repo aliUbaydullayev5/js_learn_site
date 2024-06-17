@@ -24,6 +24,7 @@
     width: 100%;
     max-width: var(--main-width);
     padding: 40px 0 28px;
+    
 }
 
 @media only screen and (max-width: 1000px) {

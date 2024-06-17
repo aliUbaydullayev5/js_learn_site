@@ -3,8 +3,123 @@
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
     crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="./style.css">
+
 <div id="page_1_1_header">
-    dasd
+
+</div>
+
+
+<div itemprop="articleBody" class="container">
+    <p>На протяжении долгого времени JavaScript развивался без проблем с обратной совместимостью. Новые функции
+        добавлялись в язык, в то время как старая функциональность не менялась.</p>
+    <p>Преимуществом данного подхода было то, что существующий код продолжал работать. А недостатком – что любая ошибка
+        или несовершенное решение, принятое создателями JavaScript, застревали в языке навсегда.</p>
+    <p>Так было до 2009 года, когда появился ECMAScript 5 (ES5). Он добавил новые возможности в язык и изменил некоторые
+        из существующих. Чтобы устаревший код работал, как и раньше, по умолчанию подобные изменения не применяются.
+        Поэтому нам нужно явно их активировать с помощью специальной директивы: <code>"use strict"</code>.</p>
+    <h2><a class="main__anchor" name="use-strict" href="#use-strict">«use strict»</a></h2>
+    <p>Директива выглядит как строка: <code>"use strict"</code> или <code>'use strict'</code>. Когда она находится в
+        начале скрипта, весь сценарий работает в «современном» режиме.</p>
+    <p>Например:</p>
+    <div id="ntst9in3vv" data-trusted="1" class="code-example" data-prism-highlighted="1">
+        <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+    
+    <code class="token comment">// этот код работает в современном режиме</code>
+    <code class="token operator">...</code></code></pre>
+            </div>
+        </div>
+
+    </div>
+    <p>Совсем скоро мы начнём изучать функции (способ группировки команд), поэтому заранее отметим, что в начале
+        большинства видов функций можно поставить <code>"use strict"</code>. Это позволяет включить строгий режим только
+        в конкретной функции. Но обычно люди используют его для всего файла.</p>
+    <div class="important important_warn">
+        <div class="important__header"><span class="important__type">Убедитесь, что «use strict» находится в
+                начале</span></div>
+        <div class="important__content">
+            <p>Проверьте, что <code>"use strict"</code> находится в первой исполняемой строке скрипта, иначе строгий
+                режим может не включиться.</p>
+            <p>Здесь строгий режим не включён:</p>
+            <div id="uahbw184tm" data-trusted="1" class="code-example" data-no-strict="1" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"some code"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token comment">// "use strict" ниже игнорируется - он должен быть в первой строке</code>
+    
+    <code class="token string">"use strict"</code><code class="token punctuation">;</code>
+    
+    <code class="token comment">// строгий режим не активирован</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <p>Над <code>"use strict"</code> могут быть записаны только комментарии.</p>
+        </div>
+    </div>
+    <div class="important important_warn">
+        <div class="important__header"><span class="important__type">Нет никакого способа отменить
+                <code>use strict</code></span></div>
+        <div class="important__content">
+            <p>Нет директивы типа <code>"no use strict"</code>, которая возвращала бы движок к старому поведению.</p>
+            <p>Как только мы входим в строгий режим, отменить это невозможно.</p>
+        </div>
+    </div>
+    <h2><a class="main__anchor" name="konsol-brauzera" href="#konsol-brauzera">Консоль браузера</a></h2>
+    <p>В дальнейшем, когда вы будете использовать <a href="/devtools">консоль браузера</a> для тестирования функций,
+        обратите внимание, что <code>use strict</code> по умолчанию в ней выключен.</p>
+    <p>Иногда, когда <code>use strict</code> имеет значение, вы можете получить неправильные результаты.</p>
+    <p>Итак, как можно включить <code>use strict</code> в консоли?</p>
+    <p>Можно использовать <kbd class="shortcut">Shift<span class="shortcut__plus">+</span>Enter</kbd> для ввода
+        нескольких строк и написать в верхней строке <code>use strict</code>:</p>
+    <div id="4x4ub47s70" data-trusted="1" class="code-example" data-prism-highlighted="1">
+        <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+                <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token string">'use strict'</code><code class="token punctuation">;</code> <code class="token operator">&lt;</code>Shift<code class="token operator">+</code>Enter для перехода на новую строку<code class="token operator">&gt;</code>
+    <code class="token comment">//  ...ваш код...</code>
+    <code class="token operator">&lt;</code>Enter для запуска<code class="token operator">&gt;</code></code></pre>
+            </div>
+        </div>
+
+    </div>
+    <p>В большинстве браузеров, включая Chrome и Firefox, это работает.</p>
+    <p>Если этого не происходит, например, в старом браузере, есть некрасивый, но надежный способ обеспечить
+        <code>use strict</code>. Поместите его в следующую обёртку:
+    </p>
+    <div id="j45vnnjirf" data-trusted="1" class="code-example" data-prism-highlighted="1">
+        <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+                <pre class="line-numbers  language-javascript"
+                    tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token punctuation">(</code><code class="token keyword">function</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token string">'use strict'</code><code class="token punctuation">;</code>
+    
+      <code class="token comment">// ...ваш код...</code>
+    <code class="token punctuation">}</code><code class="token punctuation">)</code><code class="token punctuation">(</code><code class="token punctuation">)</code></code></pre>
+            </div>
+        </div>
+
+    </div>
+    <h2><a class="main__anchor" name="vsegda-li-nuzhno-ispolzovat-use-strict"
+            href="#vsegda-li-nuzhno-ispolzovat-use-strict">Всегда ли нужно использовать «use strict»?</a></h2>
+    <p>Вопрос кажется риторическим, но это не так.</p>
+    <p>Кто-то посоветует начинать каждый скрипт с <code>"use strict"</code>… Но есть способ покруче.</p>
+    <p>Современный JavaScript поддерживает «классы» и «модули» — продвинутые структуры языка (и мы, конечно, до них
+        доберёмся), которые автоматически включают строгий режим. Поэтому в них нет нужды добавлять директиву
+        <code>"use strict"</code>.
+    </p>
+    <p><strong>Подытожим: пока очень желательно добавлять <code>"use strict";</code> в начале ваших скриптов. Позже,
+            когда весь ваш код будет состоять из классов и модулей, директиву можно будет опускать.</strong></p>
+    <p>Пока мы узнали о <code>use strict</code> только в общих чертах.</p>
+    <p>В следующих главах, по мере расширения знаний о возможностях языка, мы яснее увидим отличия между строгим и
+        стандартным режимом. К счастью, их не так много, и все они делают жизнь разработчика лучше.</p>
+    <p>Все примеры в этом учебнике подразумевают исполнение в строгом режиме, за исключением случаев (очень редких),
+        когда оговорено иное.</p>
 </div>
 
 <script>

@@ -1,0 +1,257 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="./style.css">
+<div id="page_1_1_header">
+
+</div>
+
+<div class="container">
+
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="/"><span
+                                class="breadcrumbs__hidden-text">Учебник</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="/js"><span>Язык
+                                JavaScript</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link"
+                            href="/first-steps"><span>Основы JavaScript</span></a></li>
+                    <script
+                        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Учебник","item":"https://learn.javascript.ru/"},{"@type":"ListItem","position":2,"name":"Язык JavaScript","item":"https://learn.javascript.ru/js"},{"@type":"ListItem","position":3,"name":"Основы JavaScript","item":"https://learn.javascript.ru/first-steps"}]}</script>
+                </ol>
+                <div class="updated-at" data-tooltip="Последнее обновление: 12 сентября 2020 г.">
+                    <div class="updated-at__content">12 сентября 2020 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Взаимодействие: alert, prompt, confirm</h1>
+        </div>
+    </header>
+
+
+    <article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle">
+        <meta itemprop="name" content="Взаимодействие: alert, prompt, confirm">
+        <div itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            <meta itemprop="email" content="iliakan@gmail.com">
+            <meta itemprop="name" content="Ilya Kantor">
+        </div>
+        <div itemprop="articleBody">
+            <p>Так как мы будем использовать браузер как демо-среду, нам нужно познакомиться с несколькими функциями его
+                интерфейса, а именно: <code>alert</code>, <code>prompt</code> и <code>confirm</code>.</p>
+            <h2><a class="main__anchor" name="alert" href="#alert">alert</a></h2>
+            <p>С этой функцией мы уже знакомы. Она показывает сообщение и ждёт, пока пользователь нажмёт кнопку «ОК».
+            </p>
+            <p>Например:</p>
+            <div id="0kp6xjoztl" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="toolbar codebox__toolbar">
+                        <div class="toolbar__tool">
+                            <a href="#" title="выполнить" data-action="run"
+                                class="toolbar__button toolbar__button_run"></a>
+                        </div>
+                        <div class="toolbar__tool">
+                            <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                class="toolbar__button toolbar__button_edit"></a>
+                        </div>
+                    </div>
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript"
+                            tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Hello"</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <p>Это небольшое окно с сообщением называется <em>модальным окном</em>. Понятие <em>модальное</em> означает,
+                что пользователь не может взаимодействовать с интерфейсом остальной части страницы, нажимать на другие
+                кнопки и т.д. до тех пор, пока взаимодействует с окном. В данном случае – пока не будет нажата кнопка
+                «OK».</p>
+            <h2><a class="main__anchor" name="prompt" href="#prompt">prompt</a></h2>
+            <p>Функция <code>prompt</code> принимает два аргумента:</p>
+            <div id="u7umxegeo6" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript"
+                            tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">result <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code>title<code class="token punctuation">,</code> <code class="token punctuation">[</code><code class="token keyword">default</code><code class="token punctuation">]</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <p>Этот код отобразит модальное окно с текстом, полем для ввода текста и кнопками OK/Отмена.</p>
+            <dl>
+                <dt><code>title</code></dt>
+                <dd>Текст для отображения в окне.</dd>
+                <dt><code>default</code></dt>
+                <dd>Необязательный второй параметр, который устанавливает начальное значение в поле для текста в окне.
+                </dd>
+            </dl>
+            <div class="important important_smart">
+                <div class="important__header"><span class="important__type">Квадратные скобки в синтаксисе
+                        <code>[...]</code></span></div>
+                <div class="important__content">
+                    <p>Квадратные скобки вокруг <code>default</code> в описанном выше синтаксисе означают, что параметр
+                        факультативный, необязательный.</p>
+                </div>
+            </div>
+            <p>Пользователь может напечатать что-либо в поле ввода и нажать OK. Введённый текст будет присвоен
+                переменной <code>result</code>. Пользователь также может отменить ввод нажатием на кнопку «Отмена» или
+                нажав на клавишу <kbd class="shortcut">Esc</kbd>. В этом случае значением <code>result</code> станет
+                <code>null</code>.
+            </p>
+            <p>Вызов <code>prompt</code> возвращает текст, указанный в поле для ввода, или <code>null</code>, если ввод
+                отменён пользователем.</p>
+            <p>Например:</p>
+            <div id="8w70zgmeoj" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="toolbar codebox__toolbar">
+                        <div class="toolbar__tool">
+                            <a href="#" title="выполнить" data-action="run"
+                                class="toolbar__button toolbar__button_run"></a>
+                        </div>
+                        <div class="toolbar__tool">
+                            <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                class="toolbar__button toolbar__button_edit"></a>
+                        </div>
+                    </div>
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript"
+                            tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Сколько тебе лет?'</code><code class="token punctuation">,</code> <code class="token number">100</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Тебе </code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>age<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string"> лет!</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Тебе 100 лет!</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <div class="important important_warn">
+                <div class="important__header"><span class="important__type">Для IE: всегда устанавливайте значение по
+                        умолчанию</span></div>
+                <div class="important__content">
+                    <p>Второй параметр является необязательным, но если не указать его, то Internet Explorer вставит
+                        строку <code>"undefined"</code> в поле для ввода.</p>
+                    <p>Запустите код в Internet Explorer и посмотрите на результат:</p>
+                    <div id="1qo1vo2i4q" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                        <div class="codebox code-example__codebox">
+
+                            <div class="toolbar codebox__toolbar">
+                                <div class="toolbar__tool">
+                                    <a href="#" title="выполнить" data-action="run"
+                                        class="toolbar__button toolbar__button_run"></a>
+                                </div>
+                                <div class="toolbar__tool">
+                                    <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                        class="toolbar__button toolbar__button_edit"></a>
+                                </div>
+                            </div>
+                            <div class="codebox__code" data-code="1">
+                                <pre class="line-numbers  language-javascript"
+                                    tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> test <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">"Test"</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                    <p>Чтобы <code>prompt</code> хорошо выглядел в IE, рекомендуется всегда указывать второй параметр:
+                    </p>
+                    <div id="2dx90w83yk" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                        <div class="codebox code-example__codebox">
+
+                            <div class="toolbar codebox__toolbar">
+                                <div class="toolbar__tool">
+                                    <a href="#" title="выполнить" data-action="run"
+                                        class="toolbar__button toolbar__button_run"></a>
+                                </div>
+                                <div class="toolbar__tool">
+                                    <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                        class="toolbar__button toolbar__button_edit"></a>
+                                </div>
+                            </div>
+                            <div class="codebox__code" data-code="1">
+                                <pre class="line-numbers  language-javascript"
+                                    tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> test <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">"Test"</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// &lt;-- для IE</code></code></pre>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <h2><a class="main__anchor" name="confirm" href="#confirm">confirm</a></h2>
+            <p>Синтаксис:</p>
+            <div id="cpfkwbj07s" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript"
+                            tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">result <code class="token operator">=</code> <code class="token function">confirm</code><code class="token punctuation">(</code>question<code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <p>Функция <code>confirm</code> отображает модальное окно с текстом вопроса <code>question</code> и двумя
+                кнопками: OK и Отмена.</p>
+            <p>Результат – <code>true</code>, если нажата кнопка OK. В других случаях – <code>false</code>.</p>
+            <p>Например:</p>
+            <div id="ltbz3uaio0" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                <div class="codebox code-example__codebox">
+
+                    <div class="toolbar codebox__toolbar">
+                        <div class="toolbar__tool">
+                            <a href="#" title="выполнить" data-action="run"
+                                class="toolbar__button toolbar__button_run"></a>
+                        </div>
+                        <div class="toolbar__tool">
+                            <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                class="toolbar__button toolbar__button_edit"></a>
+                        </div>
+                    </div>
+                    <div class="codebox__code" data-code="1">
+                        <pre class="line-numbers  language-javascript"
+                            tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> isBoss <code class="token operator">=</code> <code class="token function">confirm</code><code class="token punctuation">(</code><code class="token string">"Ты здесь главный?"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code> isBoss <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true, если нажата OK</code></code></pre>
+                    </div>
+                </div>
+
+            </div>
+            <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+            <p>Мы рассмотрели 3 функции браузера для взаимодействия с пользователем:</p>
+            <dl>
+                <dt><code>alert</code></dt>
+                <dd>показывает сообщение.</dd>
+                <dt><code>prompt</code></dt>
+                <dd>показывает сообщение и запрашивает ввод текста от пользователя. Возвращает напечатанный в поле ввода
+                    текст или <code>null</code>, если была нажата кнопка «Отмена» или <kbd class="shortcut">Esc</kbd> с
+                    клавиатуры.</dd>
+                <dt><code>confirm</code></dt>
+                <dd>показывает сообщение и ждёт, пока пользователь нажмёт OK или Отмена. Возвращает <code>true</code>,
+                    если нажата OK, и <code>false</code>, если нажата кнопка «Отмена» или <kbd
+                        class="shortcut">Esc</kbd> с клавиатуры.</dd>
+            </dl>
+            <p>Все эти методы являются модальными: останавливают выполнение скриптов и не позволяют пользователю
+                взаимодействовать с остальной частью страницы до тех пор, пока окно не будет закрыто.</p>
+            <p>На все указанные методы распространяются два ограничения:</p>
+            <ol>
+                <li>Расположение окон определяется браузером. Обычно окна находятся в центре.</li>
+                <li>Визуальное отображение окон зависит от браузера, и мы не можем изменить их вид.</li>
+            </ol>
+            <p>Такова цена простоты. Есть другие способы показать более приятные глазу окна с богатой функциональностью
+                для взаимодействия с пользователем, но если «навороты» не имеют значения, то данные методы работают
+                отлично.</p>
+        </div>
+    </article>
+
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('/pages/header/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('page_1_1_header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    });
+</script>

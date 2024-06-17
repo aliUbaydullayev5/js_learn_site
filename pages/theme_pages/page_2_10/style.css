@@ -1,10 +1,7 @@
-:root {
+:root{
     --borderImportant: #35383f !important;
     --foregroundDefault: #e2e3e7 !important;
-    --prismBlockBg: #282a36 !important;
-    --prismLineNumbersBg: #282a36 !important;
 }
-
 .banner-bottom__close:before,
 .breadcrumbs__item_home .breadcrumbs__link:before,
 .buy-discount__discount-label:after,

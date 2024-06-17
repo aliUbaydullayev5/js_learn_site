@@ -1,0 +1,660 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="/styles/global.css">
+<link rel="stylesheet" href="./style.css">
+<div id="page_1_1_header">
+
+</div>
+
+
+<div class="container">
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home"><a class="breadcrumbs__link" href="/"><span
+                                class="breadcrumbs__hidden-text">Учебник</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1"><a class="breadcrumbs__link" href="/js"><span>Язык
+                                JavaScript</span></a></li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2"><a class="breadcrumbs__link"
+                            href="/first-steps"><span>Основы JavaScript</span></a></li>
+                    <script
+                        type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Учебник","item":"https://learn.javascript.ru/"},{"@type":"ListItem","position":2,"name":"Язык JavaScript","item":"https://learn.javascript.ru/js"},{"@type":"ListItem","position":3,"name":"Основы JavaScript","item":"https://learn.javascript.ru/first-steps"}]}</script>
+                </ol>
+                <div class="updated-at" data-tooltip="Последнее обновление: 16 августа 2023 г.">
+                    <div class="updated-at__content">16 августа 2023 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Переменные</h1>
+        </div>
+    </header>
+
+
+    <div itemprop="articleBody">
+        <p>JavaScript-приложению обычно нужно работать с информацией. Например:</p>
+        <ol>
+            <li>Интернет-магазин – информация может включать продаваемые товары и корзину покупок.</li>
+            <li>Чат – информация может включать пользователей, сообщения и многое другое.</li>
+        </ol>
+        <p>Переменные используются для хранения этой информации.</p>
+        <h2><a class="main__anchor" name="peremennaya" href="#peremennaya">Переменная</a></h2>
+        <p><a
+                href="https://ru.wikipedia.org/wiki/%D0%9F%D0%B5%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D0%B0%D1%8F_(%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)">Переменная</a>
+            – это «именованное хранилище» для данных. Мы можем использовать переменные для хранения товаров, посетителей
+            и других данных.</p>
+        <p>Для создания переменной в JavaScript используйте ключевое слово <code>let</code>.</p>
+        <p>Приведённая ниже инструкция создаёт (другими словами, <em>объявляет</em>) переменную с именем «message»:</p>
+        <div id="cbjbc8769r" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message<code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Теперь можно поместить в неё данные (другими словами, <em>определить переменную</em>), используя оператор
+            присваивания <code>=</code>:</p>
+        <div id="udtdfjvoc6" data-trusted="1" class="code-example"
+            data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message<code class="token punctuation">;</code>
+        
+        <em class="block-highlight">message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code> <code class="token comment">// сохранить строку 'Hello' в переменной с именем message</code></em></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Строка сохраняется в области памяти, связанной с переменной. Мы можем получить к ней доступ, используя имя
+            переменной:</p>
+        <div id="hp1ad1vfy5" data-trusted="1" class="code-example"
+            data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message<code class="token punctuation">;</code>
+        message <code class="token operator">=</code> <code class="token string">'Hello!'</code><code class="token punctuation">;</code>
+        
+        <em class="block-highlight"><code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// показывает содержимое переменной</code></em></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Для краткости можно совместить объявление переменной и запись данных в одну строку:</p>
+        <div id="cyaxejxggw" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">'Hello!'</code><code class="token punctuation">;</code> <code class="token comment">// определяем переменную и присваиваем ей значение</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Hello!</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Мы также можем объявить несколько переменных в одной строке:</p>
+        <div id="3iv9owip19" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token string">'John'</code><code class="token punctuation">,</code> age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">,</code> message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Такой способ может показаться короче, но мы не рекомендуем его. Для лучшей читаемости объявляйте каждую
+            переменную на новой строке.</p>
+        <p>Многострочный вариант немного длиннее, но легче для чтения:</p>
+        <div id="9zvfmzdt4j" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token string">'John'</code><code class="token punctuation">;</code>
+        <code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">;</code>
+        <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Некоторые люди также определяют несколько переменных в таком вот многострочном стиле:</p>
+        <div id="q5dx8dvr75" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token string">'John'</code><code class="token punctuation">,</code>
+          age <code class="token operator">=</code> <code class="token number">25</code><code class="token punctuation">,</code>
+          message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>…Или даже с запятой в начале строки:</p>
+        <div id="p5v9e57jqv" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token string">'John'</code>
+          <code class="token punctuation">,</code> age <code class="token operator">=</code> <code class="token number">25</code>
+          <code class="token punctuation">,</code> message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>В принципе, все эти варианты работают одинаково. Так что это вопрос личного вкуса и эстетики.</p>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type"><code>var</code> вместо <code>let</code></span>
+            </div>
+            <div class="important__content">
+                <p>В старых скриптах вы также можете найти другое ключевое слово: <code>var</code> вместо
+                    <code>let</code>:</p>
+                <div id="99mycgm2kk" data-trusted="1" class="code-example"
+                    data-highlight="[{&quot;start&quot;:0,&quot;cols&quot;:[{&quot;start&quot;:0,&quot;end&quot;:3}]}]"
+                    data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword"><em class="inline-highlight">var</em></code> message <code class="token operator">=</code> <code class="token string">'Hello'</code><code class="token punctuation">;</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Ключевое слово <code>var</code> – <em>почти</em> то же самое, что и <code>let</code>. Оно объявляет
+                    переменную, но немного по-другому, «устаревшим» способом.</p>
+                <p>Есть тонкие различия между <code>let</code> и <code>var</code>, но они пока не имеют для нас
+                    значения. Мы подробно рассмотрим их в главе <a href="/var">Устаревшее ключевое слово "var"</a>.</p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="analogiya-iz-zhizni" href="#analogiya-iz-zhizni">Аналогия из жизни</a></h2>
+        <p>Мы легко поймём концепцию «переменной», если представим её в виде «коробки» для данных с уникальным названием
+            на ней.</p>
+        <p>Например, переменную <code>message</code> можно представить как коробку с названием <code>"message"</code> и
+            значением <code>"Hello!"</code> внутри:</p>
+        <figure>
+            <div class="image" style="width:166px">
+                <div class="image__ratio" style="padding-top:87.34939759036145%"></div>
+                <object type="image/svg+xml" data="/article/variables/variable.svg" width="166" height="145"
+                    class="image__image" data-use-theme="" style="visibility: visible;">
+                    <img src="/article/variables/variable.svg" alt="" width="166" height="145">
+                </object>
+            </div>
+        </figure>
+        <p>Мы можем положить любое значение в коробку.</p>
+        <p>Мы также можем изменить его столько раз, сколько захотим:</p>
+        <div id="m76noekc7d" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message<code class="token punctuation">;</code>
+        
+        message <code class="token operator">=</code> <code class="token string">'Hello!'</code><code class="token punctuation">;</code>
+        
+        message <code class="token operator">=</code> <code class="token string">'World!'</code><code class="token punctuation">;</code> <code class="token comment">// значение изменено</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>При изменении значения старые данные удаляются из переменной:</p>
+        <figure>
+            <div class="image" style="width:392px">
+                <div class="image__ratio" style="padding-top:48.97959183673469%"></div>
+                <object type="image/svg+xml" data="/article/variables/variable-change.svg" width="392" height="192"
+                    class="image__image" data-use-theme="" style="visibility: visible;">
+                    <img src="/article/variables/variable-change.svg" alt="" width="392" height="192">
+                </object>
+            </div>
+        </figure>
+        <p>Мы также можем объявить две переменные и скопировать данные из одной в другую.</p>
+        <div id="m42gvxd2wp" data-trusted="1" class="code-example"
+            data-highlight="[{&quot;start&quot;:4,&quot;end&quot;:5}]" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> hello <code class="token operator">=</code> <code class="token string">'Hello world!'</code><code class="token punctuation">;</code>
+        
+        <code class="token keyword">let</code> message<code class="token punctuation">;</code>
+        
+        <em class="block-highlight"><code class="token comment">// копируем значение 'Hello world' из переменной hello в переменную message</code>
+        message <code class="token operator">=</code> hello<code class="token punctuation">;</code></em>
+        
+        <code class="token comment">// теперь две переменные содержат одинаковые данные</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code>hello<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Hello world!</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Hello world!</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <div class="important important_warn">
+            <div class="important__header"><span class="important__type">Повторное объявление вызывает ошибку</span>
+            </div>
+            <div class="important__content">
+                <p>Переменная может быть объявлена только один раз.</p>
+                <p>Повторное объявление той же переменной является ошибкой:</p>
+                <div id="mssg3kyag4" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">"Это"</code><code class="token punctuation">;</code>
+        
+        <code class="token comment">// повторение ключевого слова 'let' приводит к ошибке</code>
+        <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">"Другое"</code><code class="token punctuation">;</code> <code class="token comment">// SyntaxError: 'message' has already been declared</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Поэтому следует объявлять переменную только один раз и затем использовать её уже без
+                    <code>let</code>.</p>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Функциональные языки программирования</span>
+            </div>
+            <div class="important__content">
+                <p>Примечательно, что существуют <a
+                        href="https://ru.wikipedia.org/wiki/%D0%A4%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D0%BE%D0%BD%D0%B0%D0%BB%D1%8C%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5">функциональные</a>
+                    языки программирования, такие как <a href="https://www.scala-lang.org/">Scala</a> или <a
+                        href="https://www.erlang.org/">Erlang</a>, которые запрещают изменять значение переменной.</p>
+                <p>В таких языках однажды сохранённое «в коробку» значение остаётся там навсегда. Если нам нужно
+                    сохранить что-то другое, язык заставляет нас создать новую коробку (объявить новую переменную). Мы
+                    не можем использовать старую переменную.</p>
+                <p>Хотя на первый взгляд это может показаться немного странным, эти языки вполне подходят для серьёзной
+                    разработки. Более того, есть такая область, как параллельные вычисления, где это ограничение даёт
+                    определённые преимущества. Изучение такого языка (даже если вы не планируете использовать его в
+                    ближайшее время) рекомендуется для расширения кругозора.</p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="variable-naming" href="#variable-naming">Имена переменных</a></h2>
+        <p>В JavaScript есть два ограничения, касающиеся имён переменных:</p>
+        <ol>
+            <li>Имя переменной должно содержать только буквы, цифры или символы <code>$</code> и <code>_</code>.</li>
+            <li>Первый символ не должен быть цифрой.</li>
+        </ol>
+        <p>Примеры допустимых имён:</p>
+        <div id="weieainlmm" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> userName<code class="token punctuation">;</code>
+        <code class="token keyword">let</code> test123<code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Если имя содержит несколько слов, обычно используется <a
+                href="https://ru.wikipedia.org/wiki/CamelCase">верблюжья нотация</a>, то есть, слова следуют одно за
+            другим, где каждое следующее слово начинается с заглавной буквы: <code>myVeryLongName</code>.</p>
+        <p>Самое интересное – знак доллара <code>'$'</code> и подчёркивание <code>'_'</code> также можно использовать в
+            названиях. Это обычные символы, как и буквы, без какого-либо особого значения.</p>
+        <p>Эти имена являются допустимыми:</p>
+        <div id="9frquw9mcw" data-trusted="0" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> $ <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code> <code class="token comment">// объявили переменную с именем "$"</code>
+        <code class="token keyword">let</code> _ <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> <code class="token comment">// а теперь переменную с именем "_"</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>$ <code class="token operator">+</code> _<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Примеры неправильных имён переменных:</p>
+        <div id="u8lt4vk74i" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token number">1</code>a<code class="token punctuation">;</code> <code class="token comment">// не может начинаться с цифры</code>
+        
+        <code class="token keyword">let</code> my<code class="token operator">-</code>name<code class="token punctuation">;</code> <code class="token comment">// дефис '-' не разрешён в имени</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Регистр имеет значение</span></div>
+            <div class="important__content">
+                <p>Переменные с именами <code>apple</code> и <code>APPLE</code> – это две разные переменные.</p>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Нелатинские буквы разрешены, но не
+                    рекомендуются</span></div>
+            <div class="important__content">
+                <p>Можно использовать любой язык, включая кириллицу или даже иероглифы, например:</p>
+                <div id="y4veyhw6op" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> имя <code class="token operator">=</code> <code class="token string">'...'</code><code class="token punctuation">;</code>
+        <code class="token keyword">let</code> 我 <code class="token operator">=</code> <code class="token string">'...'</code><code class="token punctuation">;</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Технически здесь нет ошибки, такие имена разрешены, но есть международная традиция использовать
+                    английский язык в именах переменных. Даже если мы пишем небольшой скрипт, у него может быть долгая
+                    жизнь впереди. Людям из других стран, возможно, придётся прочесть его не один раз.</p>
+            </div>
+        </div>
+        <div class="important important_warn">
+            <div class="important__header"><span class="important__type">Зарезервированные имена</span></div>
+            <div class="important__content">
+                <p>Существует <a
+                        href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Lexical_grammar#%D0%BA%D0%BB%D1%8E%D1%87%D0%B5%D0%B2%D1%8B%D0%B5_%D1%81%D0%BB%D0%BE%D0%B2%D0%B0">список
+                        зарезервированных слов</a>, которые нельзя использовать в качестве имён переменных, потому что
+                    они используются самим языком.</p>
+                <p>Например: <code>let</code>, <code>class</code>, <code>return</code> и <code>function</code>
+                    зарезервированы.</p>
+                <p>Приведённый ниже код даёт синтаксическую ошибку:</p>
+                <div id="ez1wt7sk8s" data-trusted="1" class="code-example" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token keyword">let</code> <code class="token operator">=</code> <code class="token number">5</code><code class="token punctuation">;</code> <code class="token comment">// нельзя назвать переменную "let", ошибка!</code>
+        <code class="token keyword">let</code> <code class="token keyword">return</code> <code class="token operator">=</code> <code class="token number">5</code><code class="token punctuation">;</code> <code class="token comment">// также нельзя назвать переменную "return", ошибка!</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="important important_warn">
+            <div class="important__header"><span class="important__type">Создание переменной без использования
+                    <code>use strict</code></span></div>
+            <div class="important__content">
+                <p>Обычно нам нужно определить переменную перед её использованием. Но в старые времена было технически
+                    возможно создать переменную простым присвоением значения без использования <code>let</code>. Это все
+                    ещё работает, если мы не включаем <code>use strict</code> в наших файлах, чтобы обеспечить
+                    совместимость со старыми скриптами.</p>
+                <div id="cqmvjvt7pe" data-trusted="1" class="code-example" data-no-strict="1"
+                    data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a href="#" title="выполнить" data-action="run"
+                                    class="toolbar__button toolbar__button_run"></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// заметка: "use strict" в этом примере не используется</code>
+        
+        num <code class="token operator">=</code> <code class="token number">5</code><code class="token punctuation">;</code> <code class="token comment">// если переменная "num" раньше не существовала, она создаётся</code>
+        
+        <code class="token function">alert</code><code class="token punctuation">(</code>num<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 5</code></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+                <p>Это плохая практика, которая приводит к ошибке в строгом режиме:</p>
+                <div id="c95sjdwdef" data-trusted="1" class="code-example"
+                    data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]" data-prism-highlighted="1">
+                    <div class="codebox code-example__codebox">
+
+                        <div class="codebox__code" data-code="1">
+                            <pre class="line-numbers  language-javascript"
+                                tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token string">"use strict"</code><code class="token punctuation">;</code>
+        
+        <em class="block-highlight">num <code class="token operator">=</code> <code class="token number">5</code><code class="token punctuation">;</code> <code class="token comment">// ошибка: num is not defined</code></em></code></pre>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="konstanty" href="#konstanty">Константы</a></h2>
+        <p>Чтобы объявить константную, то есть, неизменяемую переменную, используйте <code>const</code> вместо
+            <code>let</code>:</p>
+        <div id="lsi21o678j" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">const</code> myBirthday <code class="token operator">=</code> <code class="token string">'18.04.1982'</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Переменные, объявленные с помощью <code>const</code>, называются «константами». Их нельзя изменить. Попытка
+            сделать это приведёт к ошибке:</p>
+        <div id="kx4vqz3iiq" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">const</code> myBirthday <code class="token operator">=</code> <code class="token string">'18.04.1982'</code><code class="token punctuation">;</code>
+        
+        myBirthday <code class="token operator">=</code> <code class="token string">'01.01.2001'</code><code class="token punctuation">;</code> <code class="token comment">// ошибка, константу нельзя перезаписать!</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Если программист уверен, что переменная никогда не будет меняться, он может гарантировать это и наглядно
+            донести до каждого, объявив её через <code>const</code>.</p>
+        <h3><a class="main__anchor" name="konstanty-v-verhnem-registre" href="#konstanty-v-verhnem-registre">Константы в
+                верхнем регистре</a></h3>
+        <p>Широко распространена практика использования констант в качестве псевдонимов для трудно запоминаемых
+            значений, которые известны до начала исполнения скрипта.</p>
+        <p>Названия таких констант пишутся с использованием заглавных букв и подчёркивания.</p>
+        <p>Например, сделаем константы для различных цветов в «шестнадцатеричном формате»:</p>
+        <div id="2p4u7g4bz8" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a href="#" title="открыть в песочнице" target="_blank" data-action="edit"
+                            class="toolbar__button toolbar__button_edit"></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">const</code> <code class="token constant">COLOR_RED</code> <code class="token operator">=</code> <code class="token string">"#F00"</code><code class="token punctuation">;</code>
+        <code class="token keyword">const</code> <code class="token constant">COLOR_GREEN</code> <code class="token operator">=</code> <code class="token string">"#0F0"</code><code class="token punctuation">;</code>
+        <code class="token keyword">const</code> <code class="token constant">COLOR_BLUE</code> <code class="token operator">=</code> <code class="token string">"#00F"</code><code class="token punctuation">;</code>
+        <code class="token keyword">const</code> <code class="token constant">COLOR_ORANGE</code> <code class="token operator">=</code> <code class="token string">"#FF7F00"</code><code class="token punctuation">;</code>
+        
+        <code class="token comment">// ...когда нам нужно выбрать цвет</code>
+        <code class="token keyword">let</code> color <code class="token operator">=</code> <code class="token constant">COLOR_ORANGE</code><code class="token punctuation">;</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code>color<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// #FF7F00</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Преимущества:</p>
+        <ul>
+            <li><code>COLOR_ORANGE</code> гораздо легче запомнить, чем <code>"#FF7F00"</code>.</li>
+            <li>Гораздо легче допустить ошибку при вводе <code>"#FF7F00"</code>, чем при вводе
+                <code>COLOR_ORANGE</code>.</li>
+            <li>При чтении кода <code>COLOR_ORANGE</code> намного понятнее, чем <code>#FF7F00</code>.</li>
+        </ul>
+        <p>Когда мы должны использовать для констант заглавные буквы, а когда называть их нормально? Давайте разберёмся
+            и с этим.</p>
+        <p>Название «константа» просто означает, что значение переменной никогда не меняется. Но есть константы, которые
+            известны до выполнения (например, шестнадцатеричное значение для красного цвета), а есть константы, которые
+            <em>вычисляются</em> во время выполнения сценария, но не изменяются после их первоначального назначения.</p>
+        <p>Например:</p>
+        <div id="qnf5npji6t" data-trusted="1" class="code-example" data-prism-highlighted="1">
+            <div class="codebox code-example__codebox">
+
+                <div class="codebox__code" data-code="1">
+                    <pre class="line-numbers  language-javascript"
+                        tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">const</code> pageLoadTime <code class="token operator">=</code> <code class="token comment">/* время, потраченное на загрузку веб-страницы */</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+
+        </div>
+        <p>Значение <code>pageLoadTime</code> неизвестно до загрузки страницы, поэтому её имя записано обычными, а не
+            прописными буквами. Но это всё ещё константа, потому что она не изменяется после назначения.</p>
+        <p>Другими словами, константы с именами, записанными заглавными буквами, используются только как псевдонимы для
+            «жёстко закодированных» значений.</p>
+        <h2><a class="main__anchor" name="pridumyvayte-pravilnye-imena"
+                href="#pridumyvayte-pravilnye-imena">Придумывайте правильные имена</a></h2>
+        <p>В разговоре о переменных необходимо упомянуть, что есть ещё одна чрезвычайно важная вещь.</p>
+        <p>Название переменной должно иметь ясный и понятный смысл, говорить о том, какие данные в ней хранятся.</p>
+        <p>Именование переменных – это один из самых важных и сложных навыков в программировании. Быстрый взгляд на
+            имена переменных может показать, какой код был написан новичком, а какой – опытным разработчиком.</p>
+        <p>В реальном проекте большая часть времени тратится на изменение и расширение существующей кодовой базы, а не
+            на написание чего-то совершенно нового с нуля. Когда мы возвращаемся к коду после какого-то промежутка
+            времени, гораздо легче найти информацию, которая хорошо размечена. Или, другими словами, когда переменные
+            имеют хорошие имена.</p>
+        <p>Пожалуйста, потратьте время на обдумывание правильного имени переменной перед её объявлением. Делайте так, и
+            будете вознаграждены.</p>
+        <p>Несколько хороших правил:</p>
+        <ul>
+            <li>Используйте легко читаемые имена, такие как <code>userName</code> или <code>shoppingCart</code>.</li>
+            <li>Избегайте использования аббревиатур или коротких имён, таких как <code>a</code>, <code>b</code>,
+                <code>c</code>, за исключением тех случаев, когда вы точно знаете, что так нужно.</li>
+            <li>Делайте имена максимально описательными и лаконичными. Примеры плохих имён: <code>data</code> и
+                <code>value</code>. Такие имена ничего не говорят. Их можно использовать только в том случае, если из
+                контекста кода очевидно, какие данные хранит переменная.</li>
+            <li>Договоритесь с вашей командой об используемых терминах. Если посетитель сайта называется «user», тогда
+                мы должны называть связанные с ним переменные <code>currentUser</code> или <code>newUser</code>, а не, к
+                примеру, <code>currentVisitor</code> или <code>newManInTown</code>.</li>
+        </ul>
+        <p>Звучит просто? Действительно, это так, но на практике для создания описательных и кратких имён переменных
+            зачастую требуется подумать. Действуйте.</p>
+        <div class="important important_smart">
+            <div class="important__header"><span class="important__type">Повторно использовать или создавать новую
+                    переменную?</span></div>
+            <div class="important__content">
+                <p>И последняя заметка. Есть ленивые программисты, которые вместо объявления новых переменных повторно
+                    используют существующие.</p>
+                <p>В результате их переменные похожи на коробки, в которые люди бросают разные предметы, не меняя на них
+                    этикетки. Что сейчас находится внутри коробки? Кто знает? Нам необходимо подойти поближе и
+                    проверить.</p>
+                <p>Такие программисты немного экономят на объявлении переменных, но теряют в десять раз больше при
+                    отладке.</p>
+                <p>Дополнительная переменная – это добро, а не зло.</p>
+                <p>Современные JavaScript-минификаторы и браузеры оптимизируют код достаточно хорошо, поэтому он не
+                    создаёт проблем с производительностью. Использование разных переменных для разных значений может
+                    даже помочь движку оптимизировать ваш код.</p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <p>Мы можем объявить переменные для хранения данных с помощью ключевых слов <code>var</code>, <code>let</code>
+            или <code>const</code>.</p>
+        <ul>
+            <li><code>let</code> – это современный способ объявления.</li>
+            <li><code>var</code> – это устаревший способ объявления. Обычно мы вообще не используем его, но мы
+                рассмотрим тонкие отличия от <code>let</code> в главе <a href="/var">Устаревшее ключевое слово "var"</a>
+                на случай, если это всё-таки вам понадобится.</li>
+            <li><code>const</code> – похоже на <code>let</code>, но значение переменной не может изменяться.</li>
+        </ul>
+        <p>Переменные должны быть названы таким образом, чтобы мы могли легко понять, что у них внутри.</p>
+    </div>
+</div>
+
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch('/pages/header/index.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('page_1_1_header').innerHTML = data;
+            })
+            .catch(error => console.error('Error loading header:', error));
+    });
+</script>
