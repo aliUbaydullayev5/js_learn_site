@@ -1671,9 +1671,6 @@ body {
         Helvetica,
         Arial,
         sans-serif;
-    -webkit-text-size-adjust: none;
-    -ms-text-size-adjust: none;
-    text-size-adjust: none;
     color: var(--foregroundDefault);
     background: var(--backgroundBase);
     margin: 0;

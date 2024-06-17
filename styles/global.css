@@ -4,7 +4,6 @@
     box-sizing: border-box;
 }
 
-
 .nocopy {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
@@ -24,7 +23,6 @@
     width: 100%;
     max-width: var(--main-width);
     padding: 40px 0 28px;
-    
 }
 
 @media only screen and (max-width: 1000px) {
@@ -32,7 +30,7 @@
         width: 100%;
         max-width: var(--main-width);
         /* padding: 40px 0 28px; */
-        padding: 20px;
+        padding: 40px;
     }
 }
 
@@ -49,4 +47,8 @@ p,
 ul,
 li {
     color: #e2e3e7;
+}
+p {
+    font-size: 22px;
+    line-height: 20px;
 }
