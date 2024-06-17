@@ -1,0 +1,1537 @@
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home">
+                        <a class="breadcrumbs__link" href="/"
+                            ><span class="breadcrumbs__hidden-text"
+                                >Учебник</span
+                            ></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1">
+                        <a class="breadcrumbs__link" href="/js"
+                            ><span>Язык JavaScript</span></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2">
+                        <a class="breadcrumbs__link" href="/first-steps"
+                            ><span>Основы JavaScript</span></a
+                        >
+                    </li>
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Учебник",
+                                    "item": "https://learn.javascript.ru/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Язык JavaScript",
+                                    "item": "https://learn.javascript.ru/js"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Основы JavaScript",
+                                    "item": "https://learn.javascript.ru/first-steps"
+                                }
+                            ]
+                        }
+                    </script>
+                </ol>
+                <div
+                    class="updated-at"
+                    data-tooltip="Последнее обновление: 15 мая 2024 г."
+                >
+                    <div class="updated-at__content">15 мая 2024 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Функции</h1>
+        </div>
+    </header>
+
+    <div itemprop="articleBody">
+        <p>
+            Зачастую нам надо повторять одно и то же действие во многих частях
+            программы.
+        </p>
+        <p>
+            Например, необходимо красиво вывести сообщение при приветствии
+            посетителя, при выходе посетителя с сайта, ещё где-нибудь.
+        </p>
+        <p>
+            Чтобы не повторять один и тот же код во многих местах, придуманы
+            функции. Функции являются основными «строительными блоками»
+            программы.
+        </p>
+        <p>
+            Примеры встроенных функций вы уже видели – это
+            <code>alert(message)</code>, <code>prompt(message, default)</code> и
+            <code>confirm(question)</code>. Но можно создавать и свои.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="obyavlenie-funktsii"
+                href="#obyavlenie-funktsii"
+                >Объявление функции</a
+            >
+        </h2>
+        <p>
+            Для создания функций мы можем использовать
+            <em>объявление функции</em>.
+        </p>
+        <p>Пример объявления функции:</p>
+        <div
+            id="jaehytjpdr"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Всем привет!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Вначале идёт ключевое слово <code>function</code>, после него
+            <em>имя функции</em>, затем список <em>параметров</em> в круглых
+            скобках через запятую (в вышеприведённом примере он пустой) и,
+            наконец, код функции, также называемый «телом функции», внутри
+            фигурных скобок.
+        </p>
+        <div
+            id="c5qqpcm52e"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">имя</code><code class="token punctuation">(</code><code class="token parameter">параметры</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token operator">...</code>тело<code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Наша новая функция может быть вызвана по своему имени:
+            <code>showMessage()</code>.
+        </p>
+        <p>Например:</p>
+        <div
+            id="tlk562wyjv"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":4,"end":5}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Всем привет!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <em class="block-highlight"><code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Вызов <code>showMessage()</code> выполняет код функции. Здесь мы
+            увидим сообщение дважды.
+        </p>
+        <p>
+            Этот пример явно демонстрирует одно из главных предназначений
+            функций: избавление от дублирования кода.
+        </p>
+        <p>
+            Если понадобится поменять сообщение или способ его вывода –
+            достаточно изменить его в одном месте: в функции, которая его
+            выводит.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="lokalnye-peremennye"
+                href="#lokalnye-peremennye"
+                >Локальные переменные</a
+            >
+        </h2>
+        <p>
+            Переменные, объявленные внутри функции, видны только внутри этой
+            функции.
+        </p>
+        <p>Например:</p>
+        <div
+            id="fv8r6z1hw2"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":1,"end":1}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">  <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">"Привет, я JavaScript!"</code><code class="token punctuation">;</code> <code class="token comment">// локальная переменная</code></em>
+
+      <code class="token function">alert</code><code class="token punctuation">(</code> message <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Привет, я JavaScript!</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> message <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// &lt;-- будет ошибка, т.к. переменная видна только внутри функции</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="vneshnie-peremennye"
+                href="#vneshnie-peremennye"
+                >Внешние переменные</a
+            >
+        </h2>
+        <p>У функции есть доступ к внешним переменным, например:</p>
+        <div
+            id="9pooxd7opa"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":3,"cols":[{"start":29,"end":37}]},{"start":0,"cols":[{"start":4,"end":12}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <em class="inline-highlight">userName</em> <code class="token operator">=</code> <code class="token string">'Вася'</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">'Привет, '</code> <code class="token operator">+</code> <em class="inline-highlight">userName</em><code class="token punctuation">;</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Привет, Вася</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Функция обладает полным доступом к внешним переменным и может
+            изменять их значение.
+        </p>
+        <p>Например:</p>
+        <div
+            id="lerf6hjp3w"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":13,"cols":[{"start":22,"end":26}]},{"start":9,"cols":[{"start":22,"end":26}]},{"start":5,"cols":[{"start":29,"end":37}]},{"start":3,"cols":[{"start":2,"end":10}]},{"start":0,"cols":[{"start":4,"end":12}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <em class="inline-highlight">userName</em> <code class="token operator">=</code> <code class="token string">'Вася'</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <em class="inline-highlight">userName</em> <code class="token operator">=</code> <code class="token string">"Петя"</code><code class="token punctuation">;</code> <code class="token comment">// (1) изменяем значение внешней переменной</code>
+
+      <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">'Привет, '</code> <code class="token operator">+</code> <em class="inline-highlight">userName</em><code class="token punctuation">;</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> userName <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">Вася</em> перед вызовом функции</code>
+
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> userName <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">Петя</em>, значение внешней переменной было изменено функцией</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Внешняя переменная используется, только если внутри функции нет
+            такой локальной.
+        </p>
+        <p>
+            Если одноимённая переменная объявляется внутри функции, тогда она
+            перекрывает внешнюю. Например, в коде ниже функция использует
+            локальную переменную <code>userName</code>. Внешняя будет
+            проигнорирована:
+        </p>
+        <div
+            id="vuensa1ekg"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":12,"cols":[{"start":22,"end":26}]},{"start":5,"cols":[{"start":42,"end":46}]},{"start":3,"end":3}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> userName <code class="token operator">=</code> <code class="token string">'Вася'</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">  <code class="token keyword">let</code> userName <code class="token operator">=</code> <code class="token string">"Петя"</code><code class="token punctuation">;</code> <code class="token comment">// объявляем локальную переменную</code></em>
+
+      <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token string">'Привет, '</code> <code class="token operator">+</code> userName<code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">Петя</em></code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>message<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token comment">// функция создаст и будет использовать свою собственную локальную переменную userName</code>
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> userName <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">Вася</em>, не изменилась, функция не трогала внешнюю переменную</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type">Глобальные переменные</span>
+            </div>
+            <div class="important__content">
+                <p>
+                    Переменные, объявленные снаружи всех функций, такие как
+                    внешняя переменная <code>userName</code> в вышеприведённом
+                    коде – называются <em>глобальными</em>.
+                </p>
+                <p>
+                    <em>Глобальные переменные</em> видимы для любой функции
+                    (если только их не перекрывают одноимённые локальные
+                    переменные).
+                </p>
+                <p>
+                    Желательно сводить использование глобальных переменных к
+                    минимуму. В современном коде обычно мало или совсем нет
+                    глобальных переменных. Хотя они иногда полезны для хранения
+                    важнейших «общепроектовых» данных.
+                </p>
+            </div>
+        </div>
+        <h2>
+            <a class="main__anchor" name="parametry" href="#parametry"
+                >Параметры</a
+            >
+        </h2>
+        <p>
+            Мы можем передать внутрь функции любую информацию, используя
+            параметры.
+        </p>
+        <p>
+            В нижеприведённом примере функции передаются два параметра:
+            <code>from</code> и <code>text</code>.
+        </p>
+        <div
+            id="h2zscuhati"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":4,"end":5},{"start":0,"cols":[{"start":21,"end":31}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter"><em class="inline-highlight">from<code class="token punctuation">,</code> text</em></code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// параметры: from, text</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>from <code class="token operator">+</code> <code class="token string">': '</code> <code class="token operator">+</code> text<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <em class="block-highlight"><code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token string">'Аня'</code><code class="token punctuation">,</code> <code class="token string">'Привет!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Аня: Привет! (*)</code>
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token string">'Аня'</code><code class="token punctuation">,</code> <code class="token string">"Как дела?"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Аня: Как дела? (**)</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Когда функция вызывается в строках <code>(*)</code> и
+            <code>(**)</code>, переданные значения копируются в локальные
+            переменные <code>from</code> и <code>text</code>. Затем они
+            используются в теле функции.
+        </p>
+        <p>
+            Вот ещё один пример: у нас есть переменная <code>from</code>, и мы
+            передаём её функции. Обратите внимание: функция изменяет значение
+            <code>from</code>, но это изменение не видно снаружи. Функция всегда
+            получает только копию значения:
+        </p>
+        <div
+            id="ggo7b8b1if"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":2}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">from<code class="token punctuation">,</code> text</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+    <em class="block-highlight">  from <code class="token operator">=</code> <code class="token string">'*'</code> <code class="token operator">+</code> from <code class="token operator">+</code> <code class="token string">'*'</code><code class="token punctuation">;</code> <code class="token comment">// немного украсим "from"</code></em>
+
+      <code class="token function">alert</code><code class="token punctuation">(</code> from <code class="token operator">+</code> <code class="token string">': '</code> <code class="token operator">+</code> text <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token keyword">let</code> from <code class="token operator">=</code> <code class="token string">"Аня"</code><code class="token punctuation">;</code>
+
+    <code class="token function">showMessage</code><code class="token punctuation">(</code>from<code class="token punctuation">,</code> <code class="token string">"Привет"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// *Аня*: Привет</code>
+
+    <code class="token comment">// значение "from" осталось прежним, функция изменила значение локальной переменной</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> from <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Аня</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Значение, передаваемое в качестве параметра функции, также
+            называется <em>аргументом</em>.
+        </p>
+        <p>Другими словами:</p>
+        <ul>
+            <li>
+                Параметр – это переменная, указанная в круглых скобках в
+                объявлении функции.
+            </li>
+            <li>
+                Аргумент – это значение, которое передаётся функции при её
+                вызове.
+            </li>
+        </ul>
+        <p>
+            Мы объявляем функции со списком параметров, затем вызываем их,
+            передавая аргументы.
+        </p>
+        <p>
+            Рассматривая приведённый выше пример, мы могли бы сказать: "функция
+            <code>showMessage</code> объявляется с двумя параметрами, затем
+            вызывается с двумя аргументами: <code>from</code> и
+            <code>"Привет"</code>".
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="znacheniya-po-umolchaniyu"
+                href="#znacheniya-po-umolchaniyu"
+                >Значения по умолчанию</a
+            >
+        </h2>
+        <p>
+            Если при вызове функции аргумент не был указан, то его значением
+            становится <code>undefined</code>.
+        </p>
+        <p>
+            Например, вышеупомянутая функция
+            <code>showMessage(from, text)</code> может быть вызвана с одним
+            аргументом:
+        </p>
+        <div
+            id="iv7jxf2pew"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token string">"Аня"</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Это не приведёт к ошибке. Такой вызов выведет
+            <code>"*Аня*: undefined"</code>. В вызове не указан параметр
+            <code>text</code>, поэтому предполагается, что
+            <code>text === undefined</code>.
+        </p>
+        <p>
+            Если мы хотим задать параметру <code>text</code> значение по
+            умолчанию, мы должны указать его после <code>=</code>:
+        </p>
+        <div
+            id="yf5dpf8gu7"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":0,"cols":[{"start":27,"end":53}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code>from<code class="token punctuation">,</code> <em class="inline-highlight">text <code class="token operator">=</code> <code class="token string">"текст не добавлен"</code></em><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> from <code class="token operator">+</code> <code class="token string">": "</code> <code class="token operator">+</code> text <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token string">"Аня"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Аня: текст не добавлен</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Теперь, если параметр <code>text</code> не указан, его значением
+            будет <code>"текст не добавлен"</code>
+        </p>
+        <p>
+            В данном случае <code>"текст не добавлен"</code> это строка, но на
+            её месте могло бы быть и более сложное выражение, которое бы
+            вычислялось и присваивалось при отсутствии параметра. Например:
+        </p>
+        <div
+            id="oin6rauzvy"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">from<code class="token punctuation">,</code> text <code class="token operator">=</code> <code class="token function">anotherFunction</code><code class="token punctuation">(</code><code class="token punctuation">)</code></code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// anotherFunction() выполнится только если не передан text</code>
+      <code class="token comment">// результатом будет значение text</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Вычисление параметров по умолчанию</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    В JavaScript параметры по умолчанию вычисляются каждый раз,
+                    когда функция вызывается без соответствующего аргумента.
+                </p>
+                <p>
+                    В приведённом выше примере, функция
+                    <code>anotherFunction()</code> не будет вызвана вообще, если
+                    указан аргумент <code>text</code>.
+                </p>
+                <p>
+                    С другой стороны, функция будет независимо вызываться каждый
+                    раз, когда аргумент <code>text</code> отсутствует.
+                </p>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Использование параметров по умолчанию в ранних версиях
+                    JavaScript</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Ранние версии JavaScript не поддерживали параметры по
+                    умолчанию. Поэтому существуют альтернативные способы,
+                    которые могут встречаться в старых скриптах.
+                </p>
+                <p>Например, явная проверка на <code>undefined</code>:</p>
+                <div
+                    id="a0j20otavo"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":1,"end":3}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">from<code class="token punctuation">,</code> text</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">  <code class="token keyword">if</code> <code class="token punctuation">(</code>text <code class="token operator">===</code> <code class="token keyword">undefined</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+        text <code class="token operator">=</code> <code class="token string">'текст не добавлен'</code><code class="token punctuation">;</code>
+      <code class="token punctuation">}</code></em>
+
+      <code class="token function">alert</code><code class="token punctuation">(</code> from <code class="token operator">+</code> <code class="token string">": "</code> <code class="token operator">+</code> text <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>…Или с помощью оператора <code>||</code>:</p>
+                <div
+                    id="0qtkl8tt3x"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">from<code class="token punctuation">,</code> text</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// Если значение text ложно, тогда присвоить параметру text значение по умолчанию</code>
+      <code class="token comment">// заметим, что при этом пустая строка text === "" будет также считаться отсутствующим значением</code>
+      text <code class="token operator">=</code> text <code class="token operator">||</code> <code class="token string">'текст не добавлен'</code><code class="token punctuation">;</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>
+            <a
+                class="main__anchor"
+                name="alternativnye-parametry-po-umolchaniyu"
+                href="#alternativnye-parametry-po-umolchaniyu"
+                >Альтернативные параметры по умолчанию</a
+            >
+        </h3>
+        <p>
+            Иногда имеет смысл присваивать значения по умолчанию для параметров
+            не в объявлении функции, а на более позднем этапе.
+        </p>
+        <p>
+            Во время выполнения функции мы можем проверить, передан ли параметр,
+            сравнив его с <code>undefined</code>:
+        </p>
+        <div
+            id="142p16oazl"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":4}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">text</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// ...</code>
+    <em class="block-highlight">  <code class="token keyword">if</code> <code class="token punctuation">(</code>text <code class="token operator">===</code> <code class="token keyword">undefined</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// если параметр отсутствует</code>
+        text <code class="token operator">=</code> <code class="token string">'пустое сообщение'</code><code class="token punctuation">;</code>
+      <code class="token punctuation">}</code></em>
+      <code class="token function">alert</code><code class="token punctuation">(</code>text<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+    <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// пустое сообщение</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>…Или мы можем использовать оператор <code>||</code>:</p>
+        <div
+            id="dqcyap1eha"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token parameter">text</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// если значение text ложно или равняется undefined, тогда присвоить text значение 'пусто'</code>
+      text <code class="token operator">=</code> text <code class="token operator">||</code> <code class="token string">'пусто'</code><code class="token punctuation">;</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Современные движки JavaScript поддерживают
+            <a href="/nullish-operators">оператор нулевого слияния</a>
+            <code>??</code>. Его использование будет лучшей практикой, в случае,
+            если большинство ложных значений, таких как <code>0</code>, следует
+            расценивать как «нормальные».
+        </p>
+        <div
+            id="79u87ehogv"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showCount</code><code class="token punctuation">(</code><code class="token parameter">count</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// если count равен undefined или null, показать "неизвестно"</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>count <code class="token operator">??</code> <code class="token string">"неизвестно"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+    <code class="token function">showCount</code><code class="token punctuation">(</code><code class="token number">0</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0</code>
+    <code class="token function">showCount</code><code class="token punctuation">(</code><code class="token keyword">null</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// неизвестно</code>
+    <code class="token function">showCount</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// неизвестно</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="vozvrat-znacheniya"
+                href="#vozvrat-znacheniya"
+                >Возврат значения</a
+            >
+        </h2>
+        <p>
+            Функция может вернуть результат, который будет передан в вызвавший
+            её код.
+        </p>
+        <p>Простейшим примером может служить функция сложения двух чисел:</p>
+        <div
+            id="9gki8f2mxe"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":1,"cols":[{"start":2,"end":8}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">sum</code><code class="token punctuation">(</code><code class="token parameter">a<code class="token punctuation">,</code> b</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword"><em class="inline-highlight">return</em></code> a <code class="token operator">+</code> b<code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token keyword">let</code> result <code class="token operator">=</code> <code class="token function">sum</code><code class="token punctuation">(</code><code class="token number">1</code><code class="token punctuation">,</code> <code class="token number">2</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> result <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Директива <code>return</code> может находиться в любом месте тела
+            функции. Как только выполнение доходит до этого места, функция
+            останавливается, и значение возвращается в вызвавший её код
+            (присваивается переменной <code>result</code> выше).
+        </p>
+        <p>Вызовов <code>return</code> может быть несколько, например:</p>
+        <div
+            id="xesyanqig6"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":4,"end":4},{"start":2,"end":2}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">checkAge</code><code class="token punctuation">(</code><code class="token parameter">age</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">if</code> <code class="token punctuation">(</code>age <code class="token operator">&gt;=</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">    <code class="token keyword">return</code> <code class="token boolean">true</code><code class="token punctuation">;</code></em>
+      <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">    <code class="token keyword">return</code> <code class="token function">confirm</code><code class="token punctuation">(</code><code class="token string">'А родители разрешили?'</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em>
+      <code class="token punctuation">}</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Сколько вам лет?'</code><code class="token punctuation">,</code> <code class="token number">18</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">if</code> <code class="token punctuation">(</code> <code class="token function">checkAge</code><code class="token punctuation">(</code>age<code class="token punctuation">)</code> <code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Доступ получен'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Доступ закрыт'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Возможно использовать <code>return</code> и без значения. Это
+            приведёт к немедленному выходу из функции.
+        </p>
+        <p>Например:</p>
+        <div
+            id="4fikwohqrf"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":2}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showMovie</code><code class="token punctuation">(</code><code class="token parameter">age</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">if</code> <code class="token punctuation">(</code> <code class="token operator">!</code><code class="token function">checkAge</code><code class="token punctuation">(</code>age<code class="token punctuation">)</code> <code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">    <code class="token keyword">return</code><code class="token punctuation">;</code></em>
+      <code class="token punctuation">}</code>
+
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Вам показывается кино"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// (*)</code>
+      <code class="token comment">// ...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            В коде выше, если <code>checkAge(age)</code> вернёт
+            <code>false</code>, <code>showMovie</code> не выполнит
+            <code>alert</code>.
+        </p>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Результат функции с пустым <code>return</code> или без него
+                    – <code>undefined</code></span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Если функция не возвращает значения, это всё равно, как если
+                    бы она возвращала <code>undefined</code>:
+                </p>
+                <div
+                    id="tsdly9kp8p"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">doNothing</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">/* пусто */</code> <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">doNothing</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">===</code> <code class="token keyword">undefined</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Пустой <code>return</code> аналогичен
+                    <code>return undefined</code>:
+                </p>
+                <div
+                    id="f8yjjz6p2b"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">doNothing</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">return</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">doNothing</code><code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">===</code> <code class="token keyword">undefined</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="important important_warn">
+            <div class="important__header">
+                <span class="important__type"
+                    >Никогда не добавляйте перевод строки между
+                    <code>return</code> и его значением</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Для длинного выражения в <code>return</code> может быть
+                    заманчиво разместить его на нескольких отдельных строках,
+                    например так:
+                </p>
+                <div
+                    id="03m7mwojmz"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">return</code>
+     <code class="token punctuation">(</code>some <code class="token operator">+</code> long <code class="token operator">+</code> expression <code class="token operator">+</code> or <code class="token operator">+</code> whatever <code class="token operator">*</code> <code class="token function">f</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token operator">+</code> <code class="token function">f</code><code class="token punctuation">(</code>b<code class="token punctuation">)</code><code class="token punctuation">)</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Код не выполнится, потому что интерпретатор JavaScript
+                    подставит точку с запятой после <code>return</code>. Для
+                    него это будет выглядеть так:
+                </p>
+                <div
+                    id="k2768hy0c2"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":0,"cols":[{"start":6,"end":7}]}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">return</code><code class="token punctuation"><em class="inline-highlight">;</em></code>
+     <code class="token punctuation">(</code>some <code class="token operator">+</code> long <code class="token operator">+</code> expression <code class="token operator">+</code> or <code class="token operator">+</code> whatever <code class="token operator">*</code> <code class="token function">f</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token operator">+</code> <code class="token function">f</code><code class="token punctuation">(</code>b<code class="token punctuation">)</code><code class="token punctuation">)</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Таким образом, это фактически стало пустым
+                    <code>return</code>.
+                </p>
+                <p>
+                    Если мы хотим, чтобы возвращаемое выражение занимало
+                    несколько строк, нужно начать его на той же строке, что и
+                    <code>return</code>. Или, хотя бы, поставить там открывающую
+                    скобку, вот так:
+                </p>
+                <div
+                    id="1zedv7eb22"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">return</code> <code class="token punctuation">(</code>
+      some <code class="token operator">+</code> long <code class="token operator">+</code> expression
+      <code class="token operator">+</code> or <code class="token operator">+</code>
+      whatever <code class="token operator">*</code> <code class="token function">f</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token operator">+</code> <code class="token function">f</code><code class="token punctuation">(</code>b<code class="token punctuation">)</code>
+      <code class="token punctuation">)</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>И тогда всё сработает, как задумано.</p>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="function-naming"
+                href="#function-naming"
+                >Выбор имени функции</a
+            >
+        </h2>
+        <p>
+            Функция – это действие. Поэтому имя функции обычно является
+            глаголом. Оно должно быть кратким, точным и описывать действие
+            функции, чтобы программист, который будет читать код, получил верное
+            представление о том, что делает функция.
+        </p>
+        <p>
+            Как правило, используются глагольные префиксы, обозначающие общий
+            характер действия, после которых следует уточнение. Обычно в
+            командах разработчиков действуют соглашения, касающиеся значений
+            этих префиксов.
+        </p>
+        <p>
+            Например, функции, начинающиеся с <code>"show"</code> обычно что-то
+            показывают.
+        </p>
+        <p>Функции, начинающиеся с…</p>
+        <ul>
+            <li><code>"get…"</code> – возвращают значение,</li>
+            <li><code>"calc…"</code> – что-то вычисляют,</li>
+            <li><code>"create…"</code> – что-то создают,</li>
+            <li>
+                <code>"check…"</code> – что-то проверяют и возвращают логическое
+                значение, и т.д.
+            </li>
+        </ul>
+        <p>Примеры таких имён:</p>
+        <div
+            id="zz1xikzqmj"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">showMessage</code><code class="token punctuation">(</code><code class="token punctuation">.</code><code class="token punctuation">.</code><code class="token punctuation">)</code>     <code class="token comment">// показывает сообщение</code>
+    <code class="token function">getAge</code><code class="token punctuation">(</code><code class="token punctuation">.</code><code class="token punctuation">.</code><code class="token punctuation">)</code>          <code class="token comment">// возвращает возраст (получая его каким-то образом)</code>
+    <code class="token function">calcSum</code><code class="token punctuation">(</code><code class="token punctuation">.</code><code class="token punctuation">.</code><code class="token punctuation">)</code>         <code class="token comment">// вычисляет сумму и возвращает результат</code>
+    <code class="token function">createForm</code><code class="token punctuation">(</code><code class="token punctuation">.</code><code class="token punctuation">.</code><code class="token punctuation">)</code>      <code class="token comment">// создаёт форму (и обычно возвращает её)</code>
+    <code class="token function">checkPermission</code><code class="token punctuation">(</code><code class="token punctuation">.</code><code class="token punctuation">.</code><code class="token punctuation">)</code> <code class="token comment">// проверяет доступ, возвращая true/false</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Благодаря префиксам, при первом взгляде на имя функции становится
+            понятным, что делает её код, и какое значение она может возвращать.
+        </p>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Одна функция – одно действие</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Функция должна делать только то, что явно подразумевается её
+                    названием. И это должно быть одним действием.
+                </p>
+                <p>
+                    Два независимых действия обычно подразумевают две функции,
+                    даже если предполагается, что они будут вызываться вместе (в
+                    этом случае мы можем создать третью функцию, которая будет
+                    их вызывать).
+                </p>
+                <p>Несколько примеров, которые нарушают это правило:</p>
+                <ul>
+                    <li>
+                        <code>getAge</code> – будет плохим выбором, если функция
+                        будет выводить <code>alert</code> с возрастом (должна
+                        только возвращать его).
+                    </li>
+                    <li>
+                        <code>createForm</code> – будет плохим выбором, если
+                        функция будет изменять документ, добавляя форму в него
+                        (должна только создавать форму и возвращать её).
+                    </li>
+                    <li>
+                        <code>checkPermission</code> – будет плохим выбором,
+                        если функция будет отображать сообщение с текстом
+                        <code>доступ разрешён/запрещён</code> (должна только
+                        выполнять проверку и возвращать её результат).
+                    </li>
+                </ul>
+                <p>
+                    В этих примерах использовались общепринятые смыслы
+                    префиксов. Конечно, вы в команде можете договориться о
+                    других значениях, но обычно они мало отличаются от
+                    общепринятых. В любом случае вы и ваша команда должны чётко
+                    понимать, что значит префикс, что функция с ним может
+                    делать, а чего не может.
+                </p>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type">Сверхкороткие имена функций</span>
+            </div>
+            <div class="important__content">
+                <p>
+                    Имена функций, которые используются <em>очень часто</em>,
+                    иногда делают сверхкороткими.
+                </p>
+                <p>
+                    Например, фреймворк
+                    <a href="https://jquery.com">jQuery</a> определяет функцию с
+                    помощью <code>$</code>. В библиотеке
+                    <a href="https://lodash.com/">Lodash</a> основная функция
+                    представлена именем <code>_</code>.
+                </p>
+                <p>
+                    Это исключения. В основном имена функций должны быть в меру
+                    краткими и описательными.
+                </p>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="funktsii-kommentarii"
+                href="#funktsii-kommentarii"
+                >Функции == Комментарии</a
+            >
+        </h2>
+        <p>
+            Функции должны быть короткими и делать только что-то одно. Если это
+            что-то большое, имеет смысл разбить функцию на несколько меньших.
+            Иногда следовать этому правилу непросто, но это определённо хорошее
+            правило.
+        </p>
+        <p>
+            Небольшие функции не только облегчают тестирование и отладку – само
+            существование таких функций выполняет роль хороших комментариев!
+        </p>
+        <p>
+            Например, сравним ниже две функции <code>showPrimes(n)</code>.
+            Каждая из них выводит
+            <a
+                href="https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D1%81%D1%82%D0%BE%D0%B5_%D1%87%D0%B8%D1%81%D0%BB%D0%BE"
+                >простое число</a
+            >
+            до <code>n</code>.
+        </p>
+        <p>Первый вариант использует метку <code>nextPrime</code>:</p>
+        <div
+            id="v7fcs1i46a"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showPrimes</code><code class="token punctuation">(</code><code class="token parameter">n</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      nextPrime<code class="token operator">:</code> <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> n<code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+        <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> j <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> j <code class="token operator">&lt;</code> i<code class="token punctuation">;</code> j<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+          <code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">%</code> j <code class="token operator">==</code> <code class="token number">0</code><code class="token punctuation">)</code> <code class="token keyword">continue</code> nextPrime<code class="token punctuation">;</code>
+        <code class="token punctuation">}</code>
+
+        <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// простое</code>
+      <code class="token punctuation">}</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Второй вариант использует дополнительную функцию
+            <code>isPrime(n)</code> для проверки на простое:
+        </p>
+        <div
+            id="wcy1scrn2a"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":3,"cols":[{"start":4,"end":30}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">showPrimes</code><code class="token punctuation">(</code><code class="token parameter">n</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> n<code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+        <code class="token keyword"><em class="inline-highlight">if</em></code><em class="inline-highlight"> <code class="token punctuation">(</code><code class="token operator">!</code><code class="token function">isPrime</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">)</code> <code class="token keyword">continue</code><code class="token punctuation">;</code></em>
+
+        <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code>  <code class="token comment">// простое</code>
+      <code class="token punctuation">}</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token keyword">function</code> <code class="token function">isPrime</code><code class="token punctuation">(</code><code class="token parameter">n</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> n<code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+        <code class="token keyword">if</code> <code class="token punctuation">(</code> n <code class="token operator">%</code> i <code class="token operator">==</code> <code class="token number">0</code><code class="token punctuation">)</code> <code class="token keyword">return</code> <code class="token boolean">false</code><code class="token punctuation">;</code>
+      <code class="token punctuation">}</code>
+      <code class="token keyword">return</code> <code class="token boolean">true</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Второй вариант легче для понимания, не правда ли? Вместо куска кода
+            мы видим название действия (<code>isPrime</code>). Иногда
+            разработчики называют такой код <em>самодокументируемым</em>.
+        </p>
+        <p>
+            Таким образом, допустимо создавать функции, даже если мы не
+            планируем повторно использовать их. Такие функции структурируют код
+            и делают его более понятным.
+        </p>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <p>Объявление функции имеет вид:</p>
+        <div
+            id="8q8ucgwuxd"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">function</code> <code class="token function">имя</code><code class="token punctuation">(</code><code class="token parameter">параметры<code class="token punctuation">,</code> через<code class="token punctuation">,</code> запятую</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">/* тело, код функции */</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                Передаваемые значения копируются в параметры функции и
+                становятся локальными переменными.
+            </li>
+            <li>
+                Функции имеют доступ к внешним переменным. Но это работает
+                только изнутри наружу. Код вне функции не имеет доступа к её
+                локальным переменным.
+            </li>
+            <li>
+                Функция может возвращать значение. Если этого не происходит,
+                тогда результат равен <code>undefined</code>.
+            </li>
+        </ul>
+        <p>
+            Для того, чтобы сделать код более чистым и понятным, рекомендуется
+            использовать локальные переменные и параметры функций, не
+            пользоваться внешними переменными.
+        </p>
+        <p>
+            Функция, которая получает параметры, работает с ними и затем
+            возвращает результат, гораздо понятнее функции, вызываемой без
+            параметров, но изменяющей внешние переменные, что чревато побочными
+            эффектами.
+        </p>
+        <p>Именование функций:</p>
+        <ul>
+            <li>
+                Имя функции должно понятно и чётко отражать, что она делает.
+                Увидев её вызов в коде, вы должны тут же понимать, что она
+                делает, и что возвращает.
+            </li>
+            <li>
+                Функция – это действие, поэтому её имя обычно является глаголом.
+            </li>
+            <li>
+                Есть много общепринятых префиксов, таких как:
+                <code>create…</code>, <code>show…</code>, <code>get…</code>,
+                <code>check…</code> и т.д. Пользуйтесь ими как подсказками,
+                поясняющими, что делает функция.
+            </li>
+        </ul>
+        <p>
+            Функции являются основными строительными блоками скриптов. Мы
+            рассмотрели лишь основы функций в JavaScript, но уже сейчас можем
+            создавать и использовать их. Это только начало пути. Мы будем
+            неоднократно возвращаться к функциям и изучать их всё более и более
+            глубоко.
+        </p>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+    });
+</script>

@@ -1,19 +1,761 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
-<div id="page_1_1_header">
-    dasd
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home">
+                        <a class="breadcrumbs__link" href="/"
+                            ><span class="breadcrumbs__hidden-text"
+                                >Учебник</span
+                            ></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1">
+                        <a class="breadcrumbs__link" href="/js"
+                            ><span>Язык JavaScript</span></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2">
+                        <a class="breadcrumbs__link" href="/first-steps"
+                            ><span>Основы JavaScript</span></a
+                        >
+                    </li>
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Учебник",
+                                    "item": "https://learn.javascript.ru/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Язык JavaScript",
+                                    "item": "https://learn.javascript.ru/js"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Основы JavaScript",
+                                    "item": "https://learn.javascript.ru/first-steps"
+                                }
+                            ]
+                        }
+                    </script>
+                </ol>
+                <div
+                    class="updated-at"
+                    data-tooltip="Последнее обновление: 11 декабря 2022 г."
+                >
+                    <div class="updated-at__content">11 декабря 2022 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Условное ветвление: if, '?'</h1>
+        </div>
+    </header>
+
+    <div itemprop="articleBody">
+        <p>
+            Иногда нам нужно выполнить различные действия в зависимости от
+            условий.
+        </p>
+        <p>
+            Для этого мы можем использовать инструкцию <code>if</code> и
+            условный оператор <code>?</code>, который также называют оператором
+            «вопросительный знак».
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="instruktsiya-if"
+                href="#instruktsiya-if"
+                >Инструкция «if»</a
+            >
+        </h2>
+        <p>
+            Инструкция <code>if(...)</code> вычисляет условие в скобках и, если
+            результат <code>true</code>, то выполняет блок кода.
+        </p>
+        <p>Например:</p>
+        <div
+            id="pdgs4h4q2d"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":2}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> year <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'В каком году была опубликована спецификация ECMAScript-2015?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token keyword">if</code> <code class="token punctuation">(</code>year <code class="token operator">==</code> <code class="token number">2015</code><code class="token punctuation">)</code> <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Вы правы!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            В примере выше, условие – это простая проверка на равенство (<code
+                >year == 2015</code
+            >), но оно может быть и гораздо более сложным.
+        </p>
+        <p>
+            Если мы хотим выполнить более одной инструкции, то нужно заключить
+            блок кода в фигурные скобки:
+        </p>
+        <div
+            id="yww66i59z0"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code>year <code class="token operator">==</code> <code class="token number">2015</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Правильно!"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Вы такой умный!"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Мы рекомендуем использовать фигурные скобки <code>{}</code> всегда,
+            когда вы используете инструкцию <code>if</code>, даже если
+            выполняется только одна команда. Это улучшает читаемость кода.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="preobrazovanie-k-logicheskomu-tipu"
+                href="#preobrazovanie-k-logicheskomu-tipu"
+                >Преобразование к логическому типу</a
+            >
+        </h2>
+        <p>
+            Инструкция <code>if (…)</code> вычисляет выражение в скобках и
+            преобразует результат к логическому типу.
+        </p>
+        <p>
+            Давайте вспомним правила преобразования типов из главы
+            <a href="/type-conversions">Преобразование типов</a>:
+        </p>
+        <ul>
+            <li>
+                Число <code>0</code>, пустая строка <code>""</code>,
+                <code>null</code>, <code>undefined</code> и
+                <code>NaN</code> становятся <code>false</code>. Из-за этого их
+                называют «ложными» («falsy») значениями.
+            </li>
+            <li>
+                Остальные значения становятся <code>true</code>, поэтому их
+                называют «правдивыми» («truthy»).
+            </li>
+        </ul>
+        <p>Таким образом, код при таком условии никогда не выполнится:</p>
+        <div
+            id="zfwt6902cn"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token number">0</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// 0 is falsy</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>…а при таком – выполнится всегда:</p>
+        <div
+            id="sy8lfdzj0c"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token number">1</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// 1 is truthy</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Мы также можем передать заранее вычисленное в переменной логическое
+            значение в <code>if</code>, например так:
+        </p>
+        <div
+            id="v5hop7juwd"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> condition <code class="token operator">=</code> <code class="token punctuation">(</code>year <code class="token operator">==</code> <code class="token number">2015</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// преобразуется к true или false</code>
+
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>condition<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a class="main__anchor" name="blok-else" href="#blok-else"
+                >Блок «else»</a
+            >
+        </h2>
+        <p>
+            Инструкция <code>if</code> может содержать необязательный блок
+            «else» («иначе»). Он выполняется, когда условие ложно.
+        </p>
+        <p>Например:</p>
+        <div
+            id="a7p5qu1g6r"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> year <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'В каком году была опубликована спецификация ECMAScript-2015?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>year <code class="token operator">==</code> <code class="token number">2015</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Да вы знаток!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'А вот и неправильно!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// любое значение, кроме 2015</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="neskolko-usloviy-else-if"
+                href="#neskolko-usloviy-else-if"
+                >Несколько условий: «else if»</a
+            >
+        </h2>
+        <p>
+            Иногда нужно проверить несколько вариантов условия. Для этого
+            используется блок <code>else if</code>.
+        </p>
+        <p>Например:</p>
+        <div
+            id="rhx099gv9k"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> year <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'В каком году была опубликована спецификация ECMAScript-2015?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>year <code class="token operator">&lt;</code> <code class="token number">2015</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Это слишком рано...'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token keyword">if</code> <code class="token punctuation">(</code>year <code class="token operator">&gt;</code> <code class="token number">2015</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Это поздновато'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Верно!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            В приведённом выше коде JavaScript сначала проверит
+            <code>year &lt; 2015</code>. Если это неверно, он переходит к
+            следующему условию <code>year &gt; 2015</code>. Если оно тоже ложно,
+            тогда сработает последний <code>alert</code>.
+        </p>
+        <p>
+            Блоков <code>else if</code> может быть и больше. Присутствие блока
+            <code>else</code> не является обязательным.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="uslovnyy-operator"
+                href="#uslovnyy-operator"
+                >Условный оператор „?“</a
+            >
+        </h2>
+        <p>Иногда нам нужно определить переменную в зависимости от условия.</p>
+        <p>Например:</p>
+        <div
+            id="zr0lcyk214"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":3,"end":7}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> accessAllowed<code class="token punctuation">;</code>
+    <code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Сколько вам лет?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token keyword">if</code> <code class="token punctuation">(</code>age <code class="token operator">&gt;</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      accessAllowed <code class="token operator">=</code> <code class="token boolean">true</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      accessAllowed <code class="token operator">=</code> <code class="token boolean">false</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>accessAllowed<code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Так называемый «условный» оператор «вопросительный знак» позволяет
+            нам сделать это более коротким и простым способом.
+        </p>
+        <p>
+            Оператор представлен знаком вопроса <code>?</code>. Его также
+            называют «тернарный», так как этот оператор, единственный в своём
+            роде, имеет три аргумента.
+        </p>
+        <p>Синтаксис:</p>
+        <div
+            id="ss849o52sm"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> result <code class="token operator">=</code> условие <code class="token operator">?</code> значение<code class="token number">1</code> <code class="token operator">:</code> значение<code class="token number">2</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Сначала вычисляется <code>условие</code>: если оно истинно, тогда
+            возвращается <code>значение1</code>, в противном случае –
+            <code>значение2</code>.
+        </p>
+        <p>Например:</p>
+        <div
+            id="zf5ioo0d4b"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> accessAllowed <code class="token operator">=</code> <code class="token punctuation">(</code>age <code class="token operator">&gt;</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token operator">?</code> <code class="token boolean">true</code> <code class="token operator">:</code> <code class="token boolean">false</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Технически, мы можем опустить круглые скобки вокруг
+            <code>age &gt; 18</code>. Оператор вопросительного знака имеет
+            низкий приоритет, поэтому он выполняется после сравнения
+            <code>&gt;</code>.
+        </p>
+        <p>Этот пример будет делать то же самое, что и предыдущий:</p>
+        <div
+            id="j773w50lha"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// оператор сравнения "age &gt; 18" выполняется первым в любом случае</code>
+    <code class="token comment">// (нет необходимости заключать его в скобки)</code>
+    <code class="token keyword">let</code> accessAllowed <code class="token operator">=</code> age <code class="token operator">&gt;</code> <code class="token number">18</code> <code class="token operator">?</code> <code class="token boolean">true</code> <code class="token operator">:</code> <code class="token boolean">false</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Но скобки делают код более простым для восприятия, поэтому мы
+            рекомендуем их использовать.
+        </p>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type">На заметку:</span>
+            </div>
+            <div class="important__content">
+                <p>
+                    В примере выше вы можете избежать использования оператора
+                    вопросительного знака <code>?</code>, т.к. сравнение само по
+                    себе уже возвращает <code>true/false</code>:
+                </p>
+                <div
+                    id="g95wcnepv9"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// то же самое</code>
+    <code class="token keyword">let</code> accessAllowed <code class="token operator">=</code> age <code class="token operator">&gt;</code> <code class="token number">18</code><code class="token punctuation">;</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="neskolko-operatorov"
+                href="#neskolko-operatorov"
+                >Несколько операторов „?“</a
+            >
+        </h2>
+        <p>
+            Последовательность операторов вопросительного знака
+            <code>?</code> позволяет вернуть значение, которое зависит от более
+            чем одного условия.
+        </p>
+        <p>Например:</p>
+        <div
+            id="vmgaxia5r3"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Возраст?'</code><code class="token punctuation">,</code> <code class="token number">18</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">let</code> message <code class="token operator">=</code> <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token operator">?</code> <code class="token string">'Здравствуй, малыш!'</code> <code class="token operator">:</code>
+      <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token operator">?</code> <code class="token string">'Привет!'</code> <code class="token operator">:</code>
+      <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">100</code><code class="token punctuation">)</code> <code class="token operator">?</code> <code class="token string">'Здравствуйте!'</code> <code class="token operator">:</code>
+      <code class="token string">'Какой необычный возраст!'</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> message <code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Поначалу может быть сложно понять, что происходит. Но при ближайшем
+            рассмотрении мы видим, что это обычная последовательная проверка:
+        </p>
+        <ol>
+            <li>Первый знак вопроса проверяет <code>age &lt; 3</code>.</li>
+            <li>
+                Если верно – возвращает <code>'Здравствуй, малыш!'</code>. В
+                противном случае, проверяет выражение после двоеточия „:“,
+                вычисляет <code>age &lt; 18</code>.
+            </li>
+            <li>
+                Если это верно – возвращает <code>'Привет!'</code>. В противном
+                случае, проверяет выражение после следующего двоеточия „:“,
+                вычисляет <code>age &lt; 100</code>.
+            </li>
+            <li>
+                Если это верно – возвращает <code>'Здравствуйте!'</code>. В
+                противном случае, возвращает выражение после последнего
+                двоеточия – <code>'Какой необычный возраст!'</code>.
+            </li>
+        </ol>
+        <p>Вот как это выглядит при использовании <code>if..else</code>:</p>
+        <div
+            id="w0c6hs2usk"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      message <code class="token operator">=</code> <code class="token string">'Здравствуй, малыш!'</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token keyword">if</code> <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      message <code class="token operator">=</code> <code class="token string">'Привет!'</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token keyword">if</code> <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">100</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      message <code class="token operator">=</code> <code class="token string">'Здравствуйте!'</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      message <code class="token operator">=</code> <code class="token string">'Какой необычный возраст!'</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="netraditsionnoe-ispolzovanie"
+                href="#netraditsionnoe-ispolzovanie"
+                >Нетрадиционное использование „?“</a
+            >
+        </h2>
+        <p>
+            Иногда оператор «вопросительный знак» <code>?</code> используется в
+            качестве замены <code>if</code>:
+        </p>
+        <div
+            id="3yjh6i9jvo"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":3}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> company <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Какая компания создала JavaScript?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token punctuation">(</code>company <code class="token operator">==</code> <code class="token string">'Netscape'</code><code class="token punctuation">)</code> <code class="token operator">?</code>
+       <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Верно!'</code><code class="token punctuation">)</code> <code class="token operator">:</code> <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Неправильно.'</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            В зависимости от условия <code>company == 'Netscape'</code>, будет
+            выполнена либо первая, либо вторая часть после <code>?</code>.
+        </p>
+        <p>
+            Здесь мы не присваиваем результат переменной. Вместо этого мы
+            выполняем различный код в зависимости от условия.
+        </p>
+        <p>
+            <strong
+                >Не рекомендуется использовать оператор вопросительного знака
+                таким образом.</strong
+            >
+        </p>
+        <p>
+            Несмотря на то, что такая запись короче, чем эквивалентная
+            инструкция <code>if</code>, она хуже читается.
+        </p>
+        <p>Вот, для сравнения, тот же код, использующий <code>if</code>:</p>
+        <div
+            id="3zbih0nz8p"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":6}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> company <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">'Какая компания создала JavaScript?'</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token keyword">if</code> <code class="token punctuation">(</code>company <code class="token operator">==</code> <code class="token string">'Netscape'</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Верно!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Неправильно.'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            При чтении глаза сканируют код по вертикали. Блоки кода, занимающие
+            несколько строк, воспринимаются гораздо легче, чем длинный
+            горизонтальный набор инструкций.
+        </p>
+        <p>
+            Смысл оператора «вопросительный знак» <code>?</code> – вернуть то
+            или иное значение, в зависимости от условия. Пожалуйста, используйте
+            его именно для этого. Когда вам нужно выполнить разные ветви кода –
+            используйте <code>if</code>.
+        </p>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('/pages/header/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('page_1_1_header').innerHTML = data;
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
             })
-            .catch(error => console.error('Error loading header:', error));
+            .catch((error) => console.error("Error loading header:", error));
     });
 </script>

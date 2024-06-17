@@ -1,0 +1,508 @@
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <div class="main__header-inner">
+        <div class="main__header-group">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item breadcrumbs__item_home">
+                    <a class="breadcrumbs__link" href="/"
+                        ><span class="breadcrumbs__hidden-text"
+                            >Учебник</span
+                        ></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-1">
+                    <a class="breadcrumbs__link" href="/js"
+                        ><span>Язык JavaScript</span></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-2">
+                    <a class="breadcrumbs__link" href="/first-steps"
+                        ><span>Основы JavaScript</span></a
+                    >
+                </li>
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Учебник",
+                                "item": "https://learn.javascript.ru/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Язык JavaScript",
+                                "item": "https://learn.javascript.ru/js"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Основы JavaScript",
+                                "item": "https://learn.javascript.ru/first-steps"
+                            }
+                        ]
+                    }
+                </script>
+            </ol>
+            <div
+                class="updated-at"
+                data-tooltip="Последнее обновление: 30 марта 2022 г."
+            >
+                <div class="updated-at__content">30 марта 2022 г.</div>
+            </div>
+        </div>
+        <h1 class="main__header-title">Конструкция "switch"</h1>
+    </div>
+
+    <div itemprop="articleBody">
+        <p>
+            Конструкция <code>switch</code> заменяет собой сразу несколько
+            <code>if</code>.
+        </p>
+        <p>
+            Она представляет собой более наглядный способ сравнить выражение
+            сразу с несколькими вариантами.
+        </p>
+        <h2>
+            <a class="main__anchor" name="sintaksis" href="#sintaksis"
+                >Синтаксис</a
+            >
+        </h2>
+        <p>
+            Конструкция <code>switch</code> имеет один или более блок
+            <code>case</code> и необязательный блок <code>default</code>.
+        </p>
+        <p>Выглядит она так:</p>
+        <div
+            id="onojg94r6u"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">switch</code><code class="token punctuation">(</code>x<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">case</code> <code class="token string">'value1'</code><code class="token operator">:</code>  <code class="token comment">// if (x === 'value1')</code>
+        <code class="token operator">...</code>
+        <code class="token punctuation">[</code><code class="token keyword">break</code><code class="token punctuation">]</code>
+
+      <code class="token keyword">case</code> <code class="token string">'value2'</code><code class="token operator">:</code>  <code class="token comment">// if (x === 'value2')</code>
+        <code class="token operator">...</code>
+        <code class="token punctuation">[</code><code class="token keyword">break</code><code class="token punctuation">]</code>
+
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token operator">...</code>
+        <code class="token punctuation">[</code><code class="token keyword">break</code><code class="token punctuation">]</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                Переменная <code>x</code> проверяется на строгое равенство
+                первому значению <code>value1</code>, затем второму
+                <code>value2</code> и так далее.
+            </li>
+            <li>
+                Если соответствие установлено – <code>switch</code> начинает
+                выполняться от соответствующей директивы <code>case</code> и
+                далее, до ближайшего <code>break</code> (или до конца
+                <code>switch</code>).
+            </li>
+            <li>
+                Если ни один <code>case</code> не совпал – выполняется (если
+                есть) вариант <code>default</code>.
+            </li>
+        </ul>
+        <h2>
+            <a class="main__anchor" name="primer-raboty" href="#primer-raboty"
+                >Пример работы</a
+            >
+        </h2>
+        <p>
+            Пример использования <code>switch</code> (сработавший код выделен):
+        </p>
+        <div
+            id="twfl1qhys9"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":6,"end":8}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">switch</code> <code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">case</code> <code class="token number">3</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Маловато'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+    <em class="block-highlight">  <code class="token keyword">case</code> <code class="token number">4</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'В точку!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code></em>
+      <code class="token keyword">case</code> <code class="token number">5</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Перебор'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Нет таких значений"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Здесь оператор <code>switch</code> последовательно сравнит
+            <code>a</code> со всеми вариантами из <code>case</code>.
+        </p>
+        <p>
+            Сначала <code>3</code>, затем – так как нет совпадения –
+            <code>4</code>. Совпадение найдено, будет выполнен этот вариант, со
+            строки <code>alert( 'В точку!' )</code> и далее, до ближайшего
+            <code>break</code>, который прервёт выполнение.
+        </p>
+        <p>
+            <strong
+                >Если <code>break</code> нет, то выполнение пойдёт ниже по
+                следующим <code>case</code>, при этом остальные проверки
+                игнорируются.</strong
+            >
+        </p>
+        <p>Пример без <code>break</code>:</p>
+        <div
+            id="sdkrlutkge"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":5,"end":10}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">switch</code> <code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">case</code> <code class="token number">3</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Маловато'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <em class="block-highlight">  <code class="token keyword">case</code> <code class="token number">4</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'В точку!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      <code class="token keyword">case</code> <code class="token number">5</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Перебор'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Нет таких значений"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code></em>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>В примере выше последовательно выполнятся три <code>alert</code>:</p>
+        <div
+            id="c2w3jsyki3"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'В точку!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Перебор'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">"Нет таких значений"</code> <code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Любое выражение может быть аргументом для
+                    <code>switch/case</code></span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    И <code>switch</code> и <code>case</code> допускают любое
+                    выражение в качестве аргумента.
+                </p>
+                <p>Например:</p>
+                <div
+                    id="6sew78r10i"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":4,"end":6}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token string">"1"</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> b <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">switch</code> <code class="token punctuation">(</code><code class="token operator">+</code>a<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+    <em class="block-highlight">  <code class="token keyword">case</code> b <code class="token operator">+</code> <code class="token number">1</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Выполнится, т.к. значением +a будет 1, что в точности равно b+1"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code></em>
+
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Это не выполнится"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    В этом примере выражение <code>+a</code> вычисляется в
+                    <code>1</code>, что совпадает с выражением
+                    <code>b + 1</code> в <code>case</code>, и следовательно, код
+                    в этом блоке будет выполнен.
+                </p>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="gruppirovka-case"
+                href="#gruppirovka-case"
+                >Группировка «case»</a
+            >
+        </h2>
+        <p>
+            Несколько вариантов <code>case</code>, использующих один код, можно
+            группировать.
+        </p>
+        <p>
+            Для примера, выполним один и тот же код для <code>case 3</code> и
+            <code>case 5</code>, сгруппировав их:
+        </p>
+        <div
+            id="ll0zlmgke1"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":7,"end":11}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">switch</code> <code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">case</code> <code class="token number">4</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Правильно!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight">  <code class="token keyword">case</code> <code class="token number">3</code><code class="token operator">:</code> <code class="token comment">// (*) группируем оба case</code>
+      <code class="token keyword">case</code> <code class="token number">5</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Неправильно!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Может вам посетить урок математики?"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code></em>
+
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Результат выглядит странновато. Честно.'</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Теперь оба варианта <code>3</code> и <code>5</code> выводят одно
+            сообщение.
+        </p>
+        <p>
+            Возможность группировать <code>case</code> – это побочный эффект
+            того, как <code>switch/case</code> работает без <code>break</code>.
+            Здесь выполнение <code>case 3</code> начинается со строки
+            <code>(*)</code> и продолжается в <code>case 5</code>, потому что
+            отсутствует <code>break</code>.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="tip-imeet-znachenie"
+                href="#tip-imeet-znachenie"
+                >Тип имеет значение</a
+            >
+        </h2>
+        <p>
+            Нужно отметить, что проверка на равенство всегда строгая. Значения
+            должны быть одного типа, чтобы выполнялось равенство.
+        </p>
+        <p>Для примера, давайте рассмотрим следующий код:</p>
+        <div
+            id="ilvpmapvur"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> arg <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">"Введите число?"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token keyword">switch</code> <code class="token punctuation">(</code>arg<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">case</code> <code class="token string">'0'</code><code class="token operator">:</code>
+      <code class="token keyword">case</code> <code class="token string">'1'</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Один или ноль'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+
+      <code class="token keyword">case</code> <code class="token string">'2'</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Два'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+
+      <code class="token keyword">case</code> <code class="token number">3</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Никогда не выполнится!'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+        <code class="token keyword">break</code><code class="token punctuation">;</code>
+      <code class="token keyword">default</code><code class="token operator">:</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Неизвестное значение'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <ol>
+            <li>
+                Для <code>'0'</code> и <code>'1'</code> выполнится первый
+                <code>alert</code>.
+            </li>
+            <li>Для <code>'2'</code> – второй <code>alert</code>.</li>
+            <li>
+                Но для <code>3</code>, результат выполнения
+                <code>prompt</code> будет строка <code>"3"</code>, которая не
+                соответствует строгому равенству <code>===</code> с числом
+                <code>3</code>. Таким образом, мы имеем «мёртвый код» в
+                <code>case 3</code>! Выполнится вариант <code>default</code>.
+            </li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+    });
+</script>

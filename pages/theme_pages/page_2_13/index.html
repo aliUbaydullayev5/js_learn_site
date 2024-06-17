@@ -1,19 +1,1296 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
-<div id="page_1_1_header">
-    dasd
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <div class="main__header-inner">
+        <div class="main__header-group">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item breadcrumbs__item_home">
+                    <a class="breadcrumbs__link" href="/"
+                        ><span class="breadcrumbs__hidden-text"
+                            >Учебник</span
+                        ></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-1">
+                    <a class="breadcrumbs__link" href="/js"
+                        ><span>Язык JavaScript</span></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-2">
+                    <a class="breadcrumbs__link" href="/first-steps"
+                        ><span>Основы JavaScript</span></a
+                    >
+                </li>
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Учебник",
+                                "item": "https://learn.javascript.ru/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Язык JavaScript",
+                                "item": "https://learn.javascript.ru/js"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Основы JavaScript",
+                                "item": "https://learn.javascript.ru/first-steps"
+                            }
+                        ]
+                    }
+                </script>
+            </ol>
+            <div
+                class="updated-at"
+                data-tooltip="Последнее обновление: 14 августа 2023 г."
+            >
+                <div class="updated-at__content">14 августа 2023 г.</div>
+            </div>
+        </div>
+        <h1 class="main__header-title">Циклы while и for</h1>
+    </div>
+
+    <div itemprop="articleBody">
+        <p>
+            При написании скриптов зачастую встаёт задача сделать однотипное
+            действие много раз.
+        </p>
+        <p>
+            Например, вывести товары из списка один за другим. Или просто
+            перебрать все числа от <code>1</code> до <code>10</code> и для
+            каждого выполнить одинаковый код.
+        </p>
+        <p>
+            Для многократного повторения одного участка кода предусмотрены
+            <em>циклы</em>.
+        </p>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type">Циклы for…of и for…in</span>
+            </div>
+            <div class="important__content">
+                <p>Небольшое объявление для продвинутых читателей.</p>
+                <p>
+                    В этой статье рассматриваются только базовые циклы:
+                    <code>while</code>, <code>do..while</code> и
+                    <code>for(..;..;..)</code>.
+                </p>
+                <p>
+                    Если вы пришли к этой статье в поисках других типов циклов,
+                    вот указатели:
+                </p>
+                <ul>
+                    <li>
+                        См. <a href="/object#forin">for…in</a> для перебора
+                        свойств объекта.
+                    </li>
+                    <li>
+                        См. <a href="/array#perebor-elementov">for…of</a> и
+                        <a href="/iterable">Перебираемые объекты</a> для
+                        перебора массивов и перебираемых объектов.
+                    </li>
+                </ul>
+                <p>В противном случае, продолжайте читать.</p>
+            </div>
+        </div>
+        <h2>
+            <a class="main__anchor" name="tsikl-while" href="#tsikl-while"
+                >Цикл «while»</a
+            >
+        </h2>
+        <p>Цикл <code>while</code> имеет следующий синтаксис:</p>
+        <div
+            id="p765lry5j5"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">while</code> <code class="token punctuation">(</code>condition<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// код</code>
+      <code class="token comment">// также называемый "телом цикла"</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Код из тела цикла выполняется, пока условие
+            <code>condition</code> истинно.
+        </p>
+        <p>
+            Например, цикл ниже выводит <code>i</code>, пока
+            <code>i &lt; 3</code>:
+        </p>
+        <div
+            id="n6lnfn6458"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token keyword">while</code> <code class="token punctuation">(</code>i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// выводит 0, затем 1, затем 2</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      i<code class="token operator">++</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Одно выполнение тела цикла по-научному называется <em>итерация</em>.
+            Цикл в примере выше совершает три итерации.
+        </p>
+        <p>
+            Если бы строка <code>i++</code> отсутствовала в примере выше, то
+            цикл бы повторялся (в теории) вечно. На практике, конечно, браузер
+            не позволит такому случиться, он предоставит пользователю
+            возможность остановить «подвисший» скрипт, а JavaScript на стороне
+            сервера придётся «убить» процесс.
+        </p>
+        <p>
+            Любое выражение или переменная может быть условием цикла, а не
+            только сравнение: условие <code>while</code> вычисляется и
+            преобразуется в логическое значение.
+        </p>
+        <p>
+            Например, <code>while (i)</code> – более краткий вариант
+            <code>while (i != 0)</code>:
+        </p>
+        <div
+            id="x71ofhrouf"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":1,"end":1}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">;</code>
+    <em class="block-highlight"><code class="token keyword">while</code> <code class="token punctuation">(</code>i<code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// когда i будет равно 0, условие станет ложным, и цикл остановится</code></em>
+      <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      i<code class="token operator">--</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Фигурные скобки не требуются для тела цикла из одной
+                    строки</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Если тело цикла состоит лишь из одной инструкции, мы можем
+                    опустить фигурные скобки <code>{…}</code>:
+                </p>
+                <div
+                    id="pyz3gtjibl"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":1,"end":1}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">;</code>
+    <em class="block-highlight"><code class="token keyword">while</code> <code class="token punctuation">(</code>i<code class="token punctuation">)</code> <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token operator">--</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a class="main__anchor" name="tsikl-dowhile" href="#tsikl-dowhile"
+                >Цикл «do…while»</a
+            >
+        </h2>
+        <p>
+            Проверку условия можно разместить под телом цикла, используя
+            специальный синтаксис <code>do..while</code>:
+        </p>
+        <div
+            id="sfplpm9ld5"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">do</code> <code class="token punctuation">{</code>
+      <code class="token comment">// тело цикла</code>
+    <code class="token punctuation">}</code> <code class="token keyword">while</code> <code class="token punctuation">(</code>condition<code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Цикл сначала выполнит тело, а затем проверит условие
+            <code>condition</code>, и пока его значение равно <code>true</code>,
+            он будет выполняться снова и снова.
+        </p>
+        <p>Например:</p>
+        <div
+            id="uwqv9jq3uy"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token keyword">do</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      i<code class="token operator">++</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">while</code> <code class="token punctuation">(</code>i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Такая форма синтаксиса оправдана, если вы хотите, чтобы тело цикла
+            выполнилось <strong>хотя бы один раз</strong>, даже если условие
+            окажется ложным. На практике чаще используется форма с предусловием:
+            <code>while(…) {…}</code>.
+        </p>
+        <h2>
+            <a class="main__anchor" name="tsikl-for" href="#tsikl-for"
+                >Цикл «for»</a
+            >
+        </h2>
+        <p>
+            Более сложный, но при этом самый распространённый цикл — цикл
+            <code>for</code>.
+        </p>
+        <p>Выглядит он так:</p>
+        <div
+            id="yrznneqnhs"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code>начало<code class="token punctuation">;</code> условие<code class="token punctuation">;</code> шаг<code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// ... тело цикла ...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Давайте разберёмся, что означает каждая часть, на примере. Цикл ниже
+            выполняет <code>alert(i)</code> для <code>i</code> от
+            <code>0</code> до (но не включая) <code>3</code>:
+        </p>
+        <div
+            id="kzd02t1cz6"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// выведет 0, затем 1, затем 2</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>Рассмотрим конструкцию <code>for</code> подробней:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>часть</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>начало</td>
+                    <td><code>let i = 0</code></td>
+                    <td>Выполняется один раз при входе в цикл</td>
+                </tr>
+                <tr>
+                    <td>условие</td>
+                    <td><code>i &lt; 3</code></td>
+                    <td>
+                        Проверяется <em>перед</em> каждой итерацией цикла.<br />Если
+                        оно вычислится в <code>false</code>, цикл остановится.
+                    </td>
+                </tr>
+                <tr>
+                    <td>тело</td>
+                    <td><code>alert(i)</code></td>
+                    <td>
+                        Выполняется снова и снова, пока условие вычисляется в
+                        <code>true</code>.
+                    </td>
+                </tr>
+                <tr>
+                    <td>шаг</td>
+                    <td><code>i++</code></td>
+                    <td>
+                        Выполняется <em>после</em> тела цикла на каждой итерации
+                        <em>перед</em> проверкой условия.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <p>В целом, алгоритм работы цикла выглядит следующим образом:</p>
+        <div
+            id="er2nw6x0q1"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-none"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-none">Выполнить начало
+    → (Если условие == true → Выполнить тело, Выполнить шаг)
+    → (Если условие == true → Выполнить тело, Выполнить шаг)
+    → (Если условие == true → Выполнить тело, Выполнить шаг)
+    → ...</code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            То есть, <code>начало</code> выполняется один раз, а затем каждая
+            итерация заключается в проверке <code>условия</code>, после которой
+            выполняется <code>тело</code> и <code>шаг</code>.
+        </p>
+        <p>
+            Если тема циклов для вас нова, может быть полезным вернуться к
+            примеру выше и воспроизвести его работу на листе бумаги, шаг за
+            шагом.
+        </p>
+        <p>Вот в точности то, что происходит в нашем случае:</p>
+        <div
+            id="ab2nr0fqoz"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// for (let i = 0; i &lt; 3; i++) alert(i)</code>
+
+    <code class="token comment">// Выполнить начало</code>
+    <code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token comment">// Если условие == true → Выполнить тело, Выполнить шаг</code>
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> i<code class="token operator">++</code> <code class="token punctuation">}</code>
+    <code class="token comment">// Если условие == true → Выполнить тело, Выполнить шаг</code>
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> i<code class="token operator">++</code> <code class="token punctuation">}</code>
+    <code class="token comment">// Если условие == true → Выполнить тело, Выполнить шаг</code>
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> i<code class="token operator">++</code> <code class="token punctuation">}</code>
+    <code class="token comment">// ...конец, потому что теперь i == 3</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Встроенное объявление переменной</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    В примере переменная счётчика <code>i</code> была объявлена
+                    прямо в цикле. Это так называемое «встроенное» объявление
+                    переменной. Такие переменные существуют только внутри цикла.
+                </p>
+                <div
+                    id="yga5q06pqt"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":0,"cols":[{"start":5,"end":8}]}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword"><em class="inline-highlight">let</em></code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0, 1, 2</code>
+    <code class="token punctuation">}</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// ошибка, нет такой переменной</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Вместо объявления новой переменной мы можем использовать уже
+                    существующую:
+                </p>
+                <div
+                    id="bpe2y1r7v6"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">for</code> <code class="token punctuation">(</code>i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// используем существующую переменную</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0, 1, 2</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3, переменная доступна, т.к. была объявлена снаружи цикла</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h3>
+            <a
+                class="main__anchor"
+                name="propusk-chastey-for"
+                href="#propusk-chastey-for"
+                >Пропуск частей «for»</a
+            >
+        </h3>
+        <p>Любая часть <code>for</code> может быть пропущена.</p>
+        <p>
+            Для примера, мы можем пропустить <code>начало</code> если нам ничего
+            не нужно делать перед стартом цикла.
+        </p>
+        <p>Вот так:</p>
+        <div
+            id="20stchogb7"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> <code class="token comment">// мы уже имеем объявленную i с присвоенным значением</code>
+
+    <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token comment">// нет необходимости в "начале"</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0, 1, 2</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>Можно убрать и <code>шаг</code>:</p>
+        <div
+            id="fkbi9xcy3g"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code> i<code class="token operator">++</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>Это сделает цикл аналогичным <code>while (i &lt; 3)</code>.</p>
+        <p>А можно и вообще убрать всё, получив бесконечный цикл:</p>
+        <div
+            id="m0m0kvnz9d"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token punctuation">;</code><code class="token punctuation">;</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token comment">// будет выполняться вечно</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            При этом сами точки с запятой <code>;</code> обязательно должны
+            присутствовать, иначе будет ошибка синтаксиса.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="preryvanie-tsikla-break"
+                href="#preryvanie-tsikla-break"
+                >Прерывание цикла: «break»</a
+            >
+        </h2>
+        <p>
+            Обычно цикл завершается при вычислении <em>условия</em> в
+            <code>false</code>.
+        </p>
+        <p>
+            Но мы можем выйти из цикла в любой момент с помощью специальной
+            директивы <code>break</code>.
+        </p>
+        <p>
+            Например, следующий код подсчитывает сумму вводимых чисел до тех
+            пор, пока посетитель их вводит, а затем – выдаёт:
+        </p>
+        <div
+            id="0mihi1cy0k"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":6,"end":6}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> sum <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">while</code> <code class="token punctuation">(</code><code class="token boolean">true</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token keyword">let</code> value <code class="token operator">=</code> <code class="token operator">+</code><code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">"Введите число"</code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight">  <code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token operator">!</code>value<code class="token punctuation">)</code> <code class="token keyword">break</code><code class="token punctuation">;</code> <code class="token comment">// (*)</code></em>
+
+      sum <code class="token operator">+=</code> value<code class="token punctuation">;</code>
+
+    <code class="token punctuation">}</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Сумма: '</code> <code class="token operator">+</code> sum <code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Директива <code>break</code> в строке <code>(*)</code> полностью
+            прекращает выполнение цикла и передаёт управление на строку за его
+            телом, то есть на <code>alert</code>.
+        </p>
+        <p>
+            Вообще, сочетание «бесконечный цикл + <code>break</code>» – отличная
+            штука для тех ситуаций, когда условие, по которому нужно прерваться,
+            находится не в начале или конце цикла, а посередине или даже в
+            нескольких местах его тела.
+        </p>
+        <h2>
+            <a class="main__anchor" name="continue" href="#continue"
+                >Переход к следующей итерации: continue</a
+            >
+        </h2>
+        <p>
+            Директива <code>continue</code> – «облегчённая версия»
+            <code>break</code>. При её выполнении цикл не прерывается, а
+            переходит к следующей итерации (если условие все ещё равно
+            <code>true</code>).
+        </p>
+        <p>
+            Её используют, если понятно, что на текущем повторе цикла делать
+            больше нечего.
+        </p>
+        <p>
+            Например, цикл ниже использует <code>continue</code>, чтобы выводить
+            только нечётные значения:
+        </p>
+        <div
+            id="ivhj8zk00s"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":3,"cols":[{"start":2,"end":27}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">10</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token comment">// если true, пропустить оставшуюся часть тела цикла</code>
+      <code class="token keyword"><em class="inline-highlight">if</em></code><em class="inline-highlight"> <code class="token punctuation">(</code>i <code class="token operator">%</code> <code class="token number">2</code> <code class="token operator">==</code> <code class="token number">0</code><code class="token punctuation">)</code> <code class="token keyword">continue</code><code class="token punctuation">;</code></em>
+
+      <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1, затем 3, 5, 7, 9</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Для чётных значений <code>i</code>, директива
+            <code>continue</code> прекращает выполнение тела цикла и передаёт
+            управление на следующую итерацию <code>for</code> (со следующим
+            числом). Таким образом <code>alert</code> вызывается только для
+            нечётных значений.
+        </p>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type"
+                    >Директива <code>continue</code> позволяет избегать
+                    вложенности</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Цикл, который обрабатывает только нечётные значения, мог бы
+                    выглядеть так:
+                </p>
+                <div
+                    id="36qctn9u3l"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">10</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">%</code> <code class="token number">2</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+        <code class="token function">alert</code><code class="token punctuation">(</code> i <code class="token punctuation">)</code><code class="token punctuation">;</code>
+      <code class="token punctuation">}</code>
+
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    С технической точки зрения он полностью идентичен.
+                    Действительно, вместо <code>continue</code> можно просто
+                    завернуть действия в блок <code>if</code>.
+                </p>
+                <p>
+                    Однако мы получили дополнительный уровень вложенности
+                    фигурных скобок. Если код внутри <code>if</code> более
+                    длинный, то это ухудшает читаемость, в отличие от варианта с
+                    <code>continue</code>.
+                </p>
+            </div>
+        </div>
+        <div class="important important_warn">
+            <div class="important__header">
+                <span class="important__type"
+                    >Нельзя использовать <code>break/continue</code> справа от
+                    оператора „?“</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Обратите внимание, что эти синтаксические конструкции не
+                    являются выражениями и не могут быть использованы с
+                    тернарным оператором <code>?</code>. В частности,
+                    использование таких директив, как
+                    <code>break/continue</code>, вызовет ошибку.
+                </p>
+                <p>Например, если мы возьмём этот код:</p>
+                <div
+                    id="zgypgjlqvp"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">if</code> <code class="token punctuation">(</code>i <code class="token operator">&gt;</code> <code class="token number">5</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code> <code class="token keyword">else</code> <code class="token punctuation">{</code>
+      <code class="token keyword">continue</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>…и перепишем его, используя вопросительный знак:</p>
+                <div
+                    id="e6sejnphej"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":0,"cols":[{"start":21,"end":29}]}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token punctuation">(</code>i <code class="token operator">&gt;</code> <code class="token number">5</code><code class="token punctuation">)</code> <code class="token operator">?</code> <code class="token function">alert</code><code class="token punctuation">(</code>i<code class="token punctuation">)</code> <code class="token operator">:</code> <code class="token keyword"><em class="inline-highlight">continue</em></code><code class="token punctuation">;</code> <code class="token comment">// continue здесь приведёт к ошибке</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>…то будет синтаксическая ошибка.</p>
+                <p>
+                    Это ещё один повод не использовать оператор вопросительного
+                    знака <code>?</code> вместо <code>if</code>.
+                </p>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="metki-dlya-break-continue"
+                href="#metki-dlya-break-continue"
+                >Метки для break/continue</a
+            >
+        </h2>
+        <p>
+            Бывает, нужно выйти одновременно из нескольких уровней цикла сразу.
+        </p>
+        <p>
+            Например, в коде ниже мы проходимся циклами по <code>i</code> и
+            <code>j</code>, запрашивая с помощью <code>prompt</code> координаты
+            <code>(i, j)</code> с <code>(0,0)</code> до <code>(2,2)</code>:
+        </p>
+        <div
+            id="5jjw8p1ke3"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> j <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> j <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> j<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+        <code class="token keyword">let</code> input <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Значение на координатах (</code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>i<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">,</code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>j<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">)</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+        <code class="token comment">// Что если мы захотим перейти к Готово (ниже) прямо отсюда?</code>
+      <code class="token punctuation">}</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Готово!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Нам нужен способ остановить выполнение, если пользователь отменит
+            ввод.
+        </p>
+        <p>
+            Обычный <code>break</code> после <code>input</code> лишь прервёт
+            внутренний цикл, но этого недостаточно. Достичь желаемого поведения
+            можно с помощью меток.
+        </p>
+        <p>
+            <em>Метка</em> имеет вид идентификатора с двоеточием перед циклом:
+        </p>
+        <div
+            id="uattt7nf12"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript">labelName<code class="token operator">:</code> <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token operator">...</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Вызов <code>break &lt;labelName&gt;</code> в цикле ниже ищет
+            ближайший внешний цикл с такой меткой и переходит в его конец.
+        </p>
+        <div
+            id="8ss5t703zk"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":7,"cols":[{"start":16,"end":27}]},{"start":0,"cols":[{"start":0,"end":6}]}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><em class="inline-highlight">outer<code class="token operator">:</code></em> <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+      <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> j <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> j <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> j<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+
+        <code class="token keyword">let</code> input <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token template-string"><code class="token template-punctuation string">`</code><code class="token string">Значение на координатах (</code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>i<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">,</code><code class="token interpolation"><code class="token interpolation-punctuation punctuation">${</code>j<code class="token interpolation-punctuation punctuation">}</code></code><code class="token string">)</code><code class="token template-punctuation string">`</code></code><code class="token punctuation">,</code> <code class="token string">''</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+        <code class="token comment">// если пустая строка или Отмена, то выйти из обоих циклов</code>
+        <code class="token keyword">if</code> <code class="token punctuation">(</code><code class="token operator">!</code>input<code class="token punctuation">)</code> <code class="token keyword"><em class="inline-highlight">break</em></code><em class="inline-highlight"> outer</em><code class="token punctuation">;</code> <code class="token comment">// (*)</code>
+
+        <code class="token comment">// сделать что-нибудь со значениями...</code>
+      <code class="token punctuation">}</code>
+    <code class="token punctuation">}</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Готово!'</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            В примере выше это означает, что вызовом
+            <code>break outer</code> будет разорван внешний цикл до метки с
+            именем <code>outer</code>.
+        </p>
+        <p>
+            Таким образом управление перейдёт со строки, помеченной
+            <code>(*)</code>, к <code>alert('Готово!')</code>.
+        </p>
+        <p>Можно размещать метку на отдельной строке:</p>
+        <div
+            id="m84j9dn74t"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript">outer<code class="token operator">:</code>
+    <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token keyword">let</code> i <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code> i <code class="token operator">&lt;</code> <code class="token number">3</code><code class="token punctuation">;</code> i<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code> <code class="token operator">...</code> <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Директива <code>continue</code> также может быть использована с
+            меткой. В этом случае управление перейдёт на следующую итерацию
+            цикла с меткой.
+        </p>
+        <div class="important important_warn">
+            <div class="important__header">
+                <span class="important__type"
+                    >Метки не позволяют «прыгнуть» куда угодно</span
+                >
+            </div>
+            <div class="important__content">
+                <p>
+                    Метки не дают возможности передавать управление в
+                    произвольное место кода.
+                </p>
+                <p>Например, нет возможности сделать следующее:</p>
+                <div
+                    id="vhmgjsitp4"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">break</code> label<code class="token punctuation">;</code> <code class="token comment">// не прыгает к метке ниже</code>
+
+    label<code class="token operator">:</code> <code class="token keyword">for</code> <code class="token punctuation">(</code><code class="token operator">...</code><code class="token punctuation">)</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    Директива <code>break</code> должна находиться внутри блока
+                    кода. Технически, подойдет любой маркированный блок кода,
+                    например:
+                </p>
+                <div
+                    id="zbooekk8z3"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript">label<code class="token operator">:</code> <code class="token punctuation">{</code>
+      <code class="token comment">// ...</code>
+      <code class="token keyword">break</code> label<code class="token punctuation">;</code> <code class="token comment">// работает</code>
+      <code class="token comment">// ...</code>
+    <code class="token punctuation">}</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    …Хотя в 99.9% случаев <code>break</code> используется внутри
+                    циклов, как мы видели в примерах выше.
+                </p>
+                <p>
+                    К слову, <code>continue</code> возможно только внутри цикла.
+                </p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <p>Мы рассмотрели 3 вида циклов:</p>
+        <ul>
+            <li>
+                <code>while</code> – Проверяет условие перед каждой итерацией.
+            </li>
+            <li>
+                <code>do..while</code> – Проверяет условие после каждой
+                итерации.
+            </li>
+            <li>
+                <code>for (;;)</code> – Проверяет условие перед каждой
+                итерацией, есть возможность задать дополнительные настройки.
+            </li>
+        </ul>
+        <p>
+            Чтобы организовать бесконечный цикл, используют конструкцию
+            <code>while (true)</code>. При этом он, как и любой другой цикл,
+            может быть прерван директивой <code>break</code>.
+        </p>
+        <p>
+            Если на данной итерации цикла делать больше ничего не надо, но
+            полностью прекращать цикл не следует – используют директиву
+            <code>continue</code>.
+        </p>
+        <p>
+            Обе этих директивы поддерживают <em>метки</em>, которые ставятся
+            перед циклом. Метки – единственный способ для
+            <code>break/continue</code> выйти за пределы текущего цикла,
+            повлиять на выполнение внешнего.
+        </p>
+        <p>
+            Заметим, что метки не позволяют прыгнуть в произвольное место кода,
+            в JavaScript нет такой возможности.
+        </p>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('/pages/header/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('page_1_1_header').innerHTML = data;
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
             })
-            .catch(error => console.error('Error loading header:', error));
+            .catch((error) => console.error("Error loading header:", error));
     });
 </script>

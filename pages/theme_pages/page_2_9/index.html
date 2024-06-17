@@ -1,19 +1,452 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
-<div id="page_1_1_header">
-    dasd
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <div class="main__header-inner">
+        <div class="main__header-group">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item breadcrumbs__item_home">
+                    <a class="breadcrumbs__link" href="/"
+                        ><span class="breadcrumbs__hidden-text"
+                            >Учебник</span
+                        ></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-1">
+                    <a class="breadcrumbs__link" href="/js"
+                        ><span>Язык JavaScript</span></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-2">
+                    <a class="breadcrumbs__link" href="/first-steps"
+                        ><span>Основы JavaScript</span></a
+                    >
+                </li>
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Учебник",
+                                "item": "https://learn.javascript.ru/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Язык JavaScript",
+                                "item": "https://learn.javascript.ru/js"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Основы JavaScript",
+                                "item": "https://learn.javascript.ru/first-steps"
+                            }
+                        ]
+                    }
+                </script>
+            </ol>
+            <div
+                class="updated-at"
+                data-tooltip="Последнее обновление: 13 октября 2023 г."
+            >
+                <div class="updated-at__content">13 октября 2023 г.</div>
+            </div>
+        </div>
+        <h1 class="main__header-title">Операторы сравнения</h1>
+    </div>
+
+
+    <div class="content"><article class="formatted" itemscope="" itemtype="http://schema.org/TechArticle"><meta itemprop="name" content="Операторы сравнения"><div itemprop="author" itemscope="" itemtype="http://schema.org/Person"><meta itemprop="email" content="iliakan@gmail.com"><meta itemprop="name" content="Ilya Kantor"></div><div itemprop="articleBody"><p>Многие операторы сравнения известны нам из математики.</p>
+    <p>В JavaScript они записываются так:</p>
+    <ul>
+    <li>Больше/меньше: <code>a &gt; b</code>, <code>a &lt; b</code>.</li>
+    <li>Больше/меньше или равно: <code>a &gt;= b</code>, <code>a &lt;= b</code>.</li>
+    <li>Равно: <code>a == b</code>. Обратите внимание, для сравнения используется двойной знак равенства <code>==</code>. Один знак равенства <code>a = b</code> означал бы присваивание.</li>
+    <li>Не равно. В математике обозначается символом <code>≠</code>, но в JavaScript записывается как <code>a != b</code>.</li>
+    </ul>
+    <p>В этом разделе мы больше узнаем про то, какие бывают сравнения, как язык с ними работает и к каким неожиданностям мы должны быть готовы.</p>
+    <p>В конце вы найдёте хороший рецепт того, как избегать «причуд» сравнения в JavaScript.</p>
+    <h2><a class="main__anchor" name="rezultat-sravneniya-imeet-logicheskiy-tip" href="#rezultat-sravneniya-imeet-logicheskiy-tip">Результат сравнения имеет логический тип</a></h2><p>Все операторы сравнения возвращают значение логического типа:</p>
+    <ul>
+    <li><code>true</code> – означает «да», «верно», «истина».</li>
+    <li><code>false</code> – означает «нет», «неверно», «ложь».</li>
+    </ul>
+    <p>Например:</p>
+    <div id="qojs2r3jp5" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">&gt;</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>  <code class="token comment">// true (верно)</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">==</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false (неверно)</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">!=</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true (верно)</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Результат сравнения можно присвоить переменной, как и любое значение:</p>
+    <div id="yyuqaafrck" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> result <code class="token operator">=</code> <code class="token number">5</code> <code class="token operator">&gt;</code> <code class="token number">4</code><code class="token punctuation">;</code> <code class="token comment">// результат сравнения присваивается переменной result</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> result <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div><h2><a class="main__anchor" name="sravnenie-strok" href="#sravnenie-strok">Сравнение строк</a></h2><p>Чтобы определить, что одна строка больше другой, JavaScript использует «алфавитный» или «лексикографический» порядок.</p>
+    <p>Другими словами, строки сравниваются посимвольно.</p>
+    <p>Например:</p>
+    <div id="rthespsplz" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Я'</code> <code class="token operator">&gt;</code> <code class="token string">'А'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Коты'</code> <code class="token operator">&gt;</code> <code class="token string">'Кода'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'Сонный'</code> <code class="token operator">&gt;</code> <code class="token string">'Сон'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Алгоритм сравнения двух строк довольно прост:</p>
+    <ol>
+    <li>Сначала сравниваются первые символы строк.</li>
+    <li>Если первый символ первой строки больше (меньше), чем первый символ второй, то первая строка больше (меньше) второй. Сравнение завершено.</li>
+    <li>Если первые символы равны, то таким же образом сравниваются уже вторые символы строк.</li>
+    <li>Сравнение продолжается, пока не закончится одна из строк.</li>
+    <li>Если обе строки заканчиваются одновременно, то они равны. Иначе, большей считается более длинная строка.</li>
+    </ol>
+    <p>В примерах выше сравнение <code>'Я' &gt; 'А'</code> завершится на первом шаге, тогда как строки <code>'Коты'</code> и <code>'Кода'</code> будут сравниваться посимвольно:</p>
+    <ol>
+    <li><code>К</code> равна <code>К</code>.</li>
+    <li><code>о</code> равна <code>о</code>.</li>
+    <li><code>т</code> больше, чем <code>д</code>. На этом сравнение заканчивается. Первая строка больше.</li>
+    </ol>
+    <div class="important important_smart">
+                <div class="important__header"><span class="important__type">Используется кодировка Unicode, а не настоящий алфавит</span></div>
+                <div class="important__content"><p>Приведённый выше алгоритм сравнения похож на алгоритм, используемый в словарях и телефонных книгах, но между ними есть и различия.</p>
+    <p>Например, в JavaScript имеет значение регистр символов. Заглавная буква <code>"A"</code> не равна строчной <code>"a"</code>. Какая же из них больше? Строчная <code>"a"</code>. Почему? Потому что строчные буквы имеют больший код во внутренней таблице кодирования, которую использует JavaScript (Unicode). Мы ещё поговорим о внутреннем представлении строк и его влиянии в главе <a href="/string">Строки</a>.</p>
+    </div></div>
+    <h2><a class="main__anchor" name="sravnenie-raznyh-tipov" href="#sravnenie-raznyh-tipov">Сравнение разных типов</a></h2><p>При сравнении значений разных типов JavaScript приводит каждое из них к числу.</p>
+    <p>Например:</p>
+    <div id="jm2g0s5gh0" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'2'</code> <code class="token operator">&gt;</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true, строка '2' становится числом 2</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'01'</code> <code class="token operator">==</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true, строка '01' становится числом 1</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Логическое значение <code>true</code> становится <code>1</code>, а <code>false</code> – <code>0</code>.</p>
+    <p>Например:</p>
+    <div id="t3q3sfp2sw" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token boolean">true</code> <code class="token operator">==</code> <code class="token number">1</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token boolean">false</code> <code class="token operator">==</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div><div class="important important_smart">
+                <div class="important__header"><span class="important__type">Забавное следствие</span></div>
+                <div class="important__content"><p>Возможна следующая ситуация:</p>
+    <ul>
+    <li>Два значения равны.</li>
+    <li>Одно из них <code>true</code> как логическое значение, другое – <code>false</code>.</li>
+    </ul>
+    <p>Например:</p>
+    <div id="m2i4inm26l" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">Boolean</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code>
+
+    <code class="token keyword">let</code> b <code class="token operator">=</code> <code class="token string">"0"</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">Boolean</code><code class="token punctuation">(</code>b<code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>a <code class="token operator">==</code> b<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true!</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>С точки зрения JavaScript, результат ожидаем. Равенство преобразует значения, используя числовое преобразование, поэтому <code>"0"</code> становится <code>0</code>. В то время как явное преобразование с помощью <code>Boolean</code> использует другой набор правил.</p>
+    </div></div>
+    <h2><a class="main__anchor" name="strogoe-sravnenie" href="#strogoe-sravnenie">Строгое сравнение</a></h2><p>Использование обычного сравнения <code>==</code> может вызывать проблемы. Например, оно не отличает <code>0</code> от <code>false</code>:</p>
+    <div id="0vw32yk2lw" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">0</code> <code class="token operator">==</code> <code class="token boolean">false</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Та же проблема с пустой строкой:</p>
+    <div id="sqcbe84rwi" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">''</code> <code class="token operator">==</code> <code class="token boolean">false</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Это происходит из-за того, что операнды разных типов преобразуются оператором <code>==</code> к числу. В итоге, и пустая строка, и <code>false</code> становятся нулём.</p>
+    <p>Как же тогда отличать <code>0</code> от <code>false</code>?</p>
+    <p><strong>Оператор строгого равенства <code>===</code> проверяет равенство без приведения типов.</strong></p>
+    <p>Другими словами, если <code>a</code> и <code>b</code> имеют разные типы, то проверка <code>a === b</code> немедленно возвращает <code>false</code> без попытки их преобразования.</p>
+    <p>Давайте проверим:</p>
+    <div id="le8aqcppyo" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">0</code> <code class="token operator">===</code> <code class="token boolean">false</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false, так как сравниваются разные типы</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Ещё есть оператор строгого неравенства <code>!==</code>, аналогичный <code>!=</code>.</p>
+    <p>Оператор строгого равенства дольше писать, но он делает код более очевидным и оставляет меньше места для ошибок.</p>
+    <h2><a class="main__anchor" name="sravnenie-s-null-i-undefined" href="#sravnenie-s-null-i-undefined">Сравнение с null и undefined</a></h2><p>Поведение <code>null</code> и <code>undefined</code> при сравнении с другими значениями — особое:</p>
+    <dl>
+    <dt>При строгом равенстве <code>===</code></dt>
+    <dd>
+    <p>Эти значения различны, так как различны их типы.</p>
+    <div id="dedwq5pecm" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">null</code> <code class="token operator">===</code> <code class="token keyword">undefined</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false</code></code></pre>
+            </div>
+          </div>
+
+          </div></dd>
+    <dt>При нестрогом равенстве <code>==</code></dt>
+    <dd>
+    <p>Эти значения равны друг другу и не равны никаким другим значениям. Это специальное правило языка.</p>
+    <div id="ndmfi0hi3s" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">null</code> <code class="token operator">==</code> <code class="token keyword">undefined</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// true</code></code></pre>
+            </div>
+          </div>
+
+          </div></dd>
+    <dt>При использовании математических операторов и других операторов сравнения <code>&lt; &gt; &lt;= &gt;=</code></dt>
+    <dd>
+    <p>Значения <code>null/undefined</code> преобразуются к числам: <code>null</code> становится <code>0</code>, а <code>undefined</code> – <code>NaN</code>.</p>
+    </dd>
+    </dl>
+    <p>Посмотрим, какие забавные вещи случаются, когда мы применяем эти правила. И, что более важно, как избежать ошибок при их использовании.</p>
+    <h3><a class="main__anchor" name="strannyy-rezultat-sravneniya-null-i-0" href="#strannyy-rezultat-sravneniya-null-i-0">Странный результат сравнения null и 0</a></h3><p>Сравним <code>null</code> с нулём:</p>
+    <div id="7qiyhp1n8w" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;cols&quot;:[{&quot;start&quot;:27,&quot;end&quot;:31}]}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">null</code> <code class="token operator">&gt;</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>  <code class="token comment">// (1) false</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">null</code> <code class="token operator">==</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// (2) false</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">null</code> <code class="token operator">&gt;=</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// (3) <em class="inline-highlight">true</em></code></code></pre>
+            </div>
+          </div>
+
+          </div><p>С точки зрения математики это странно. Результат последнего сравнения говорит о том, что "<code>null</code> больше или равно нулю", тогда результат одного из сравнений выше должен быть <code>true</code>, но они оба ложны.</p>
+    <p>Причина в том, что нестрогое равенство и сравнения <code>&gt; &lt; &gt;= &lt;=</code> работают по-разному. Сравнения преобразуют <code>null</code> в число, рассматривая его как <code>0</code>. Поэтому выражение (3) <code>null &gt;= 0</code> истинно, а <code>null &gt; 0</code> ложно.</p>
+    <p>С другой стороны, для нестрогого равенства <code>==</code> значений <code>undefined</code> и <code>null</code> действует особое правило: эти значения ни к чему не приводятся, они равны друг другу и не равны ничему другому. Поэтому (2) <code>null == 0</code> ложно.</p>
+    <h3><a class="main__anchor" name="nesravnennoe-znachenie-undefined" href="#nesravnennoe-znachenie-undefined">Несравненное значение undefined</a></h3><p>Значение <code>undefined</code> несравнимо с другими значениями:</p>
+    <div id="nilzyh3qzq" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">undefined</code> <code class="token operator">&gt;</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false (1)</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">undefined</code> <code class="token operator">&lt;</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false (2)</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token keyword">undefined</code> <code class="token operator">==</code> <code class="token number">0</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// false (3)</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Почему же сравнение <code>undefined</code> с нулём всегда ложно?</p>
+    <p>На это есть следующие причины:</p>
+    <ul>
+    <li>Сравнения <code>(1)</code> и <code>(2)</code> возвращают <code>false</code>, потому что <code>undefined</code> преобразуется в <code>NaN</code>, а <code>NaN</code> – это специальное числовое значение, которое возвращает <code>false</code> при любых сравнениях.</li>
+    <li>Нестрогое равенство <code>(3)</code> возвращает <code>false</code>, потому что <code>undefined</code> равно только <code>null</code>, <code>undefined</code> и ничему больше.</li>
+    </ul>
+    <h3><a class="main__anchor" name="kak-izbezhat-problem" href="#kak-izbezhat-problem">Как избежать проблем</a></h3><p>Зачем мы рассмотрели все эти примеры? Должны ли мы постоянно помнить обо всех этих особенностях? Необязательно. Со временем все они станут вам знакомы, но можно избежать проблем, если следовать надёжным правилам:</p>
+    <ul>
+    <li>Относитесь очень осторожно к любому сравнению с <code>undefined/null</code>, кроме случаев строгого равенства <code>===</code>.</li>
+    <li>Не используйте сравнения <code>&gt;= &gt; &lt; &lt;=</code> с переменными, которые могут принимать значения <code>null/undefined</code>, разве что вы полностью уверены в том, что делаете. Если переменная может принимать эти значения, то добавьте для них отдельные проверки.</li>
+    </ul>
+    <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2><ul>
+    <li>Операторы сравнения возвращают значения логического типа.</li>
+    <li>Строки сравниваются посимвольно в лексикографическом порядке.</li>
+    <li>Значения разных типов при сравнении приводятся к числу. Исключением является сравнение с помощью операторов строгого равенства/неравенства.</li>
+    <li>Значения <code>null</code> и <code>undefined</code> равны <code>==</code> друг другу и не равны любому другому значению.</li>
+    <li>Будьте осторожны при использовании операторов сравнений вроде <code>&gt;</code> и <code>&lt;</code> с переменными, которые могут принимать значения <code>null/undefined</code>. Хорошей идеей будет сделать отдельную проверку на <code>null/undefined</code>.</li>
+    </ul>
+    </div></article><div class="tasks formatted"><h2 class="tasks__title" id="tasks"><a class="tasks__title-anchor main__anchor main__anchor main__anchor_noicon" href="#tasks">Задачи</a></h2><div class="task tasks__task"><div class="task__header"><div class="task__title-wrap"><h3 class="task__title"><a class="main__anchor" href="#operatory-sravneniya" name="operatory-sravneniya">Операторы сравнения</a></h3><a class="task__open-link" href="/task/comparison-questions" target="_blank"></a></div><div class="task__header-note"><span class="task__importance" title="Насколько эта задача важна для освоения материала, от 1 до 5">важность: 5</span></div><div class="task__content"><div class="task__formatted"><p>Каким будет результат этих выражений?</p>
+    <div id="31kggol37f" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token number">5</code> <code class="token operator">&gt;</code> <code class="token number">4</code>
+    <code class="token string">"ананас"</code> <code class="token operator">&gt;</code> <code class="token string">"яблоко"</code>
+    <code class="token string">"2"</code> <code class="token operator">&gt;</code> <code class="token string">"12"</code>
+    <code class="token keyword">undefined</code> <code class="token operator">==</code> <code class="token keyword">null</code>
+    <code class="token keyword">undefined</code> <code class="token operator">===</code> <code class="token keyword">null</code>
+    <code class="token keyword">null</code> <code class="token operator">==</code> <code class="token string">"\n0\n"</code>
+    <code class="token keyword">null</code> <code class="token operator">===</code> <code class="token operator">+</code><code class="token string">"\n0\n"</code></code></pre>
+            </div>
+          </div>
+
+          </div></div><button class="task__solution" type="button">решение</button><div class="task__answer"><div class="task__answer-content"><div class="formatted"><div id="knhazppovu" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token number">5</code> <code class="token operator">&gt;</code> <code class="token number">4</code> → <code class="token boolean">true</code>
+    <code class="token string">"ананас"</code> <code class="token operator">&gt;</code> <code class="token string">"яблоко"</code> → <code class="token boolean">false</code>
+    <code class="token string">"2"</code> <code class="token operator">&gt;</code> <code class="token string">"12"</code> → <code class="token boolean">true</code>
+    <code class="token keyword">undefined</code> <code class="token operator">==</code> <code class="token keyword">null</code> → <code class="token boolean">true</code>
+    <code class="token keyword">undefined</code> <code class="token operator">===</code> <code class="token keyword">null</code> → <code class="token boolean">false</code>
+    <code class="token keyword">null</code> <code class="token operator">==</code> <code class="token string">"\n0\n"</code> → <code class="token boolean">false</code>
+    <code class="token keyword">null</code> <code class="token operator">===</code> <code class="token operator">+</code><code class="token string">"\n0\n"</code> → <code class="token boolean">false</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Разъяснения:</p>
+    <ol>
+    <li>Очевидно, <code>true</code>.</li>
+    <li>Используется посимвольное сравнение, поэтому <code>false</code>. <code>"а"</code> меньше, чем <code>"я"</code>.</li>
+    <li>Снова посимвольное сравнение. Первый символ первой строки <code>"2"</code> больше, чем первый символ второй <code>"1"</code>.</li>
+    <li>Специальный случай. Значения <code>null</code> и <code>undefined</code> равны только друг другу при нестрогом сравнении.</li>
+    <li>Строгое сравнение разных типов, поэтому <code>false</code>.</li>
+    <li>Аналогично <code>(4)</code>, <code>null</code> равен только <code>undefined</code>.</li>
+    <li>Строгое сравнение разных типов.</li>
+    </ol>
+    </div></div><button class="close-button task__answer-close" type="button" title="закрыть"></button></div></div></div></div></div></div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('/pages/header/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('page_1_1_header').innerHTML = data;
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
             })
-            .catch(error => console.error('Error loading header:', error));
+            .catch((error) => console.error("Error loading header:", error));
     });
 </script>

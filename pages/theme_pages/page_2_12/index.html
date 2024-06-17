@@ -1,19 +1,820 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
-<div id="page_1_1_header">
-    dasd
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <div class="main__header-inner">
+        <div class="main__header-group">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item breadcrumbs__item_home">
+                    <a class="breadcrumbs__link" href="/"
+                        ><span class="breadcrumbs__hidden-text"
+                            >Учебник</span
+                        ></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-1">
+                    <a class="breadcrumbs__link" href="/js"
+                        ><span>Язык JavaScript</span></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-2">
+                    <a class="breadcrumbs__link" href="/first-steps"
+                        ><span>Основы JavaScript</span></a
+                    >
+                </li>
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Учебник",
+                                "item": "https://learn.javascript.ru/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Язык JavaScript",
+                                "item": "https://learn.javascript.ru/js"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Основы JavaScript",
+                                "item": "https://learn.javascript.ru/first-steps"
+                            }
+                        ]
+                    }
+                </script>
+            </ol>
+            <div
+                class="updated-at"
+                data-tooltip="Последнее обновление: 12 июня 2024 г."
+            >
+                <div class="updated-at__content">12 июня 2024 г.</div>
+            </div>
+        </div>
+        <h1 class="main__header-title">
+            Операторы нулевого слияния и присваивания: '??', '??='
+        </h1>
+    </div>
+
+    <div itemprop="articleBody">
+        <div class="important important_warn">
+            <div class="important__header">
+                <span class="important__type">Новая возможность</span>
+            </div>
+            <div class="important__content">
+                Эта возможность была добавлена в язык недавно. В старых
+                браузерах может понадобиться
+                <a href="https://learn.javascript.ru/polyfills">полифил</a>.
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="operator-nulevogo-sliyaniya"
+                href="#operator-nulevogo-sliyaniya"
+                >Оператор нулевого слияния (??)</a
+            >
+        </h2>
+        <p>
+            Оператор нулевого слияния представляет собой два вопросительных
+            знака <code>??</code>.
+        </p>
+        <p>
+            Так как он обрабатывает <code>null</code> и
+            <code>undefined</code> одинаковым образом, то для этой статьи мы
+            введём специальный термин. Для краткости будем говорить, что
+            значение «определено», если оно не равняется ни <code>null</code>,
+            ни <code>undefined</code>.
+        </p>
+        <p>Результат выражения <code>a ?? b</code> будет следующим:</p>
+        <ul>
+            <li>если <code>a</code> определено, то <code>a</code>,</li>
+            <li>если <code>a</code> не определено, то <code>b</code>.</li>
+        </ul>
+        <p>
+            Иначе говоря, оператор <code>??</code> возвращает первый аргумент,
+            если он не <code>null/undefined</code>, иначе второй.
+        </p>
+        <p>
+            Оператор нулевого слияния не является чем-то принципиально новым.
+            Это всего лишь удобный синтаксис, как из двух значений получить
+            одно, которое «определено».
+        </p>
+        <p>
+            Вот как можно переписать выражение <code>result = a ?? b</code>,
+            используя уже знакомые нам операторы:
+        </p>
+        <div
+            id="vnjk0i4fre"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">result <code class="token operator">=</code> <code class="token punctuation">(</code>a <code class="token operator">!==</code> <code class="token keyword">null</code> <code class="token operator">&amp;&amp;</code> a <code class="token operator">!==</code> <code class="token keyword">undefined</code><code class="token punctuation">)</code> <code class="token operator">?</code> a <code class="token operator">:</code> b<code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Теперь должно быть абсолютно ясно, что делает <code>??</code>.
+            Давайте посмотрим, где это может быть полезно.
+        </p>
+        <p>
+            Как правило, оператор <code>??</code> нужен для того, чтобы задать
+            значение по умолчанию для потенциально неопределённой переменной.
+        </p>
+        <p>
+            Например, здесь мы отобразим <code>user</code>, если её значение не
+            <code>null/undefined</code>, в противном случае <code>Аноним</code>:
+        </p>
+        <div
+            id="zb3f1mi21y"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user<code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>user <code class="token operator">??</code> <code class="token string">"Аноним"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Аноним (user не существует)</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>А вот пример, когда <code>user</code> присвоено значение:</p>
+        <div
+            id="o9qmpnvb3b"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> user <code class="token operator">=</code> <code class="token string">"Иван"</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>user <code class="token operator">??</code> <code class="token string">"Аноним"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Иван (user существует)</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Кроме этого, можно записать последовательность из операторов
+            <code>??</code>, чтобы получить первое значение из списка, которое
+            не является <code>null/undefined</code>.
+        </p>
+        <p>
+            Допустим, у нас есть данные пользователя в переменных
+            <code>firstName</code>, <code>lastName</code> или
+            <code>nickName</code>. Все они могут не существовать, если
+            пользователь решил не вводить соответствующие значение.
+        </p>
+        <p>
+            Мы хотели бы отобразить имя пользователя, используя одну из этих
+            переменных, или показать «Аноним», если все они
+            <code>null/undefined</code>.
+        </p>
+        <p>Для этого воспользуемся оператором <code>??</code>:</p>
+        <div
+            id="ijj343ddtz"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":5,"end":5}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> firstName <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> lastName <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> nickName <code class="token operator">=</code> <code class="token string">"Суперкодер"</code><code class="token punctuation">;</code>
+
+    <code class="token comment">// показывает первое значение, которое определено:</code>
+    <em class="block-highlight"><code class="token function">alert</code><code class="token punctuation">(</code>firstName <code class="token operator">??</code> lastName <code class="token operator">??</code> nickName <code class="token operator">??</code> <code class="token string">"Аноним"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Суперкодер</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <h3>
+            <a class="main__anchor" name="sravnenie-s" href="#sravnenie-s"
+                >Сравнение с ||</a
+            >
+        </h3>
+        <p>
+            Оператор ИЛИ <code>||</code> можно использовать для того же, что и
+            <code>??</code>, как это было показано в
+            <a href="/logical-operators#or-finds-the-first-truthy-value"
+                >предыдущей главе</a
+            >.
+        </p>
+        <p>
+            Например, если в приведённом выше коде заменить <code>??</code> на
+            <code>||</code>, то будет тот же самый результат:
+        </p>
+        <div
+            id="9hco1qi35d"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":5,"end":5}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> firstName <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> lastName <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> nickName <code class="token operator">=</code> <code class="token string">"Суперкодер"</code><code class="token punctuation">;</code>
+
+    <code class="token comment">// показывает первое истинное значение:</code>
+    <em class="block-highlight"><code class="token function">alert</code><code class="token punctuation">(</code>firstName <code class="token operator">||</code> lastName <code class="token operator">||</code> nickName <code class="token operator">||</code> <code class="token string">"Аноним"</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// Суперкодер</code></em></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Исторически сложилось так, что оператор ИЛИ <code>||</code> появился
+            первым. Он существует с самого начала в JavaScript, поэтому
+            разработчики долгое время использовали его для таких целей.
+        </p>
+        <p>
+            С другой стороны, сравнительно недавно в язык был добавлен оператор
+            нулевого слияния <code>??</code> – как раз потому, что многие были
+            недовольны оператором <code>||</code>.
+        </p>
+        <p>Важное различие между ними заключается в том, что:</p>
+        <ul>
+            <li>
+                <code>||</code> возвращает первое <em>истинное</em> значение.
+            </li>
+            <li>
+                <code>??</code> возвращает первое
+                <em>определённое</em> значение.
+            </li>
+        </ul>
+        <p>
+            Проще говоря, оператор <code>||</code> не различает
+            <code>false</code>, <code>0</code>, пустую строку <code>""</code> и
+            <code>null/undefined</code>. Для него они все одинаковы, т.е.
+            являются ложными значениями. Если первым аргументом для оператора
+            <code>||</code> будет любое из перечисленных значений, то в качестве
+            результата мы получим второй аргумент.
+        </p>
+        <p>
+            Однако на практике часто требуется использовать значение по
+            умолчанию только тогда, когда переменная является
+            <code>null/undefined</code>. Ведь именно тогда значение
+            действительно неизвестно/не определено.
+        </p>
+        <p>Рассмотрим следующий пример:</p>
+        <div
+            id="gxcqnk23mw"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> height <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>height <code class="token operator">||</code> <code class="token number">100</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 100</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code>height <code class="token operator">??</code> <code class="token number">100</code><code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <code>height || 100</code> проверяет <code>height</code> на
+                ложное значение, оно равно <code>0</code>, да, ложное.
+                <ul>
+                    <li>
+                        поэтому результатом <code>||</code> является второй
+                        аргумент, т.е. <code>100</code>.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <code>height ?? 100</code> проверяет, что переменная
+                <code>height</code> содержит <code>null/undefined</code>, а
+                поскольку это не так,
+                <ul>
+                    <li>
+                        то результатом является сама переменная
+                        <code>height</code>, т.е. <code>0</code>.
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <p>
+            На практике нулевая высота часто является вполне нормальным
+            значением, которое не следует заменять значением по умолчанию. Таким
+            образом, <code>??</code> здесь как раз работает так, как нужно.
+        </p>
+        <h3>
+            <a class="main__anchor" name="prioritet" href="#prioritet"
+                >Приоритет</a
+            >
+        </h3>
+        <p>
+            Приоритет оператора <code>??</code> такой же, как и у
+            <code>||</code>. Они оба равны <code>3</code> в
+            <a
+                href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Operator_Precedence#Table"
+                >таблице на MDN</a
+            >.
+        </p>
+        <p>
+            Это означает, что, как и <code>||</code>, оператор нулевого слияния
+            <code>??</code> вычисляется до <code>=</code> и <code>?</code>, но
+            после большинства других операций, таких как <code>+</code>,
+            <code>*</code>.
+        </p>
+        <p>Так что, в выражениях такого вида понадобятся скобки:</p>
+        <div
+            id="t0tnn1sdoc"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> height <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> width <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+
+    <code class="token comment">// важно: используйте круглые скобки</code>
+    <code class="token keyword">let</code> area <code class="token operator">=</code> <code class="token punctuation">(</code>height <code class="token operator">??</code> <code class="token number">100</code><code class="token punctuation">)</code> <code class="token operator">*</code> <code class="token punctuation">(</code>width <code class="token operator">??</code> <code class="token number">50</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>area<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 5000</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Иначе, если опустить скобки, оператор <code>*</code> выполнится
+            первым, так как у него приоритет выше, чем у <code>??</code>, и это
+            приведёт к неправильным результатам.
+        </p>
+        <div
+            id="zx9kgkwzgp"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// без скобок</code>
+    <code class="token keyword">let</code> area <code class="token operator">=</code> height <code class="token operator">??</code> <code class="token number">100</code> <code class="token operator">*</code> width <code class="token operator">??</code> <code class="token number">50</code><code class="token punctuation">;</code>
+
+    <code class="token comment">// ...сработает вот так (совсем не как нам нужно):</code>
+    <code class="token keyword">let</code> area <code class="token operator">=</code> height <code class="token operator">??</code> <code class="token punctuation">(</code><code class="token number">100</code> <code class="token operator">*</code> width<code class="token punctuation">)</code> <code class="token operator">??</code> <code class="token number">50</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h3>
+            <a
+                class="main__anchor"
+                name="ispolzovanie-vmeste-s-ili"
+                href="#ispolzovanie-vmeste-s-ili"
+                >Использование ?? вместе с &amp;&amp; или ||</a
+            >
+        </h3>
+        <p>
+            По соображениям безопасности JavaScript запрещает использование
+            оператора <code>??</code> вместе с <code>&amp;&amp;</code> и
+            <code>||</code>, если приоритет явно не указан при помощи круглых
+            скобок.
+        </p>
+        <p>Выполнение следующего кода приведёт к синтаксической ошибке:</p>
+        <div
+            id="vo30ge2rgz"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token number">1</code> <code class="token operator">&amp;&amp;</code> <code class="token number">2</code> <code class="token operator">??</code> <code class="token number">3</code><code class="token punctuation">;</code> <code class="token comment">// Синтаксическая ошибка</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Это, безусловно, спорное ограничение было добавлено в спецификацию
+            языка с целью избежать программные ошибки, когда люди начнут
+            переходить с <code>||</code> на <code>??</code>.
+        </p>
+        <p>Используйте скобки, чтобы обойти это ограничение:</p>
+        <div
+            id="njvt4bt721"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":0,"end":0}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><em class="block-highlight"><code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token number">1</code> <code class="token operator">&amp;&amp;</code> <code class="token number">2</code><code class="token punctuation">)</code> <code class="token operator">??</code> <code class="token number">3</code><code class="token punctuation">;</code> <code class="token comment">// Работает без ошибок</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>x<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2>
+            <a
+                class="main__anchor"
+                name="operator-nulevogo-prisvaivaniya"
+                href="#operator-nulevogo-prisvaivaniya"
+                >Оператор нулевого присваивания (??=)</a
+            >
+        </h2>
+        <p>
+            Предположим, нам необходимо проверить, равна ли переменная
+            <code>null</code> или <code>undefined</code>, и если это так —
+            присвоить этой переменной какое-либо другое значение.
+        </p>
+        <p>Вот как мы сделали бы это сейчас:</p>
+        <div
+            id="uxk51lxmk8"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> userAge <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">if</code> <code class="token punctuation">(</code>userAge <code class="token operator">===</code> <code class="token keyword">null</code> <code class="token operator">||</code> userAge <code class="token operator">===</code> <code class="token keyword">undefined</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      userAge <code class="token operator">=</code> <code class="token number">18</code><code class="token punctuation">;</code>
+    <code class="token punctuation">}</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Выглядит громоздко, правда? Существует оператор, более подходящий
+            для подобных задач. Вот его синтаксис:
+        </p>
+        <div
+            id="b0uxxv0zbn"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript">x <code class="token operator">??=</code> y</code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Оператор <code>??=</code> присвоит <code>x</code> значение
+            <code>y</code> только в том случае, если <code>x</code>
+            <em>не определено</em> (<code>null</code>/<code>undefined</code>).
+        </p>
+        <p>
+            Теперь попробуем переписать уже знакомый нам фрагмент кода используя
+            новый оператор:
+        </p>
+        <div
+            id="6qdl1a0ky1"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> userAge <code class="token operator">=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+
+    userAge <code class="token operator">??=</code> <code class="token number">18</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>userAge<code class="token punctuation">)</code> <code class="token comment">// 18</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Обратите внимание: если бы <code>userAge</code> не был равен
+            <code>null</code>/<code>undefined</code>, то выражение справа от
+            <code>??=</code> никогда бы не выполнилось:
+        </p>
+        <div
+            id="zel781er1b"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> userAge <code class="token operator">=</code> <code class="token number">18</code><code class="token punctuation">;</code>
+
+    userAge <code class="token operator">??=</code> <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"не сработает"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+    userAge <code class="token operator">??=</code> <code class="token number">21</code><code class="token punctuation">;</code>
+    userAge <code class="token operator">??=</code> <code class="token keyword">null</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>userAge<code class="token punctuation">)</code> <code class="token comment">// по-прежнему 18</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <ul>
+            <li>
+                <p>
+                    Оператор нулевого слияния <code>??</code> — это быстрый
+                    способ выбрать первое «определённое» значение из списка.
+                </p>
+                <p>
+                    Используется для присвоения переменным значений по
+                    умолчанию:
+                </p>
+                <div
+                    id="yuuoa46r45"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// будет height=100, если переменная height равна null или undefined</code>
+    height <code class="token operator">=</code> height <code class="token operator">??</code> <code class="token number">100</code><code class="token punctuation">;</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>
+                    Оператор <code>??</code> имеет очень низкий приоритет, лишь
+                    немного выше, чем у <code>?</code> и <code>=</code>, поэтому
+                    при использовании его в выражении, скорее всего, потребуются
+                    скобки.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Запрещено использовать вместе с <code>||</code> или
+                    <code>&amp;&amp;</code> без явно указанного приоритета, то
+                    есть без скобок.
+                </p>
+            </li>
+            <li>
+                <p>
+                    Для присвоения переменной значения в зависимости от того,
+                    «определена» она или нет, используется оператор нулевого
+                    присваивания <code>??=</code>.
+                </p>
+            </li>
+        </ul>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('/pages/header/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('page_1_1_header').innerHTML = data;
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
             })
-            .catch(error => console.error('Error loading header:', error));
+            .catch((error) => console.error("Error loading header:", error));
     });
 </script>

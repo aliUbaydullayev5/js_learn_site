@@ -1,19 +1,861 @@
-<link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
-<script defer src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
     integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<link rel="stylesheet" href="/styles/global.css">
-<div id="page_1_1_header">
-    dasd
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <header class="main__header">
+        <div class="main__header-inner">
+            <div class="main__header-group">
+                <ol class="breadcrumbs">
+                    <li class="breadcrumbs__item breadcrumbs__item_home">
+                        <a class="breadcrumbs__link" href="/"
+                            ><span class="breadcrumbs__hidden-text"
+                                >Учебник</span
+                            ></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-1">
+                        <a class="breadcrumbs__link" href="/js"
+                            ><span>Язык JavaScript</span></a
+                        >
+                    </li>
+                    <li class="breadcrumbs__item" id="breadcrumb-2">
+                        <a class="breadcrumbs__link" href="/first-steps"
+                            ><span>Основы JavaScript</span></a
+                        >
+                    </li>
+                    <script type="application/ld+json">
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Учебник",
+                                    "item": "https://learn.javascript.ru/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Язык JavaScript",
+                                    "item": "https://learn.javascript.ru/js"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Основы JavaScript",
+                                    "item": "https://learn.javascript.ru/first-steps"
+                                }
+                            ]
+                        }
+                    </script>
+                </ol>
+                <div
+                    class="updated-at"
+                    data-tooltip="Последнее обновление: 12 января 2024 г."
+                >
+                    <div class="updated-at__content">12 января 2024 г.</div>
+                </div>
+            </div>
+            <h1 class="main__header-title">Базовые операторы, математика</h1>
+        </div>
+    </header>
+
+
+    <div itemprop="articleBody"><p>Многие операторы знакомы нам ещё со школы: сложение <code>+</code>, умножение <code>*</code>, вычитание <code>-</code> и так далее.</p>
+    <p>В этой главе мы начнём с простых операторов, а потом сконцентрируемся на специфических для JavaScript аспектах, которые не проходят в школьном курсе арифметики.</p>
+    <h2><a class="main__anchor" name="terminy-unarnyy-binarnyy-operand" href="#terminy-unarnyy-binarnyy-operand">Термины: «унарный», «бинарный», «операнд»</a></h2><p>Прежде, чем мы двинемся дальше, давайте разберёмся с терминологией.</p>
+    <ul>
+    <li>
+    <p><em>Операнд</em> – то, к чему применяется оператор. Например, в умножении <code>5 * 2</code> есть два операнда: левый операнд равен <code>5</code>, а правый операнд равен <code>2</code>. Иногда их называют «аргументами» вместо «операндов».</p>
+    </li>
+    <li>
+    <p><em>Унарным</em> называется оператор, который применяется к одному операнду. Например, оператор унарный минус <code>"-"</code> меняет знак числа на противоположный:</p>
+    <div id="eaqfj80gxl" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight">x <code class="token operator">=</code> <code class="token operator">-</code>x<code class="token punctuation">;</code></em>
+    <code class="token function">alert</code><code class="token punctuation">(</code> x <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// -1, применили унарный минус</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    <li>
+    <p><em>Бинарным</em> называется оператор, который применяется к двум операндам. Тот же минус существует и в бинарной форме:</p>
+    <div id="r2hte4r3tx" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">,</code> y <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> y <code class="token operator">-</code> x <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2, бинарный минус вычитает значения</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Формально, в последних примерах мы говорим о двух разных операторах, использующих один символ: оператор отрицания (унарный оператор, который обращает знак) и оператор вычитания (бинарный оператор, который вычитает одно число из другого).</p>
+    </li>
+    </ul>
+    <h2><a class="main__anchor" name="matematika" href="#matematika">Математика</a></h2><p>Поддерживаются следующие математические операторы:</p>
+    <ul>
+    <li>Сложение <code>+</code>,</li>
+    <li>Вычитание <code>-</code>,</li>
+    <li>Умножение <code>*</code>,</li>
+    <li>Деление <code>/</code>,</li>
+    <li>Взятие остатка от деления <code>%</code>,</li>
+    <li>Возведение в степень <code>**</code>.</li>
+    </ul>
+    <p>Первые четыре оператора очевидны, а про <code>%</code> и <code>**</code> стоит сказать несколько слов.</p>
+    <h3><a class="main__anchor" name="vzyatie-ostatka" href="#vzyatie-ostatka">Взятие остатка %</a></h3><p>Оператор взятия остатка <code>%</code>, несмотря на обозначение, никакого отношения к процентам не имеет.</p>
+    <p>Результат <code>a % b</code> – это <a href="https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5_%D1%81_%D0%BE%D1%81%D1%82%D0%B0%D1%82%D0%BA%D0%BE%D0%BC">остаток</a> от целочисленного деления <code>a</code> на <code>b</code>.</p>
+    <p>Например:</p>
+    <div id="jpmzxjxnsx" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">5</code> <code class="token operator">%</code> <code class="token number">2</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1, остаток от деления 5 на 2</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">8</code> <code class="token operator">%</code> <code class="token number">3</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2, остаток от деления 8 на 3</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">8</code> <code class="token operator">%</code> <code class="token number">4</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0, остаток от деления 8 на 4</code></code></pre>
+            </div>
+          </div>
+
+          </div><h3><a class="main__anchor" name="vozvedenie-v-stepen" href="#vozvedenie-v-stepen">Возведение в степень **</a></h3><p>Оператор возведения в степень <code>a ** b</code> возводит <code>a</code> в степень <code>b</code>.</p>
+    <p>В школьной математике мы записываем это как a<sup>b</sup>.</p>
+    <p>Например:</p>
+    <div id="jgjfycm6qm" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">**</code> <code class="token number">2</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2² = 4</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">**</code> <code class="token number">3</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2³ = 8</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">**</code> <code class="token number">4</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2⁴ = 16</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Математически, оператор работает и для нецелых чисел. Например, квадратный корень является возведением в степень ½:</p>
+    <div id="gtxw0dxr5r" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">4</code> <code class="token operator">**</code> <code class="token punctuation">(</code><code class="token number">1</code><code class="token operator">/</code><code class="token number">2</code><code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2 (степень 1/2 эквивалентна взятию квадратного корня)</code></code></pre>
+            </div>
+          </div>
+
+          </div><h2><a class="main__anchor" name="slozhenie-strok-pri-pomoschi-binarnogo" href="#slozhenie-strok-pri-pomoschi-binarnogo">Сложение строк при помощи бинарного +</a></h2><p>Давайте рассмотрим специальные возможности операторов JavaScript, которые выходят за рамки школьной арифметики.</p>
+    <p>Обычно при помощи плюса <code>'+'</code> складывают числа.</p>
+    <p>Но если бинарный оператор <code>'+'</code> применить к строкам, то он их объединяет в одну:</p>
+    <div id="rml4266dpy" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> s <code class="token operator">=</code> <code class="token string">"моя"</code> <code class="token operator">+</code> <code class="token string">"строка"</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code>s<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// моястрока</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Обратите внимание, если хотя бы один операнд является строкой, то второй будет также преобразован в строку.</p>
+    <p>Например:</p>
+    <div id="v55qily80y" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'1'</code> <code class="token operator">+</code> <code class="token number">2</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// "12"</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token string">'1'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// "21"</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Как видите, не важно, первый или второй операнд является строкой.</p>
+    <p>Вот пример посложнее:</p>
+    <div id="rqmspann11" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code><code class="token number">2</code> <code class="token operator">+</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token string">'1'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// будет "41", а не "221"</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Здесь операторы работают один за другим. Первый <code>+</code> складывает два числа и возвращает <code>4</code>, затем следующий <code>+</code> объединяет результат со строкой, производя действие <code>4 + '1' = '41'</code>.</p>
+    <p>Сложение и преобразование строк — это особенность бинарного плюса <code>+</code>. Другие арифметические операторы работают только с числами и всегда преобразуют операнды в числа.</p>
+    <p>Например, вычитание и деление:</p>
+    <div id="x6m2e1ms3k" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">6</code> <code class="token operator">-</code> <code class="token string">'2'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 4, '2' приводится к числу</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token string">'6'</code> <code class="token operator">/</code> <code class="token string">'2'</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3, оба операнда приводятся к числам</code></code></pre>
+            </div>
+          </div>
+
+          </div><h2><a class="main__anchor" name="privedenie-k-chislu-unarnyy" href="#privedenie-k-chislu-unarnyy">Приведение к числу, унарный +</a></h2><p>Плюс <code>+</code> существует в двух формах: бинарной, которую мы использовали выше, и унарной.</p>
+    <p>Унарный, то есть применённый к одному значению, плюс <code>+</code> ничего не делает с числами. Но если операнд не число, унарный плюс преобразует его в число.</p>
+    <p>Например:</p>
+    <div id="5oexlr689y" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:7,&quot;end&quot;:9}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// Не влияет на числа</code>
+    <code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">+</code>x <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1</code>
+
+    <code class="token keyword">let</code> y <code class="token operator">=</code> <code class="token operator">-</code><code class="token number">2</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">+</code>y <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// -2</code>
+
+    <em class="block-highlight"><code class="token comment">// Преобразует не числа в числа</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">+</code><code class="token boolean">true</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">+</code><code class="token string">""</code> <code class="token punctuation">)</code><code class="token punctuation">;</code>   <code class="token comment">// 0</code></em></code></pre>
+            </div>
+          </div>
+
+          </div><p>На самом деле это то же самое, что и <code>Number(...)</code>, только короче.</p>
+    <p>Необходимость преобразовывать строки в числа возникает очень часто. Например, обычно значения полей HTML-формы — это строки. А что, если их нужно, к примеру, сложить?</p>
+    <p>Бинарный плюс сложит их как строки:</p>
+    <div id="s33ijx5z3d" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> apples <code class="token operator">=</code> <code class="token string">"2"</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> oranges <code class="token operator">=</code> <code class="token string">"3"</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> apples <code class="token operator">+</code> oranges <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// "23", так как бинарный плюс объединяет строки</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Поэтому используем унарный плюс, чтобы преобразовать к числу:</p>
+    <div id="ya55lqx85s" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:4}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> apples <code class="token operator">=</code> <code class="token string">"2"</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> oranges <code class="token operator">=</code> <code class="token string">"3"</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token comment">// оба операнда предварительно преобразованы в числа</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">+</code>apples <code class="token operator">+</code> <code class="token operator">+</code>oranges <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 5</code></em>
+
+    <code class="token comment">// более длинный вариант</code>
+    <code class="token comment">// alert( Number(apples) + Number(oranges) ); // 5</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>С точки зрения математики, такое изобилие плюсов выглядит странным. Но с точки зрения программиста тут нет ничего особенного: сначала выполнятся унарные плюсы, которые приведут строки к числам, а затем бинарный <code>'+'</code> их сложит.</p>
+    <p>Почему унарные плюсы выполнились до бинарного сложения? Как мы сейчас увидим, дело в их приоритете.</p>
+    <h2><a class="main__anchor" name="prioritet-operatorov" href="#prioritet-operatorov">Приоритет операторов</a></h2><p>В том случае, если в выражении есть несколько операторов – порядок их выполнения определяется <em>приоритетом</em>, или, другими словами, существует определённый порядок выполнения операторов.</p>
+    <p>Из школы мы знаем, что умножение в выражении <code>1 + 2 * 2</code> выполнится раньше сложения. Это как раз и есть «приоритет». Говорят, что умножение имеет более высокий приоритет, чем сложение.</p>
+    <p>Скобки важнее, чем приоритет, так что, если мы не удовлетворены порядком по умолчанию, мы можем использовать их, чтобы изменить приоритет. Например, написать <code>(1 + 2) * 2</code>.</p>
+    <p>В JavaScript много операторов. Каждый оператор имеет соответствующий номер приоритета. Тот, у кого это число больше, – выполнится раньше. Если приоритет одинаковый, то порядок выполнения – слева направо.</p>
+    <p>Отрывок из <a href="https://developer.mozilla.org/ru/docs/Web/JavaScript/Reference/Operators/Operator_Precedence">таблицы приоритетов</a> (нет необходимости всё запоминать, обратите внимание, что приоритет унарных операторов выше, чем соответствующих бинарных):</p>
+    <table>
+    <thead>
+    <tr>
+    <th>Приоритет</th>
+    <th>Название</th>
+    <th>Обозначение</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <td>…</td>
+    <td>…</td>
+    <td>…</td>
+    </tr>
+    <tr>
+    <td>15</td>
+    <td>унарный плюс</td>
+    <td><code>+</code></td>
+    </tr>
+    <tr>
+    <td>15</td>
+    <td>унарный минус</td>
+    <td><code>-</code></td>
+    </tr>
+    <tr>
+    <td>14</td>
+    <td>возведение в степень</td>
+    <td><code>**</code></td>
+    </tr>
+    <tr>
+    <td>13</td>
+    <td>умножение</td>
+    <td><code>*</code></td>
+    </tr>
+    <tr>
+    <td>13</td>
+    <td>деление</td>
+    <td><code>/</code></td>
+    </tr>
+    <tr>
+    <td>12</td>
+    <td>сложение</td>
+    <td><code>+</code></td>
+    </tr>
+    <tr>
+    <td>12</td>
+    <td>вычитание</td>
+    <td><code>-</code></td>
+    </tr>
+    <tr>
+    <td>…</td>
+    <td>…</td>
+    <td>…</td>
+    </tr>
+    <tr>
+    <td>2</td>
+    <td>присваивание</td>
+    <td><code>=</code></td>
+    </tr>
+    <tr>
+    <td>…</td>
+    <td>…</td>
+    <td>…</td>
+    </tr>
+    </tbody>
+    </table>
+    <p>Так как «унарный плюс» имеет приоритет <code>15</code>, который выше, чем <code>12</code> у «сложения» (бинарный плюс), то в выражении <code>"+apples + +oranges"</code> сначала выполнятся унарные плюсы, а затем сложение.</p>
+    <h2><a class="main__anchor" name="prisvaivanie" href="#prisvaivanie">Присваивание</a></h2><p>Давайте отметим, что в таблице приоритетов также есть оператор присваивания <code>=</code>. У него один из самых низких приоритетов: <code>2</code>.</p>
+    <p>Именно поэтому, когда переменной что-либо присваивают, например, <code>x = 2 * 2 + 1</code>, то сначала выполнится арифметика, а уже затем произойдёт присваивание <code>=</code> с сохранением результата в <code>x</code>.</p>
+    <div id="swudfc4fe3" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> x <code class="token operator">=</code> <code class="token number">2</code> <code class="token operator">*</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token number">1</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> x <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 5</code></code></pre>
+            </div>
+          </div>
+
+          </div><h3><a class="main__anchor" name="prisvaivanie-vozvraschaet-znachenie" href="#prisvaivanie-vozvraschaet-znachenie">Присваивание = возвращает значение</a></h3><p>Тот факт, что <code>=</code> является оператором, а не «магической» конструкцией языка, имеет интересные последствия.</p>
+    <p>Большинство операторов в JavaScript возвращают значение. Для некоторых это очевидно, например сложение <code>+</code> или умножение <code>*</code>. Но и оператор присваивания не является исключением.</p>
+    <p>Вызов <code>x = value</code> записывает <code>value</code> в <code>x</code> <em>и возвращает его</em>.</p>
+    <p>Благодаря этому присваивание можно использовать как часть более сложного выражения:</p>
+    <div id="8mm68l341b" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;end&quot;:3}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> b <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+
+    <em class="block-highlight"><code class="token keyword">let</code> c <code class="token operator">=</code> <code class="token number">3</code> <code class="token operator">-</code> <code class="token punctuation">(</code>a <code class="token operator">=</code> b <code class="token operator">+</code> <code class="token number">1</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> a <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> c <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>В примере выше результатом <code>(a = b + 1)</code> будет значение, которое присваивается переменной <code>a</code> (то есть <code>3</code>). Потом оно используется для дальнейших вычислений.</p>
+    <p>Забавное применение присваивания, не так ли? Нам нужно понимать, как это работает, потому что иногда это можно увидеть в JavaScript-библиотеках.</p>
+    <p>Однако писать самим в таком стиле не рекомендуется. Такие трюки не сделают ваш код более понятным или читабельным.</p>
+    <h3><a class="main__anchor" name="prisvaivanie-po-tsepochke" href="#prisvaivanie-po-tsepochke">Присваивание по цепочке</a></h3><p>Рассмотрим ещё одну интересную возможность: цепочку присваиваний.</p>
+    <div id="whun81jta3" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:2,&quot;end&quot;:2}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> a<code class="token punctuation">,</code> b<code class="token punctuation">,</code> c<code class="token punctuation">;</code>
+
+    <em class="block-highlight">a <code class="token operator">=</code> b <code class="token operator">=</code> c <code class="token operator">=</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">;</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> a <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 4</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> b <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 4</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> c <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 4</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Такое присваивание работает справа налево. Сначала вычисляется самое правое выражение <code>2 + 2</code>, и затем результат присваивается переменным слева: <code>c</code>, <code>b</code> и <code>a</code>. В конце у всех переменных будет одно значение.</p>
+    <p>Опять-таки, чтобы код читался легче, лучше разделять подобные конструкции на несколько строчек:</p>
+    <div id="ryphyfjgmq" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript">c <code class="token operator">=</code> <code class="token number">2</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    b <code class="token operator">=</code> c<code class="token punctuation">;</code>
+    a <code class="token operator">=</code> c<code class="token punctuation">;</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Польза от такого стиля особенно ощущается при быстром просмотре кода.</p>
+    <h2><a class="main__anchor" name="sokraschyonnaya-arifmetika-s-prisvaivaniem" href="#sokraschyonnaya-arifmetika-s-prisvaivaniem">Сокращённая арифметика с присваиванием</a></h2><p>Часто нужно применить оператор к переменной и сохранить результат в ней же.</p>
+    <p>Например:</p>
+    <div id="0oot48qvpx" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> n <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    n <code class="token operator">=</code> n <code class="token operator">+</code> <code class="token number">5</code><code class="token punctuation">;</code>
+    n <code class="token operator">=</code> n <code class="token operator">*</code> <code class="token number">2</code><code class="token punctuation">;</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Эту запись можно укоротить при помощи совмещённых операторов <code>+=</code> и <code>*=</code>:</p>
+    <div id="wrqdhd86cs" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> n <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    n <code class="token operator">+=</code> <code class="token number">5</code><code class="token punctuation">;</code> <code class="token comment">// теперь n = 7 (работает как n = n + 5)</code>
+    n <code class="token operator">*=</code> <code class="token number">2</code><code class="token punctuation">;</code> <code class="token comment">// теперь n = 14 (работает как n = n * 2)</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> n <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 14</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Подобные краткие формы записи существуют для <strong>всех</strong> арифметических и побитовых операторов: <code>/=</code>, <code>-=</code>, <code>**=</code> и так далее.</p>
+    <p>Вызов с присваиванием имеет в точности такой же приоритет, как обычное присваивание, то есть выполнится после большинства других операций:</p>
+    <div id="qqmck039et" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> n <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+
+    n <code class="token operator">*=</code> <code class="token number">3</code> <code class="token operator">+</code> <code class="token number">5</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> n <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 16  (сначала выполнится правая часть, выражение идентично n *= 8)</code></code></pre>
+            </div>
+          </div>
+
+          </div><h2><a class="main__anchor" name="inkrement-dekrement" href="#inkrement-dekrement">Инкремент/декремент</a></h2><!-- Не получается использовать -- в заголовке, так как парсер превращает -- в длинное тире – -->
+    <p>Одной из наиболее частых числовых операций является увеличение или уменьшение на единицу.</p>
+    <p>Для этого существуют даже специальные операторы:</p>
+    <ul>
+    <li>
+    <p><strong>Инкремент</strong> <code>++</code> увеличивает переменную на 1:</p>
+    <div id="4rdd6vtbix" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    counter<code class="token operator">++</code><code class="token punctuation">;</code>        <code class="token comment">// работает как counter = counter + 1, просто запись короче</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> counter <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    <li>
+    <p><strong>Декремент</strong> <code>--</code> уменьшает переменную на 1:</p>
+    <div id="0ws18enzcw" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    counter<code class="token operator">--</code><code class="token punctuation">;</code>        <code class="token comment">// работает как counter = counter - 1, просто запись короче</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> counter <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    </ul>
+    <div class="important important_warn">
+                <div class="important__header"><span class="important__type">Важно:</span></div>
+                <div class="important__content"><p>Инкремент/декремент можно применить только к переменной. Попытка использовать его на значении, типа 5++, приведёт к ошибке.</p>
+    </div></div>
+    <p>Операторы <code>++</code> и <code>--</code> могут быть расположены не только после, но и до переменной.</p>
+    <ul>
+    <li>Когда оператор идёт после переменной — это «постфиксная форма»: <code>counter++</code>.</li>
+    <li>«Префиксная форма» — это когда оператор идёт перед переменной: <code>++counter</code>.</li>
+    </ul>
+    <p>Обе эти инструкции делают одно и то же: увеличивают <code>counter</code> на <code>1</code>.</p>
+    <p>Есть ли разница между ними? Да, но увидеть её мы сможем, только если будем использовать значение, которое возвращают <code>++/--</code>.</p>
+    <p>Давайте проясним этот момент. Как мы знаем, все операторы возвращают значение. Операторы инкремента/декремента не исключение. Префиксная форма возвращает новое значение, в то время как постфиксная форма возвращает старое (до увеличения/уменьшения числа).</p>
+    <p>Чтобы увидеть разницу, вот небольшой пример:</p>
+    <div id="k12vcslwy5" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:14}]}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token operator">++</code>counter<code class="token punctuation">;</code> <code class="token comment">// (*)</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">2</em></code></code></pre>
+            </div>
+          </div>
+
+          </div><p>В строке <code>(*)</code> <em>префиксная</em> форма <code>++counter</code> увеличивает <code>counter</code> и возвращает новое значение <code>2</code>. Так что <code>alert</code> покажет <code>2</code>.</p>
+    <p>Теперь посмотрим на постфиксную форму:</p>
+    <div id="lpuhv1t497" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:3,&quot;cols&quot;:[{&quot;start&quot;:13,&quot;end&quot;:14}]}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token keyword">let</code> a <code class="token operator">=</code> counter<code class="token operator">++</code><code class="token punctuation">;</code> <code class="token comment">// (*) меняем ++counter на counter++</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// <em class="inline-highlight">1</em></code></code></pre>
+            </div>
+          </div>
+
+          </div><p>В строке <code>(*)</code> <em>постфиксная</em> форма <code>counter++</code> также увеличивает <code>counter</code>, но возвращает <em>старое</em> значение (которое было до увеличения). Так что <code>alert</code> покажет <code>1</code>.</p>
+    <p>Подведём итоги:</p>
+    <ul>
+    <li>
+    <p>Если результат оператора не используется, а нужно только увеличить/уменьшить переменную, тогда без разницы, какую форму использовать:</p>
+    <div id="1fln90t7rg" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    counter<code class="token operator">++</code><code class="token punctuation">;</code>
+    <code class="token operator">++</code>counter<code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> counter <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2, обе строки сделали одно и то же</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    <li>
+    <p>Если хочется тут же использовать результат, то нужна префиксная форма:</p>
+    <div id="qtjilhrgjx" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token operator">++</code>counter <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 1</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    <li>
+    <p>Если нужно увеличить и при этом получить значение переменной <em>до увеличения</em> – нужна постфиксная форма:</p>
+    <div id="g0wdmhds9" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">0</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> counter<code class="token operator">++</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 0</code></code></pre>
+            </div>
+          </div>
+
+          </div></li>
+    </ul>
+    <div class="important important_smart">
+                <div class="important__header"><span class="important__type">Инкремент/декремент можно использовать в любых выражениях</span></div>
+                <div class="important__content"><p>Операторы <code>++/--</code> могут также использоваться внутри выражений. Их приоритет выше, чем у большинства других арифметических операций.</p>
+    <p>Например:</p>
+    <div id="rmbmfsj1c8" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">*</code> <code class="token operator">++</code>counter <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 4</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Сравните с:</p>
+    <div id="o8tin96hes" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">*</code> counter<code class="token operator">++</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 2, потому что counter++ возвращает "старое" значение</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Хотя технически здесь всё в порядке, такая запись обычно делает код менее читабельным. Одна строка выполняет множество действий – нехорошо.</p>
+    <p>При беглом чтении кода можно с лёгкостью пропустить такой <code>counter++</code>, и будет неочевидно, что переменная увеличивается.</p>
+    <p>Лучше использовать стиль «одна строка – одно действие»:</p>
+    <div id="wxor96m09y" data-trusted="1" class="code-example" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> counter <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">;</code>
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token number">2</code> <code class="token operator">*</code> counter <code class="token punctuation">)</code><code class="token punctuation">;</code>
+    counter<code class="token operator">++</code><code class="token punctuation">;</code></code></pre>
+            </div>
+          </div>
+
+          </div></div></div>
+    <h2><a class="main__anchor" name="pobitovye-operatory" href="#pobitovye-operatory">Побитовые операторы</a></h2><p>Побитовые операторы работают с 32-разрядными целыми числами (при необходимости приводят к ним), на уровне их внутреннего двоичного представления.</p>
+    <p>Эти операторы не являются чем-то специфичным для JavaScript, они поддерживаются в большинстве языков программирования.</p>
+    <p>Поддерживаются следующие побитовые операторы:</p>
+    <ul>
+    <li>AND(и) ( <code>&amp;</code> )</li>
+    <li>OR(или) ( <code>|</code> )</li>
+    <li>XOR(побитовое исключающее или) ( <code>^</code> )</li>
+    <li>NOT(не) ( <code>~</code> )</li>
+    <li>LEFT SHIFT(левый сдвиг) ( <code>&lt;&lt;</code> )</li>
+    <li>RIGHT SHIFT(правый сдвиг) ( <code>&gt;&gt;</code> )</li>
+    <li>ZERO-FILL RIGHT SHIFT(правый сдвиг с заполнением нулями) ( <code>&gt;&gt;&gt;</code> )</li>
+    </ul>
+    <p>Они используются редко, когда возникает необходимость оперировать с числами на очень низком (побитовом) уровне. В ближайшем времени они нам не понадобятся, так как веб-разработчики редко к ним прибегают, хотя в некоторых сферах (например, в криптографии) они полезны.</p>
+    <p>Вы можете прочитать о них в главе <a href="/bitwise-operators">Побитовые операторы</a>, когда возникнет реальная необходимость.</p>
+    <h2><a class="main__anchor" name="operator-zapyataya" href="#operator-zapyataya">Оператор «запятая»</a></h2><p>Оператор «запятая» (<code>,</code>) редко применяется и является одним из самых необычных. Иногда он используется для написания более короткого кода, поэтому нам нужно знать его, чтобы понимать, что при этом происходит.</p>
+    <p>Оператор «запятая» предоставляет нам возможность вычислять несколько выражений, разделяя их запятой <code>,</code>. Каждое выражение выполняется, но возвращается результат только последнего.</p>
+    <p>Например:</p>
+    <div id="uf4kwh2tfc" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:0,&quot;end&quot;:0}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><em class="block-highlight"><code class="token keyword">let</code> a <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token number">1</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">,</code> <code class="token number">3</code> <code class="token operator">+</code> <code class="token number">4</code><code class="token punctuation">)</code><code class="token punctuation">;</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> a <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 7 (результат вычисления 3 + 4)</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Первое выражение <code>1 + 2</code> выполняется, а результат отбрасывается. Затем идёт <code>3 + 4</code>, выражение выполняется и возвращается результат.</p>
+    <div class="important important_smart">
+                <div class="important__header"><span class="important__type">Запятая имеет очень низкий приоритет</span></div>
+                <div class="important__content"><p>Пожалуйста, обратите внимание, что оператор <code>,</code> имеет очень низкий приоритет, ниже <code>=</code>, поэтому скобки важны в приведённом выше примере.</p>
+    <p>Попробуйте запустить следующий код (<strong>строгий режим <code>"use strict"</code> в примере ниже не используется, иначе мы бы получили ошибку</strong>):</p>
+    <div id="j0edy4pggt" data-trusted="1" class="code-example" data-no-strict="1" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="toolbar codebox__toolbar">
+              <div class="toolbar__tool">
+                <a href="#" title="выполнить" data-action="run" class="toolbar__button toolbar__button_run"></a>
+              </div>
+              <div class="toolbar__tool">
+                <a href="#" title="открыть в песочнице" target="_blank" data-action="edit" class="toolbar__button toolbar__button_edit"></a>
+              </div>
+            </div>
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript">a <code class="token operator">=</code> <code class="token number">1</code> <code class="token operator">+</code> <code class="token number">2</code><code class="token punctuation">,</code> <code class="token number">3</code> <code class="token operator">+</code> <code class="token number">4</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code>a<code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Необычный результат, правда? Особенно учитывая то, что оператор <code>,</code> должен «выполнять каждое выражение, но возвращать результат только последнего».</p>
+    <p>Без скобок в <code>a = 1 + 2, 3 + 4</code> сначала выполнится <code>+</code>, суммируя числа в <code>a = 3, 7</code>, затем оператор присваивания <code>=</code> присвоит <code>a = 3</code>, а то, что идёт дальше, будет проигнорировано. Всё так же, как в <code>(a = 1 + 2), 3 + 4</code>.</p>
+    </div></div>
+    <p>Зачем нам оператор, который отбрасывает всё, кроме последнего выражения?</p>
+    <p>Иногда его используют в составе более сложных конструкций, чтобы сделать несколько действий в одной строке.</p>
+    <p>Например:</p>
+    <div id="oc1hx9v41k" data-trusted="1" class="code-example" data-highlight="[{&quot;start&quot;:1,&quot;cols&quot;:[{&quot;start&quot;:5,&quot;end&quot;:28}]}]" data-prism-highlighted="1">
+          <div class="codebox code-example__codebox">
+
+            <div class="codebox__code" data-code="1">
+              <pre class="line-numbers  language-javascript" tabindex="0"><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token comment">// три операции в одной строке</code>
+    <code class="token keyword">for</code> <code class="token punctuation">(</code><em class="inline-highlight">a <code class="token operator">=</code> <code class="token number">1</code><code class="token punctuation">,</code> b <code class="token operator">=</code> <code class="token number">3</code><code class="token punctuation">,</code> c <code class="token operator">=</code> a <code class="token operator">*</code> b</em><code class="token punctuation">;</code> a <code class="token operator">&lt;</code> <code class="token number">10</code><code class="token punctuation">;</code> a<code class="token operator">++</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+     <code class="token operator">...</code>
+    <code class="token punctuation">}</code></code></pre>
+            </div>
+          </div>
+
+          </div><p>Такие трюки используются во многих JavaScript-фреймворках. Вот почему мы упоминаем их. Но обычно они не улучшают читабельность кода, поэтому стоит хорошо подумать, прежде чем их использовать.</p>
+    </div>
 </div>
 
 <script>
     document.addEventListener("DOMContentLoaded", function () {
-        fetch('/pages/header/index.html')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('page_1_1_header').innerHTML = data;
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
             })
-            .catch(error => console.error('Error loading header:', error));
+            .catch((error) => console.error("Error loading header:", error));
     });
 </script>

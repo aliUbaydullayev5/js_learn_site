@@ -1,0 +1,431 @@
+<link
+    rel="stylesheet"
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+/>
+<script
+    defer
+    src="https://cdnjs.cloudflare.com/ajax/libs/mui/5.9.2/mui.min.js"
+    integrity="sha512-1rH8Et+N11lbTPoYO4M4N+AB3ySpft9uHbr+qT4v5F7w2O/OB4UoOHfoHe8ZZLFzUlw8rAWxg2tVchZC/X0qOQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+></script>
+<link rel="stylesheet" href="/styles/global.css" />
+<link rel="stylesheet" href="./style.css" />
+<div id="page_1_1_header"></div>
+
+<div class="container">
+    <div class="main__header-inner">
+        <div class="main__header-group">
+            <ol class="breadcrumbs">
+                <li class="breadcrumbs__item breadcrumbs__item_home">
+                    <a class="breadcrumbs__link" href="/"
+                        ><span class="breadcrumbs__hidden-text"
+                            >Учебник</span
+                        ></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-1">
+                    <a class="breadcrumbs__link" href="/js"
+                        ><span>Язык JavaScript</span></a
+                    >
+                </li>
+                <li class="breadcrumbs__item" id="breadcrumb-2">
+                    <a class="breadcrumbs__link" href="/first-steps"
+                        ><span>Основы JavaScript</span></a
+                    >
+                </li>
+                <script type="application/ld+json">
+                    {
+                        "@context": "https://schema.org",
+                        "@type": "BreadcrumbList",
+                        "itemListElement": [
+                            {
+                                "@type": "ListItem",
+                                "position": 1,
+                                "name": "Учебник",
+                                "item": "https://learn.javascript.ru/"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 2,
+                                "name": "Язык JavaScript",
+                                "item": "https://learn.javascript.ru/js"
+                            },
+                            {
+                                "@type": "ListItem",
+                                "position": 3,
+                                "name": "Основы JavaScript",
+                                "item": "https://learn.javascript.ru/first-steps"
+                            }
+                        ]
+                    }
+                </script>
+            </ol>
+            <div
+                class="updated-at"
+                data-tooltip="Последнее обновление: 9 июля 2022 г."
+            >
+                <div class="updated-at__content">9 июля 2022 г.</div>
+            </div>
+        </div>
+        <h1 class="main__header-title">Стрелочные функции, основы</h1>
+    </div>
+
+    <div itemprop="articleBody">
+        <p>
+            Существует ещё один очень простой и лаконичный синтаксис для
+            создания функций, который часто лучше, чем Function Expression.
+        </p>
+        <p>
+            Он называется «функции-стрелки» или «стрелочные функции» (arrow
+            functions), т.к. выглядит следующим образом:
+        </p>
+        <div
+            id="f2qmo8d9bo"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token function-variable function">func</code> <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token parameter">arg1<code class="token punctuation">,</code> arg2<code class="token punctuation">,</code> <code class="token operator">...</code>argN</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> expression<code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Это создаёт функцию <code>func</code>, которая принимает аргументы
+            <code>arg1..argN</code>, затем вычисляет <code>expression</code> в
+            правой части с их использованием и возвращает результат.
+        </p>
+        <p>Другими словами, это сокращённая версия:</p>
+        <div
+            id="2jzztjmwnc"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token function-variable function">func</code> <code class="token operator">=</code> <code class="token keyword">function</code><code class="token punctuation">(</code><code class="token parameter">arg1<code class="token punctuation">,</code> arg2<code class="token punctuation">,</code> <code class="token operator">...</code>argN</code><code class="token punctuation">)</code> <code class="token punctuation">{</code>
+      <code class="token keyword">return</code> expression<code class="token punctuation">;</code>
+    <code class="token punctuation">}</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>Давайте рассмотрим конкретный пример:</p>
+        <div
+            id="syzvx5ujkt"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token function-variable function">sum</code> <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token parameter">a<code class="token punctuation">,</code> b</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> a <code class="token operator">+</code> b<code class="token punctuation">;</code>
+
+    <code class="token comment">/* Эта стрелочная функция представляет собой более короткую форму:
+
+    let sum = function(a, b) {
+      return a + b;
+    };
+    */</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">sum</code><code class="token punctuation">(</code><code class="token number">1</code><code class="token punctuation">,</code> <code class="token number">2</code><code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Как вы можете видеть, <code>(a, b) =&gt; a + b</code> задаёт
+            функцию, которая принимает два аргумента с именами <code>a</code> и
+            <code>b</code>. И при выполнении она вычисляет выражение
+            <code>a + b</code> и возвращает результат.
+        </p>
+        <ul>
+            <li>
+                <p>
+                    Если у нас только один аргумент, то круглые скобки вокруг
+                    параметров можно опустить, сделав запись ещё короче:
+                </p>
+                <div
+                    id="iyqf8qk1l9"
+                    data-trusted="1"
+                    class="code-example"
+                    data-highlight='[{"start":0,"end":1}]'
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><em class="block-highlight"><code class="token keyword">let</code> <code class="token function-variable function">double</code> <code class="token operator">=</code> <code class="token parameter">n</code> <code class="token operator">=&gt;</code> n <code class="token operator">*</code> <code class="token number">2</code><code class="token punctuation">;</code>
+    <code class="token comment">// примерно тоже что и: let double = function(n) { return n * 2 }</code></em>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">double</code><code class="token punctuation">(</code><code class="token number">3</code><code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 6</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <p>
+                    Если аргументов нет, круглые скобки будут пустыми, но они
+                    должны присутствовать:
+                </p>
+                <div
+                    id="0jekmfnjk3"
+                    data-trusted="1"
+                    class="code-example"
+                    data-prism-highlighted="1"
+                >
+                    <div class="codebox code-example__codebox">
+                        <div class="toolbar codebox__toolbar">
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="выполнить"
+                                    data-action="run"
+                                    class="toolbar__button toolbar__button_run"
+                                ></a>
+                            </div>
+                            <div class="toolbar__tool">
+                                <a
+                                    href="#"
+                                    title="открыть в песочнице"
+                                    target="_blank"
+                                    data-action="edit"
+                                    class="toolbar__button toolbar__button_edit"
+                                ></a>
+                            </div>
+                        </div>
+                        <div class="codebox__code" data-code="1">
+                            <pre
+                                class="line-numbers language-javascript"
+                                tabindex="0"
+                            ><span class="line-numbers-rows"><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token function-variable function">sayHi</code> <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Hello!"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token function">sayHi</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <p>
+            Стрелочные функции можно использовать так же, как и Function
+            Expression.
+        </p>
+        <p>Например, для динамического создания функции:</p>
+        <div
+            id="rb27f9qgsc"
+            data-trusted="1"
+            class="code-example"
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> age <code class="token operator">=</code> <code class="token function">prompt</code><code class="token punctuation">(</code><code class="token string">"Сколько Вам лет?"</code><code class="token punctuation">,</code> <code class="token number">18</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token keyword">let</code> welcome <code class="token operator">=</code> <code class="token punctuation">(</code>age <code class="token operator">&lt;</code> <code class="token number">18</code><code class="token punctuation">)</code> <code class="token operator">?</code>
+      <code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">'Привет!'</code><code class="token punctuation">)</code> <code class="token operator">:</code>
+      <code class="token punctuation">(</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token function">alert</code><code class="token punctuation">(</code><code class="token string">"Здравствуйте!"</code><code class="token punctuation">)</code><code class="token punctuation">;</code>
+
+    <code class="token function">welcome</code><code class="token punctuation">(</code><code class="token punctuation">)</code><code class="token punctuation">;</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <p>
+            Поначалу стрелочные функции могут показаться необычными и даже
+            трудночитаемыми, но это быстро пройдёт по мере того, как глаза
+            привыкнут к этим конструкциям.
+        </p>
+        <p>
+            Они очень удобны для простых однострочных действий, когда лень
+            писать много слов.
+        </p>
+        <h2>
+            <a
+                class="main__anchor"
+                name="mnogostrochnye-strelochnye-funktsii"
+                href="#mnogostrochnye-strelochnye-funktsii"
+                >Многострочные стрелочные функции</a
+            >
+        </h2>
+        <p>
+            Стрелочные функции, которые мы видели до этого, были очень простыми.
+            Они брали аргументы слева от <code>=&gt;</code> и вычисляли и
+            возвращали выражение справа.
+        </p>
+        <p>
+            Иногда нам нужна более сложная функция, с несколькими выражениями и
+            инструкциями. Это также возможно, нужно лишь заключить их в фигурные
+            скобки. При этом важное отличие – в том, что в таких скобках для
+            возврата значения нужно использовать <code>return</code> (как в
+            обычных функциях).
+        </p>
+        <p>Вроде этого:</p>
+        <div
+            id="1kfrnlkf8f"
+            data-trusted="1"
+            class="code-example"
+            data-highlight='[{"start":2,"end":2}]'
+            data-prism-highlighted="1"
+        >
+            <div class="codebox code-example__codebox">
+                <div class="toolbar codebox__toolbar">
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="выполнить"
+                            data-action="run"
+                            class="toolbar__button toolbar__button_run"
+                        ></a>
+                    </div>
+                    <div class="toolbar__tool">
+                        <a
+                            href="#"
+                            title="открыть в песочнице"
+                            target="_blank"
+                            data-action="edit"
+                            class="toolbar__button toolbar__button_edit"
+                        ></a>
+                    </div>
+                </div>
+                <div class="codebox__code" data-code="1">
+                    <pre
+                        class="line-numbers language-javascript"
+                        tabindex="0"
+                    ><span class="line-numbers-rows"><span></span><span></span><span></span><span></span><span></span><span></span></span><code class=" language-javascript"><code class="token keyword">let</code> <code class="token function-variable function">sum</code> <code class="token operator">=</code> <code class="token punctuation">(</code><code class="token parameter">a<code class="token punctuation">,</code> b</code><code class="token punctuation">)</code> <code class="token operator">=&gt;</code> <code class="token punctuation">{</code>  <code class="token comment">// фигурная скобка, открывающая тело многострочной функции</code>
+      <code class="token keyword">let</code> result <code class="token operator">=</code> a <code class="token operator">+</code> b<code class="token punctuation">;</code>
+    <em class="block-highlight">  <code class="token keyword">return</code> result<code class="token punctuation">;</code> <code class="token comment">// если мы используем фигурные скобки, то нам нужно явно указать "return"</code></em>
+    <code class="token punctuation">}</code><code class="token punctuation">;</code>
+
+    <code class="token function">alert</code><code class="token punctuation">(</code> <code class="token function">sum</code><code class="token punctuation">(</code><code class="token number">1</code><code class="token punctuation">,</code> <code class="token number">2</code><code class="token punctuation">)</code> <code class="token punctuation">)</code><code class="token punctuation">;</code> <code class="token comment">// 3</code></code></pre>
+                </div>
+            </div>
+        </div>
+        <div class="important important_smart">
+            <div class="important__header">
+                <span class="important__type">Дальше – больше</span>
+            </div>
+            <div class="important__content">
+                <p>
+                    Здесь мы представили главной целью стрелочных функций
+                    краткость. Но это ещё не всё!
+                </p>
+                <p>
+                    Стрелочные функции обладают и другими интересными
+                    возможностями.
+                </p>
+                <p>
+                    Чтобы изучить их более подробно, нам сначала нужно
+                    познакомиться с некоторыми другими аспектами JavaScript,
+                    поэтому мы вернёмся к стрелочным функциям позже, в главе
+                    <a href="/arrow-functions">Повторяем стрелочные функции</a>.
+                </p>
+                <p>
+                    А пока мы можем использовать их для простых однострочных
+                    действий и колбэков.
+                </p>
+            </div>
+        </div>
+        <h2><a class="main__anchor" name="itogo" href="#itogo">Итого</a></h2>
+        <p>
+            Стрелочные функции очень удобны для простых действий, особенно для
+            однострочных.
+        </p>
+        <p>Они бывают двух типов:</p>
+        <ol>
+            <li>
+                Без фигурных скобок: <code>(...args) =&gt; expression</code> –
+                правая сторона выражения: функция вычисляет его и возвращает
+                результат. Скобки можно не ставить, если аргумент только один:
+                <code>n =&gt; n * 2</code>.
+            </li>
+            <li>
+                С фигурными скобками: <code>(...args) =&gt; { body }</code> –
+                скобки позволяют нам писать несколько инструкций внутри функции,
+                но при этом необходимо явно вызывать <code>return</code>, чтобы
+                вернуть значение.
+            </li>
+        </ol>
+    </div>
+</div>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        fetch("/pages/header/index.html")
+            .then((response) => response.text())
+            .then((data) => {
+                document.getElementById("page_1_1_header").innerHTML = data;
+            })
+            .catch((error) => console.error("Error loading header:", error));
+    });
+</script>
