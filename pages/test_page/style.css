@@ -35,6 +35,7 @@ body {
 }
 .test_page-blocks-area-title {
     font-size: 18px;
+    font-weight: bold;
     margin-bottom: 10px;
     color: #b20000;
 }
