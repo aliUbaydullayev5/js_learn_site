@@ -48,6 +48,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.appendChild(createElementFromHTML(data))
             }
 
+            currentPage = intersection(currentPage, pageArr)[0]
+
             if (pageArr.findIndex((e) => e == currentPage) == 0) {
                 document.getElementById('last_button').style.display = 'none'
             } else if (pageArr.findIndex((e) => e == currentPage) == 21) {
