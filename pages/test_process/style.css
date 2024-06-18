@@ -71,7 +71,16 @@ body {
     border: 3px solid #eee;
     border-radius: 10px;
 }
-
+@media screen and (max-width: 600px) {
+    .test_process_variant_block {
+        border: 2px solid #eee;
+        border-radius: 7px;
+        padding: 10px;
+    }
+    .container{
+        padding: 10px !important;
+    }
+}
 .test_process_variant_block_title {
 }
 
@@ -166,4 +175,17 @@ body {
 .test_block-list {
     padding: 5px;
     margin: 5px;
+}
+
+
+.test_process_variant_block_code{
+    background-color: #b6b6b633;
+    padding: 4px 10px;
+    border-radius: 4px;
+    margin: 10px 0;
+
+}
+
+.test_process_variant_block_code > div{
+
 }
