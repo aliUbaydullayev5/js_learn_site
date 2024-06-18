@@ -397,3 +397,7 @@ const tests = [
     ],
   },
 ];
+
+// .split("")
+// .map((mp) => `<span>${mp}</span>`)
+// .join("")}

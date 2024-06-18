@@ -120,3 +120,49 @@ body {
 .test_process-input_label {
     cursor: pointer;
 }
+
+.answer_time {
+}
+
+.answer_time-title {
+    font:
+        700 32px / 40px BlinkMacSystemFont,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    margin: 0 auto 12px;
+    padding: 0;
+    text-align: center;
+}
+.test_block-title {
+    font-size: 20px;
+}
+.answer_time-test-green {
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 3px;
+}
+.answer_time-test-red {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 3px;
+}
+.answer_time-test-green-main {
+    border: 2px solid green;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0;
+}
+.answer_time-test-red-main {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px 0;
+}
+.test_block-list {
+    padding: 5px;
+    margin: 5px;
+}

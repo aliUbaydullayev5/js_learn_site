@@ -19,7 +19,7 @@
     <div class="test_process-line-block" id="test_process-line-block"></div>
 </div>
 
-<div class="container nocopy">
+<div class="container nocopy" id="test_time">
     <div class="test_process_variant_block">
         <div id="test_process_variant_block"></div>
     </div>
@@ -27,7 +27,10 @@
         <button class="next_button" id="next_button">Продолжить</button>
     </div>
 </div>
-
+<div class="container nocopy answer_time" id="answer_time">
+    <p class="answer_time-title">Язык JavaScript</p>
+    <div id="answer_time_map_area"></div>
+</div>
 <script src="./tests.js"></script>
 <script>
     const test_processLineBlockTag = document.getElementById(
@@ -41,6 +44,11 @@
         "test_process_variant_block_button",
     );
     const next_buttonTag = document.getElementById("next_button");
+    const test_timeTag = document.getElementById("test_time");
+    const answer_timeTag = document.getElementById("answer_time");
+    const answer_time_map_areaTag = document.getElementById(
+        "answer_time_map_area",
+    );
 
     document.addEventListener("DOMContentLoaded", function () {
         fetch("/pages/header/index.html")
@@ -53,15 +61,67 @@
 
     let current_quation = 0;
     let answers = [];
+    let test;
 
     let current_answer = [];
+
+    function asnwerRenderFunc() {
+        answer_time_map_areaTag.innerHTML = tests
+            .map((mapItem) => {
+                let userAnswerInfo = answers.find(
+                    (answer) => answer.quationId == mapItem.id,
+                );
+                let userAnswers = userAnswerInfo ? userAnswerInfo.answer : [];
+                let correctAnswers = mapItem.variants
+                    .filter((variant) => variant.iscorrect)
+                    .map((variant) => variant.id);
+                let isUserAnswerCorrect = userAnswers.some((answer) =>
+                    correctAnswers.includes(answer),
+                );
+
+                let fd = mapItem.variants
+                    .map((variant) => {
+                        let isCorrect = variant.iscorrect;
+                        let isSelectedByUser = userAnswers.includes(variant.id);
+                        let answerClass = "";
+
+                        if (isSelectedByUser && isCorrect) {
+                            answerClass = "answer_time-test-green";
+                        } else if (isSelectedByUser && !isCorrect) {
+                            answerClass = "answer_time-test-red";
+                        }
+
+                        return `<div class='test_block-list ${answerClass}'>
+                            ${variant.text
+                                .split("")
+                                .map((char) => `<span>${char}</span>`)
+                                .join("")}
+                        </div>`;
+                    })
+                    .join("");
+
+                let questionClass = isUserAnswerCorrect
+                    ? "answer_time-test-green-main"
+                    : "answer_time-test-red-main";
+
+                return `
+                <div class='${questionClass}'>
+                    <div class='test_block-title'>${mapItem.quation}</div>
+                    <div class='test_block-lists'>
+                        ${fd}
+                    </div>
+                </div>
+            `;
+            })
+            .join("");
+    }
 
     function lineRenderFunc() {
         test_processLineBlockTag.innerHTML = tests
             .map((mapItem, mapIndex) => {
                 return `<div class='test_processLineBlocks'>
-                <div class='test_processLineBlocks_inset ${mapIndex == current_quation && "test_processLineBlocks_inset_blue"}'>${mapIndex + 1}</div>
-              </div>`;
+                    <div class='test_processLineBlocks_inset ${mapIndex == current_quation && "test_processLineBlocks_inset_blue"}'>${mapIndex + 1}</div>
+                  </div>`;
             })
             .join("");
     }
@@ -73,35 +133,90 @@
             .map((mapItem, mapindex) => {
                 console.log("dasdasd: ", mapItem.type == "checkbox", mapItem);
                 return `
-            <div class='test_process_variant_block_title'>${mapItem?.quation}</div>
-            <div class='test_processLineBlocks_lists'>
-              ${mapItem.variants
-                  .map((insetMapItem) => {
-                      return `<div class='test_processLineBlocks_list'>
-                      <input id='${insetMapItem.id}' type='${mapItem.type}' name='${mapItem.id}' class='test_process-input_${mapItem.type}' />
-                    <label class='test_process-input_label' for='${insetMapItem.id}'>${insetMapItem.text
-                        .split("")
-                        .map((mp) => `<span>${mp}</span>`)
-                        .join("")}</label>
-                </div>`;
-                  })
-                  .join("")}
+                <div class='test_process_variant_block_title'>${mapItem?.quation}</div>
+                <div class='test_processLineBlocks_lists'>
+                  ${mapItem.variants
+                      .map((insetMapItem) => {
+                          let ans = [];
+                          return `<div class='test_processLineBlocks_list'>
+                            <input onchange='changeAnsFunc(this, "${mapItem.id}", "${insetMapItem.id}")' id='inputEventId' type='${mapItem.type}' name='${mapItem.id}' class='test_process-input_${mapItem.type}' />
+                            <label class='test_process-input_label' for='${insetMapItem.id}'>${insetMapItem.text
+                                .split("")
+                                .map((mp) => `<span>${mp}</span>`)
+                                .join("")}</label>
+                    </div>`;
+                      })
+                      .join("")}
 
-            </div>
-          `;
+                </div>
+              `;
             });
     }
+
+    // console.log(
+    //     "dasjkhdgasd: ",
+    //     insetMapItem.id,
+    //     document.getElementById(insetMapItem.id),
+    // );
+    //
+
+    test_timeTag.style.display = "block";
+    answer_timeTag.style.display = "none";
 
     next_buttonTag.addEventListener("click", () => {
         if (current_quation <= 13) {
             current_quation++;
             quationrenderFunc();
             lineRenderFunc();
+        } else if (current_quation >= 14) {
+            // test_timeTag
+            // answer_timeTag
+            test_timeTag.style.display = "none";
+            answer_timeTag.style.display = "block";
+            asnwerRenderFunc();
         }
+        console.log("fdasfdsfs: ", current_quation);
     });
 
     function buttonRenderFunc() {}
     buttonRenderFunc();
     quationrenderFunc();
     lineRenderFunc();
+
+    function changeAnsFunc(e, quationId, answerId) {
+        console.log("dasdasd: ", e.checked, quationId, answerId);
+        test = e.checked;
+
+        if (
+            answers.length &&
+            answers.filter((fv) => fv?.quationId === quationId)[0]
+                ?.quationId === quationId
+        ) {
+            answers = answers.map((mapItem) => {
+                if (mapItem.quationId === quationId) {
+                    if (e.checked) {
+                        return {
+                            ...mapItem,
+                            answer: [...mapItem.answer, answerId],
+                        };
+                    } else {
+                        return {
+                            ...mapItem,
+                            answer: mapItem.answer.filter(
+                                (fv) => fv !== answerId,
+                            ),
+                        };
+                    }
+                } else {
+                    return mapItem;
+                }
+            });
+        } else {
+            answers = [
+                ...answers,
+                { quationId: quationId, answer: [answerId] },
+            ];
+        }
+        console.log("djashdgas: ", answers);
+    }
 </script>
