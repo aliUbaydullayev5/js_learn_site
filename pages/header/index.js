@@ -61,11 +61,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
             document.getElementById('last_button').addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) - 1]
-                location.href = `/pages/theme_pages/${pageStr}`
+                location.href = `/pages/theme_pages/${pageStr}/index.html`
             })
             document.getElementById('next_button').addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) + 1]
-                location.href = `/pages/theme_pages/${pageStr}`
+                location.href = `/pages/theme_pages/${pageStr}/index.html`
             })
 
         })
