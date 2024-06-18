@@ -1,0 +1,23 @@
+
+.next_button{
+    position: fixed;
+    top: 50%;
+    right: 10px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background: #000c;
+    border-radius: 5px;
+}
+.last_button{
+    position: fixed;
+    top: 50%;
+    left: 10px;
+    transform: translate(0, -50%);
+    cursor: pointer;
+    background: #000c;
+    border-radius: 5px;
+}
+
+.icon_style span{
+    font-size: 50px;
+}

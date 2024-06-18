@@ -1,8 +1,69 @@
-document.addEventListener("DOMContentLoaded", function() {
-    fetch('./pages/header/index.html')
-        .then(response => response.text())
-        .then(data => {
-            document.getElementById('header').innerHTML = data;
+console.log('daskdhgasjd')
+document.addEventListener("DOMContentLoaded", function () {
+    fetch("/pages/next_last_button/index.html")
+        .then((response) => response.text())
+        .then((data) => {
+            // document.getElementById("page_1_1_header").innerHTML = data;
+            let pageArr = [
+                'page_1_1',
+                'page_1_2',
+                'page_1_3',
+                'page_1_4',
+                'page_2_1',
+                'page_2_2',
+                'page_2_3',
+                'page_2_4',
+                'page_2_5',
+                'page_2_6',
+                'page_2_7',
+                'page_2_8',
+                'page_2_9',
+                'page_2_10',
+                'page_2_11',
+                'page_2_12',
+                'page_2_13',
+                'page_2_14',
+                'page_2_15',
+                'page_2_16',
+                'page_2_17',
+                'page_2_18',
+            ]
+            let currentPage = window.location.href.split('/').filter(Boolean).slice(-1)[0]
+
+            // 0 21
+
+            function createElementFromHTML(htmlString) {
+                var div = document.createElement('div');
+                div.innerHTML = htmlString.trim();
+                return div.firstChild;
+            }
+
+            // let next_buttonTag = document.getElementById('next_button')
+            // let last_buttonTag = document.getElementById('last_button')
+
+            console.log('dsakudahs: ', pageArr.findIndex((e) => e == currentPage))
+
+            if (pageArr.findIndex((e) => e == currentPage) >= 0) {
+                document.body.appendChild(createElementFromHTML(data))
+            }
+
+
+            if (pageArr.findIndex((e) => e == currentPage) == 0) {
+                last_button.style.display = 'none'
+            } else if (pageArr.findIndex((e) => e == currentPage) == 21) {
+                next_button.style.display = 'none'
+            }
+
+            last_button.addEventListener('click', () => {
+                let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) - 1]
+                location.href = `/pages/theme_pages/${pageStr}`
+            })
+            next_button.addEventListener('click', () => {
+                let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) + 1]
+                location.href = `/pages/theme_pages/${pageStr}`
+
+            })
+
         })
-        .catch(error => console.error('Error loading header:', error));
+        .catch((error) => console.error("Error loading header:", error));
 });
