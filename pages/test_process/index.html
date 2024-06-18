@@ -14,9 +14,34 @@
 
 <div id="test_process_header"></div>
 
-<div class="container"></div>
+<div class="container nocopy">
+    <div class="test_process-title">Язык JavaScript</div>
+    <div class="test_process-line-block" id="test_process-line-block"></div>
+</div>
 
+<div class="container nocopy">
+    <div class="test_process_variant_block">
+        <div id="test_process_variant_block"></div>
+    </div>
+    <div style="display: flex; margin: 20px auto">
+        <button class="next_button" id="next_button">Продолжить</button>
+    </div>
+</div>
+
+<script src="./tests.js"></script>
 <script>
+    const test_processLineBlockTag = document.getElementById(
+        "test_process-line-block",
+    );
+    const test_process_variant_blockTag = document.getElementById(
+        "test_process_variant_block",
+    );
+
+    const test_process_variant_block_buttonTag = document.getElementById(
+        "test_process_variant_block_button",
+    );
+    const next_buttonTag = document.getElementById("next_button");
+
     document.addEventListener("DOMContentLoaded", function () {
         fetch("/pages/header/index.html")
             .then((response) => response.text())
@@ -26,34 +51,57 @@
             .catch((error) => console.error("Error loading header:", error));
     });
 
+    let current_quation = 0;
+    let answers = [];
 
-    const tests = [
-      [
-        id: '1',
-        quation: '',
-        code: false,
-        variants: [
-          {
-            id: '1_1',
-            text: '',
-            iscorrect: false
-          },
-          {
-            id: '1_1',
-            text: '',
-            iscorrect: false
-          },
-          {
-            id: '1_1',
-            text: '',
-            iscorrect: false
-          },
-          {
-            id: '1_1',
-            text: '',
-            iscorrect: false
-          }
-        ]
-      ]
-    ]
+    let current_answer = [];
+
+    function lineRenderFunc() {
+        test_processLineBlockTag.innerHTML = tests
+            .map((mapItem, mapIndex) => {
+                return `<div class='test_processLineBlocks'>
+                <div class='test_processLineBlocks_inset ${mapIndex == current_quation && "test_processLineBlocks_inset_blue"}'>${mapIndex + 1}</div>
+              </div>`;
+            })
+            .join("");
+    }
+
+    function quationrenderFunc() {
+        test_process_variant_blockTag.innerHTML = tests
+
+            .filter((f, i) => i == current_quation)
+            .map((mapItem, mapindex) => {
+                console.log("dasdasd: ", mapItem.type == "checkbox", mapItem);
+                return `
+            <div class='test_process_variant_block_title'>${mapItem?.quation}</div>
+            <div class='test_processLineBlocks_lists'>
+              ${mapItem.variants
+                  .map((insetMapItem) => {
+                      return `<div class='test_processLineBlocks_list'>
+                      <input type='${mapItem.type}' name='${mapItem.id}' class='test_process-input_${mapItem.type}' />
+                    ${insetMapItem.text
+                        .split("")
+                        .map((mp) => `<span>${mp}</span>`)
+                        .join("")}
+                </div>`;
+                  })
+                  .join("")}
+
+            </div>
+          `;
+            });
+    }
+
+    next_buttonTag.addEventListener("click", () => {
+        if (current_quation <= 13) {
+            current_quation++;
+            quationrenderFunc();
+            lineRenderFunc();
+        }
+    });
+
+    function buttonRenderFunc() {}
+    buttonRenderFunc();
+    quationrenderFunc();
+    lineRenderFunc();
 </script>

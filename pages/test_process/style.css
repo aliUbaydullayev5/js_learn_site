@@ -1,4 +1,102 @@
 body {
     background-color: #232529;
     font-family: "Roboto", sans-serif;
+    color: #fff;
+}
+
+.test_process-title {
+    text-align: center;
+    font:
+        700 32px / 40px BlinkMacSystemFont,
+        -apple-system,
+        Segoe UI,
+        Roboto,
+        Helvetica,
+        Arial,
+        sans-serif;
+    margin: 0 auto 12px;
+}
+
+.test_process-line-block {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    border: 2px solid #eee;
+    border-radius: 20px;
+    padding: 5px;
+}
+
+.test_processLineBlocks {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test_processLineBlocks_inset {
+    height: 22px;
+    width: 22px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.test_processLineBlocks_inset_blue {
+    background-color: #f8ab47;
+}
+
+/* ========================================== */
+
+.test_process_variant_block {
+    padding: 30px;
+    text-align: left;
+    border: 3px solid #eee;
+    border-radius: 10px;
+}
+
+.test_process_variant_block_title {
+}
+
+.next_button {
+    padding: 10px 20px;
+    background-color: green;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin: 15px auto;
+    cursor: pointer;
+}
+
+.next_button_disable {
+    padding: 10px 20px;
+    background-color: green;
+    border: 0;
+    border-radius: 10px;
+    color: #fff;
+    font-weight: bold;
+    margin: 15px auto;
+    cursor: pointer;
+    opacity: 0.6;
+}
+
+.test_processLineBlocks_lists {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.test_processLineBlocks_list {
+    color: #fff;
+}
+
+.test_process-input_checkbox {
+    margin: 0 10px;
+    cursor: pointer;
+}
+.test_process-input_radio {
+    margin: 0 10px;
+    cursor: pointer;
 }
