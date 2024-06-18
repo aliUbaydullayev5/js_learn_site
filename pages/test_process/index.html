@@ -121,7 +121,17 @@
 
     function codeRender(param) {
         if (param.code) {
-            return `<div class='test_process_variant_block_code'>${param?.code?.split(';').map((mv) => `<div>${mv}</div>`).join('')}</div>`
+            return `
+                <div class='test_process_variant_block_code'>
+                    ${param?.code?.split(';').map((mv, mi) => mv.length ? `
+                        <div>
+                            <span class='test_process_variant_block_code_number'>${mi+1}.</span> <span>${mv}</span>
+                        </div>
+                        ` : '').join('')}
+                </div>
+            `
+        }else{
+            return ''
         }
 
     }

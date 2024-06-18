@@ -162,7 +162,7 @@ const tests = [
   {
     id: "7",
     quation: "Что выведет этот код?",
-    code: 'alert( "1"[0] );',
+    code: 'alert( "1"[0] )',
     type: "radio",
     variants: [
       {
@@ -236,7 +236,7 @@ const tests = [
   {
     id: "10",
     quation: "Что выведет этот скрипт?",
-    code: '"use strict";a = null + undefined;alert(a);',
+    code: '"use strict"; a = null + undefined; alert(a)',
     type: "radio",
     variants: [
       {
