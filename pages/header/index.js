@@ -38,8 +38,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return div.firstChild;
             }
 
-            // let next_buttonTag = document.getElementById('next_button')
-            // let last_buttonTag = document.getElementById('last_button')
 
             console.log('dsakudahs: ', pageArr.findIndex((e) => e == currentPage))
 
@@ -47,21 +45,22 @@ document.addEventListener("DOMContentLoaded", function () {
                 document.body.appendChild(createElementFromHTML(data))
             }
 
-
             if (pageArr.findIndex((e) => e == currentPage) == 0) {
-                last_button.style.display = 'none'
+                document.getElementById('last_button').style.display = 'none'
             } else if (pageArr.findIndex((e) => e == currentPage) == 21) {
-                next_button.style.display = 'none'
+                document.getElementById('next_button').style.display = 'none'
             }
 
-            last_button.addEventListener('click', () => {
+            // let next_buttonTag = document.getElementById('next_button') | ''
+            // let last_buttonTag = document.getElementById('last_button') | ''
+
+            document.getElementById('last_button').addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) - 1]
                 location.href = `/pages/theme_pages/${pageStr}`
             })
-            next_button.addEventListener('click', () => {
+            document.getElementById('next_button').addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) + 1]
                 location.href = `/pages/theme_pages/${pageStr}`
-
             })
 
         })
