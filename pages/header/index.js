@@ -59,11 +59,11 @@ document.addEventListener("DOMContentLoaded", function () {
             // let next_buttonTag = document.getElementById('next_button') | ''
             // let last_buttonTag = document.getElementById('last_button') | ''
 
-            document.getElementById('last_button').addEventListener('click', () => {
+            document.getElementById('last_button')?.addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) - 1]
                 location.href = `/pages/theme_pages/${pageStr}/index.html`
             })
-            document.getElementById('next_button').addEventListener('click', () => {
+            document.getElementById('next_button')?.addEventListener('click', () => {
                 let pageStr = pageArr[pageArr.findIndex((e) => e == currentPage) + 1]
                 location.href = `/pages/theme_pages/${pageStr}/index.html`
             })
