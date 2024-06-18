@@ -28,7 +28,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 'page_2_17',
                 'page_2_18',
             ]
-            let currentPage = window.location.href.split('/').filter(Boolean).slice(-1)[0]
+            let currentPage = window.location.href.split('/').filter(Boolean)
+
+            console.log('currentPage: ', currentPage)
 
             // 0 21
 
@@ -37,11 +39,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 div.innerHTML = htmlString.trim();
                 return div.firstChild;
             }
+            function intersection(arr1, arr2) {
+                return arr1.filter(value => arr2.includes(value));
+            }
 
-
-            console.log('dsakudahs: ', pageArr.findIndex((e) => e == currentPage))
-
-            if (pageArr.findIndex((e) => e == currentPage) >= 0) {
+            console.log('dsakudahs: ', currentPage, pageArr.findIndex((e) => e == currentPage))
+            if (intersection(currentPage, pageArr).length) {
                 document.body.appendChild(createElementFromHTML(data))
             }
 
