@@ -78,11 +78,11 @@
               ${mapItem.variants
                   .map((insetMapItem) => {
                       return `<div class='test_processLineBlocks_list'>
-                      <input type='${mapItem.type}' name='${mapItem.id}' class='test_process-input_${mapItem.type}' />
-                    ${insetMapItem.text
+                      <input id='${insetMapItem.id}' type='${mapItem.type}' name='${mapItem.id}' class='test_process-input_${mapItem.type}' />
+                    <label class='test_process-input_label' for='${insetMapItem.id}'>${insetMapItem.text
                         .split("")
                         .map((mp) => `<span>${mp}</span>`)
-                        .join("")}
+                        .join("")}</label>
                 </div>`;
                   })
                   .join("")}

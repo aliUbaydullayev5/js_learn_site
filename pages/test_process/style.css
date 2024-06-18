@@ -32,7 +32,24 @@ body {
     align-items: center;
     justify-content: center;
 }
-
+@media screen and (max-width: 700px) {
+    .test_process-line-block {
+        display: flex;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        border: 2px solid #eee;
+        border-radius: 20px;
+        padding: 5px;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+    .test_processLineBlocks {
+        width: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
 .test_processLineBlocks_inset {
     height: 22px;
     width: 22px;
@@ -98,5 +115,8 @@ body {
 }
 .test_process-input_radio {
     margin: 0 10px;
+    cursor: pointer;
+}
+.test_process-input_label {
     cursor: pointer;
 }
